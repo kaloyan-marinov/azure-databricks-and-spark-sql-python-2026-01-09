@@ -22,14 +22,10 @@ project_root = os.path.abspath(project_root)
 if project_root not in sys.path:
     sys.path.append(project_root)
 
+from modules.file_downloader import download_file
+
 
 # COMMAND ----------
-
-import urllib.request
-import os
-import shutil
-
-from modules.file_downloader import download_file
 
 try:
     # Construct the URL for the relevant file
