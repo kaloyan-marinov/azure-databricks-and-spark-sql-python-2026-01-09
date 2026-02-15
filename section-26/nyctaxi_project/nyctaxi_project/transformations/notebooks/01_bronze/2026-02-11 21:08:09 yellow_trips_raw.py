@@ -10,7 +10,20 @@
 
 # COMMAND ----------
 
-from pyspark.sql.functions import current_timestamp
+import os
+import sys
+
+project_root = os.path.join(
+    os.getcwd(),
+    '..',
+    '..',
+)
+project_root = os.path.abspath(project_root)
+
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+from modules.transformations.metadata import add_processed_timestamp
 
 # COMMAND ----------
 
@@ -38,10 +51,8 @@ df = spark.read.load(
 
 # COMMAND ----------
 
-df_1 = df.withColumn(
-    'processed_timestamp',
-    current_timestamp(),
-)
+# Add a column to capture when the data was processed.
+df_1 = add_processed_timestamp(df)
 
 # COMMAND ----------
 
