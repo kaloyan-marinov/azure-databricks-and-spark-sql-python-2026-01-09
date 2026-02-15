@@ -22,7 +22,7 @@ project_root = os.path.abspath(project_root)
 if project_root not in sys.path:
     sys.path.append(project_root)
 
-from modules.file_downloader import download_file
+from modules.data_loader.file_downloader import download_file
 
 
 # COMMAND ----------
