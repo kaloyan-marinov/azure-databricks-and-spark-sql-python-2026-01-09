@@ -1,0 +1,7 @@
+65-temporary-views.txt
+
+
+
+Temporary views in Databricks let you
+register the result of a DataFrame under a name
+without persisting data to storage.

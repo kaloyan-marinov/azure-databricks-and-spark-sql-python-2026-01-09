@@ -1,0 +1,34 @@
+08-introduction-to-spark-architecture.txt
+
+
+
+[CLUSTER]
+
+-----------------------------------------------
+                    DRIVER                          the heart/manager/orchestrator of the entire operation
+                    SparkContext
+
+
+
+                    CLUSTER MANAGER                 allocates resources; can add or remove workers; e.g. Yarn, Kubernetes, Spark's built-in cluster manager
+
+
+
+    WORKER          WORKER          WORKER          the machines that do the actual heavy lifting
+
+    Executor        Executor        Executor
+      slot            slot            slot
+      slot            slot            slot
+      slot            slot            slot
+      slot            slot            slot
+-----------------------------------------------
+
+
+
+In summary, you have:
+
+- the DRIVER managing the workflow;
+
+- executors performing the tasks; and
+
+- the cluster manager overseeing resource allocation;

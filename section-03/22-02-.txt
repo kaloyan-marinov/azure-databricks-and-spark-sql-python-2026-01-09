@@ -1,0 +1,13 @@
+22-02-.txt
+
+In Databricks,
+a profile would also be created associated with this `User principal name`
+(and you can actually sign in with it).
+
+It's this profile that would be given Account Administrator Access.
+
+So, going forward,
+you'll have to access both Azure and Databricks
+using this `User principal name`:
+
+    ms-azure-account-admin-km_clean.simplelogin.com@kallomarinovgmail.onmicrosoft.com

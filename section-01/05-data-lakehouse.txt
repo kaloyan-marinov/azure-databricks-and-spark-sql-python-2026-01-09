@@ -1,0 +1,85 @@
+05-data-lakehouse.txt
+
+
+
+combines the best elements of
+data warehouses
+and
+data lakes
+
+
+
+data warehouses
+
+    emerged in 1990s
+
+    excel at handling structured data
+
+    guarantee ACID transactions
+
+
+
+    are very expensive to scale
+
+    can only handle structured data
+
+
+
+data lake
+
+    rose to prominence in the late 2000s and early 2010s
+    as cloud object storage became cheap and ubiquituous
+
+    let you dump any data - structured, semi-structured, and unstructured - into a central store
+    without upfront schema design
+
+
+
+    slashed storage costs and unlocked new use cases
+
+    power advanced analytics and real-time streaming
+
+
+
+    were not built for traditional BI and reporting
+
+    lacked ACID compliance and built-in governance and security
+
+    without built-in transaction safety (in the form of ACID compliance or schema enforcement),
+    data lakes can easily turn into data swamps
+
+
+
+enter: the data lakehouse
+
+    combine the best sides of both into one open architecture
+
+
+
+    sits on a low-cost object storage
+
+    ingests any type of data - structured, semi-structured, and unstructured
+
+
+
+    brings warehouse-style reliability and performance
+
+        ACID compliance guarantees
+
+        schema enforcement
+
+        every change is versioned
+
+
+
+    uses open formats like PARQUET and DELTA
+
+
+
+    storage and compute can scale independently;
+    you only pay for what you use;
+
+    you
+    keep the openness and flexibility of a data lake
+    and
+    gain the safety and speed of a data warehouse

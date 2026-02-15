@@ -1,0 +1,95 @@
+07-brief-history-of-hadoop-MapReduce-and-apache-spark.txt
+
+
+
+Big Data refers to datasets that are
+so large, fast-moving, or diverse
+that traditional data processing tools and technologies can't handle them efficiently.
+
+    Volume      (TB, PB, and beyond)
+
+    Velocity    (data arriving at high speed)
+
+    Variety     (of data formats - structured, semi-structured, unstructured)
+
+    Veracity    (uncertainty or trustworthiness of the data)
+
+
+
+traditional data warehouses
+
+    as your data grows,
+    you apply *vertical scaling*
+    (:= making a single machine more powerful by adding more CPU cores, extra RAM, or faster storage)
+
+    vertical scaling runs into physical and economical limits
+
+
+
+2004
+
+    Google introduced
+        GFS         = Google File System
+        MapReduce   = a framework for processing massive datasets efficiently
+
+
+
+2006
+
+    2 engineers developed Hadoop
+
+        HDFS        = Hadoop Distributed File System
+        MapReduce   = a distributed processing engine
+
+
+
+    *horizontal scaling*
+    (
+    :=
+    distribute the workload across many smaller, cheaper machines
+    instead of relying on one single powerhouse
+    )
+
+
+
+Hadoop had 1 significant drawback: Disk I/O
+
+    Intermediate results were
+    read from and written to disk
+    at each step of processing,
+    which slowed down performance.
+
+    This made Hadoop inefficient for iterative processes
+    (like machine learning and real-time analytics).
+
+
+
+2009
+
+    researchers at UC Berkeley set out to solve Hadoop's performance issues
+
+    They Developed Apache Spark,
+    an enginer designed to process data in memory,
+    bypassing the repeated disk I/O bottlenecks.
+
+
+
+How Spark improves on Hadoop
+
+    in-memory processing                100x faster
+
+    multiple workload support           batch processing;
+                                        real-time streaming;
+                                        machine learning;
+                                        SQL queries;
+
+    supports various storage systems    HDFS;
+                                        Amazon S3;
+                                        Azure Data Lake;
+
+
+
+2014
+
+    the creators of Spark co-founded Databricks
+    to provide managed Spark solutions to organizations

@@ -1,0 +1,70 @@
+10-overview-of-the-apache-spark-ecosystem.txt
+
+
+
+        -----------------------------------------------------------------------------
+        |     R     |     SQL     |     Python     |     Scala     |     Java       |
+        -----------------------------------------------------------------------------
+
+        --------------------------------------------------------------------------------------
+        |                        | Structured |                  |                           |
+        | Spark SQL + DataFrames | Streaming  | MLlib            | Pandas API                |
+        |                        |            |                  | on Spark                  |
+        |                        |            | Machine Learning |                           |
+        |                        |            |                  |                           |
+        | (in scope              | (in scope  | tools for        |                           |
+        | for this               | for this   | classification,  |                           |
+        | course)                | course)    | regression,      |                           |
+        |                        |            | clustering,      |                           |
+        |                        |            | recommendation   |                           |
+        | query                  | handles    |                  | distributed DataFrame API |
+        | structured             | real-time  |                  |                           |
+        | data                   | data       |                  | brings                    |
+        |                        | processing |                  | the familiar Pandas       |
+        |                        | via        |                  | syntax and semantics      |
+        | integrates with        | micro-     |                  | to Apache Spark           |
+        | various data formats   | batching   |                  |                           |
+        | such as                |            |                  | enables                   |
+        | CSV, PARQUET,          | can ingest |                  | scalable, parallel        |
+        | and DELTA LAKE         | from       |                  | data processing           |
+        |                        | Kafka,     |                  | w/o changing your         |
+        |                        | socket     |                  | Pandas code               |
+        |                        | stream,    |                  |                           |
+        |                        | or files   |                  |                           |
+        --------------------------------------------------------------------------------------
+
+        -----------------------------------------------------------------------------
+        |                           Spark Core
+        |
+        |   this:
+        |
+        |       is the foundation of the Spark Ecosystem
+        |
+        |       manages distributed data processing
+        |       through *Resilient Distributed Datasets (RDD)*
+        |
+        |   however:
+        |
+        |       as a user,
+        |       you don't interact with Spark Core directly;
+        |
+        |       instead, you use higher-level APIs;
+        |
+        -----------------------------------------------------------------------------
+
+
+
+There are 3 core data structures in Spark for distributed processing:
+
+
+            RDDs                    Spark DataFrames            Datasets
+
+API Level   low level, functional   high level, declarative     mainly used in Scala and Java workloads,
+                                                                and not in Python
+
+
+
+Today, DataFrames are the standard for most data-processing tasks in Spark
+and
+that's what we'll be focusing on in this course.
+(RDDs will be outside the scope of this course.)

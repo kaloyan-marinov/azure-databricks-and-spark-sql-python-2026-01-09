@@ -1,0 +1,89 @@
+88-10-what-is-the-medallion-architecture.txt
+
+
+
+A medallion architecture is a data design pattern used to organize data logically.
+Its goal is to
+incrementally and progressively improve the structure and quality of data
+as it flows through each layer of the architecture.
+
+    bronze                      ->      silver              ->      gold
+
+The recommended data format for each layer is DELTA LAKE
+b/c it guarantees
+    Atomicity
+    Consistency
+    Isolation
+    Durability
+as data passes through each layer.
+
+
+
+    bronze                      ->      silver              ->      gold
+
+    raw data                            validated,                  high-value,
+    as ingested from the source         cleaned,                    business-ready
+                                        deduplicated,               data
+    it may have                         enriched,
+    duplicates,                         quality-checked,            might include
+    missing fields,                     more structured             aggregations,
+    and/or inconsistent formats         data                        KPIs,
+                                                                    dimensional models,
+    its purpose is                      you apply                   or features for machine learning
+    to preserve                         rules,
+    the original format                 JOINs,                      typically,
+    of the input data -                 and business logic,         the tables are optimized for consumption -
+    for                                 making the data             whether by
+    traceability,                       usable                      dashboards,
+    recovery,                           and                         reports,
+    and auditing                        trustworthy                 or data-science notebooks
+
+
+
+This layered design makes your platform
+
+    easier to debug         (b/c raw data is always preseved)
+
+    easier to trust         (b/c each layer builds up quality)
+
+    easier to scale         (b/c you can optimize the layers indepedently)
+
+    easier to govern        (with clear separation of responsibility among the layers)
+
+It gives you structure
+without locking you into a rigid blueprint.
+
+
+
+Who are the intended users of each layer?
+
+    bronze                      ->      silver              ->      gold
+
+    data engineers                      data engineers              business analysts
+    data operations teams               data analysts               BI developers
+    compliance and audit teams          data scientists             data scientists
+                                                                    operational teams
+                                                                    executives
+
+Just ro re-iterate:
+The medallion architecture is a guiding framework, not a fixed rule.
+
+    Not everybody uses the exact same layering or even naming conventions.
+
+    e.g.
+    you may have a separate landing/raw zone (before the bronze zone):
+
+        landing         ->      bronze                      ->      silver              ->      gold
+
+        preserve
+        the original
+        file format
+        of
+        the input data
+
+    e.g.
+    other teams may prefer to use alternative names:
+
+    bronze                      ->      silver              ->      gold
+    =                                   =                           =
+    raw                                 enriched                    refined

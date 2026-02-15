@@ -1,0 +1,54 @@
+04-what-is-data-engineering.txt
+
+
+
+Data Engineering is
+the practice of designing, building, and operationg systems
+that turn raw data into reliable, analysis-ready information.
+
+
+
+Every data pipeline follows a common flow:
+
+    1 ingestion
+    2 staging
+    3 transform
+    4 serve
+
+
+
+Two foundational Data Integration Patterns follow these pipelines:
+
+    Extract, Transform and Load (ETL)
+
+    Extract, Load and Transform (ELT)
+
+
+
+    Please note:
+    Although Databricks embraces ETL and ELT,
+    the documentation uses ETL as a familiar umbrella term.
+
+
+
+Data Processing can run in 2 modes:
+
+    batch
+
+        handles chunks of data
+
+        fixed schedule
+
+        ideal for aggregation and bulk updates
+
+    stream
+
+        continuously processes data as it arrives
+
+        real-time analysis
+
+
+
+Robust data engineering ensures that
+analysis, data scientists, and applications receive fresh, accurate data
+without spending hours fixing broken pipelines.

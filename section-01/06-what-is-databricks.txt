@@ -1,0 +1,49 @@
+06-what-is-databricks.txt
+
+
+
+Databricks is a unified, cloud-native Data Intelligence Platform.
+
+It combines
+    data ingestion,
+    storage,
+    processing,
+    analytics,
+    and even machine learning
+- so you don't have to stitch together multiple disconnected tools.
+
+
+
+
+Under the hood,
+Databricks runs on Apache Spark
+[which is] the industry-standard engine for large-scale data processing.
+Spark gives you fast parallel execution for both batch and streaming workloads.
+
+
+
+Databricks ... works seamlessly with each cloud's core services.
+
+
+
+At its heart sits the Data Lakehouse.
+
+
+
+Databricks provides 5 core engines to turn your data into value:
+
+    business intelligence       (build live dashboards and run reports)
+
+    data warehousing            (run high-performance, large-scale SQL queries)
+
+    data science and AI         (explore data interactively + built-in experiment tracking and model management via MLFlow)
+
+    streaming                   (ETL and real-time analytics; create both batch ETL pipelines and streaming jobs in one platform)
+
+    orchestration               (automate end-to-end workflows)
+
+
+
+That's Databricks in a nutshell:
+a unified, cloud-native lakehouse powered by Spark
+that streamlines every stage of the data lifecycle.

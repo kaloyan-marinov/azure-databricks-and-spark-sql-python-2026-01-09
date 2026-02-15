@@ -1,0 +1,6 @@
+62-creating-views-with-SQL.txt
+
+
+
+A view is read-only object
+that's the result of a query over 1 or more tables (and/or views) in a Unity Catalog metastore.

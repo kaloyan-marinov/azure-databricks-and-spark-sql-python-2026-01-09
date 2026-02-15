@@ -1,0 +1,27 @@
+03-azure-and-databricks-managed-resources.txt
+
+
+
+when you provision a Databricks service,
+two things will be provisioned in your Azure account:
+
+    firstly (and obviously),
+    the Databricks service itself
+
+    secondly (and not obviously),
+    a resource group which is comprised of the following newly-provisioned resources:
+
+        a Virtual Network           (provides the network infrastructure)
+
+        a Network security group    (controls the traffic to and from the workspace)
+
+        an Access Connector for Azure Databricks (facilitates access to other Azure services from within the Databricks environment)
+
+        a Storage Account           (primarily to hold the workspace's managed tables and volumens within Unity Catalog, along with the associated metadata)
+
+        a Managed Identity          (provides an identity for the workspace to access other Azure resources securely)
+
+    thirdly,
+    a resource group:
+
+        NetworkWatcherRG            (is automatically provisioned by Azure)

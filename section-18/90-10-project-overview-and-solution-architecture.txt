@@ -1,0 +1,15 @@
+# 90-10-project-overview-and-solution-architecture.txt
+
+
+
+go to
+
+    draw.io
+
+    File
+
+    Import From
+
+    Device
+
+    select the `90-20-project-overview-and-solution-architecture-nyctaxi_project_architecture_part_1.drawio` file

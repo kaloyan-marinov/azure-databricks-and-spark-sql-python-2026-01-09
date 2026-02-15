@@ -1,0 +1,69 @@
+89-10-overview-of-the-NYC-taxi-data.txt
+
+
+
+this part will focus on
+the setup,
+initial load of the data,
+and the data-transformation steps
+
+
+
+the NYC Taxi Data is a public dataset
+that contains detailed trip records of taxi cabs operating in New York City
+
+
+
+it's widely used in Data Engineering, Data Science, and Analytics projects
+due to
+
+    its real-world complexities
+
+    size, and
+
+    rich attributes
+
+
+
+go to
+
+    https://www.nyc.gov/site/tlc/index.page
+
+    "Download data"
+
+    "Raw Data"
+
+    "Trip Record Data"
+
+        "Data Dictionaries and MetaData"
+
+            [Yellow Trips Data Dictionary](
+                https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
+            )
+
+        "Trip Record Data Download"
+
+            "2025"
+
+                "January"
+
+                [Yellow Taxi Trip Records (PARQUET)](
+                    https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet
+                )
+
+
+
+        "Taxi Zone Maps and Lookup Tables"
+
+            [Taxi Zone Lookup Table (CSV)](
+                https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv
+            )
+
+            these can be used to make sense of the values in the following columns
+            within the PARQUET file:
+
+                ```
+                PULocationID
+
+                DOLocationID
+                ```

@@ -1,0 +1,20 @@
+09-comparing-apache-spark-and-databricks.txt
+
+
+
+Apache Spark is the open-source engine you install and run yourself.
+You pick the versions, add libraries, pick the settings, and fix any issues on your own.
+
+    [
+        https://spark.apache.org/
+
+        Apache Spark™ is a multi-language engine for executing
+            data engineering,
+            data science,
+            and machine learning
+        on single-node machines or clusters.
+    ]
+
+
+Databricks is a fully-managed cloud platform that delivers Spark as a service.
+It handles all infrastructure provisioning, patching, scaling, and version upgrades for you.

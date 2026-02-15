@@ -1,0 +1,13 @@
+31-databricks-runtime.txt
+
+
+
+Databricks Runtime is the managed, highly optimized execution environment
+that powers all Databricks clusters.
+
+At its core,
+it's a customized build of Apache Spark
+(with performance enhancements to deliver faster query execution and more efficient resource utilization).
+
+Beyond Spark itself,
+each runtime image includes a curated set of pre-installed libraries.

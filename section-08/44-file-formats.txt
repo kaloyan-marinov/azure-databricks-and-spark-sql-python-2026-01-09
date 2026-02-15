@@ -1,0 +1,15 @@
+44-file-formats.txt
+
+
+
+DELTA LAKE is an open-source storage layer that
+
+    is built on top of the PARQUET file format
+
+    and
+
+    adds
+        ACID transactions,
+        schema enforcement,
+        and time travel
+    via its transaction log (known as «the Delta Log»).
