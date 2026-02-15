@@ -11,8 +11,19 @@
 # COMMAND ----------
 
 import os
-import shutil
-import urllib.request
+import sys
+
+project_root = os.path.join(
+    os.getcwd(),
+    '..',
+    '..',
+)
+project_root = os.path.abspath(project_root)
+
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+from modules.file_downloader import download_file
 
 import datetime as dt
 
@@ -58,12 +69,9 @@ except:
     try:
         url = f"https://d37ci6vzurychx.cloudfront.net/trip-data/{filename}"
 
-        # Open a remote connection and stream the remote file
-        response = urllib.request.urlopen(url)
-    
-        os.makedirs(dir_path, exist_ok=True)
-        with open(local_path, 'wb') as f:
-            shutil.copyfileobj(response, f)
+        # Download the file
+        # Create a local directory for the data from `date_to_process`
+        download_file(url, dir_path, local_path)
 
         dbutils.jobs.taskValues.set(
             key='continue_downstream',
