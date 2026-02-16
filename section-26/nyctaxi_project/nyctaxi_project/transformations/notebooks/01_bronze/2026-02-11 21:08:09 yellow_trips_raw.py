@@ -24,21 +24,11 @@ if project_root not in sys.path:
     sys.path.append(project_root)
 
 from modules.transformations.metadata import add_processed_timestamp
+from modules.utils.date_utils import get_target_yyyymm
 
 # COMMAND ----------
 
-import datetime as dt
-
-from dateutil.relativedelta import relativedelta
-
-
-today = dt.date.today()
-# Simulate the time when the lecturer recorded the video `134-set-up-for-part-2.md`.
-today = dt.date(year=2025, month=8, day=17)
-
-two_months_ago = today - relativedelta(months=2)
-
-date_to_process = two_months_ago.strftime("%Y-%m")
+date_to_process = get_target_yyyymm(months_ago=2)
 
 # COMMAND ----------
 

@@ -7,6 +7,9 @@ def get_target_yyyymm(months_ago: int = 2) -> str:
     Return the year-month string (yyyy-MM) for the given number of months ago.
     """
     today = dt.date.today()
+    # Simulate the time when the lecturer recorded the video `134-set-up-for-part-2.md`.
+    today = dt.date(year=2025, month=8, day=17)
+
     target_date = today - relativedelta(months=months_ago)
     return target_date.strftime("%Y-%m")
 
@@ -16,5 +19,8 @@ def get_month_start_n_months_ago(months_ago: int = 2) -> dt.date:
     Return the date representing the 1st day of the month, 'n' months ago.
     """
     today = dt.date.today()
+    # Simulate the time when the lecturer recorded the video `134-set-up-for-part-2.md`.
+    today = dt.date(year=2025, month=8, day=17)
+
     first_day_in_curr_month = today.replace(day=1)
     return first_day_in_curr_month - relativedelta(months=months_ago)

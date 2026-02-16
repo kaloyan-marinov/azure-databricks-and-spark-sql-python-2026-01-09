@@ -9,19 +9,25 @@
 
 # COMMAND ----------
 
-import datetime as dt
+import os
+import sys
 
-from dateutil.relativedelta import relativedelta
+project_root = os.path.join(
+    os.getcwd(),
+    '..',
+    '..',
+)
+project_root = os.path.abspath(project_root)
 
-today = dt.date.today()
-# Simulate the time when the lecturer recorded the video `134-set-up-for-part-2.md`.
-today = dt.date(year=2025, month=8, day=17)
+if project_root not in sys.path:
+    sys.path.append(project_root)
 
-# Get the 1st day of the current month
-curr_month_start = today.replace(day=1)
+from modules.utils.date_utils import get_month_start_n_months_ago
+
+# COMMAND ----------
 
 # Get the 1st day of the month from 2 months ago
-two_months_ago_start = curr_month_start - relativedelta(months=2)
+two_months_ago_start = get_month_start_n_months_ago(months_ago=2)
 
 # COMMAND ----------
 

@@ -10,6 +10,19 @@
 
 # COMMAND ----------
 
+import os
+import sys
+
+project_root = os.path.join(
+    os.getcwd(),
+    '..',
+    '..',
+)
+project_root = os.path.abspath(project_root)
+
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
 from pyspark.sql.functions import (
     col,
     max,
@@ -18,25 +31,16 @@ from pyspark.sql.functions import (
     when,
 )
 
+from modules.utils.date_utils import get_month_start_n_months_ago
+
 
 # COMMAND ----------
 
-import datetime as dt
-
-from dateutil.relativedelta import relativedelta
-
-today = dt.date.today()
-# Simulate the time when the lecturer recorded the video `134-set-up-for-part-2.md`.
-today = dt.date(year=2025, month=8, day=17)
-
-# Get the 1st day of the current month
-curr_month_start = today.replace(day=1)
-
 # Get the 1st day of the month from 2 months ago
-two_months_ago_start = curr_month_start - relativedelta(months=2)
+two_months_ago_start = get_month_start_n_months_ago(months_ago=2)
 
 # Get the 1st day of the month from 1 months ago
-one_month_ago_start = curr_month_start - relativedelta(months=1)
+one_month_ago_start = get_month_start_n_months_ago(months_ago=1)
 
 # COMMAND ----------
 
