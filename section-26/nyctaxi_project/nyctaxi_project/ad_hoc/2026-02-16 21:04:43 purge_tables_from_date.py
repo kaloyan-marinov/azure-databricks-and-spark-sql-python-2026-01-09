@@ -33,7 +33,7 @@ d_t = DeltaTable.forName(
     "nyctaxi.`02_silver`.yellow_trips_enriched",
 )
 
-dt_t.delete(condition)
+d_t.delete(condition)
 
 
 # COMMAND ----------
@@ -43,4 +43,4 @@ d_t = DeltaTable.forName(
     "nyctaxi.`03_gold`.daily_trip_summary",
 )
 
-dt.delete(f"pickup_date >= '{date_from}'")
+d_t.delete(f"pickup_date >= '{date_from}'")
