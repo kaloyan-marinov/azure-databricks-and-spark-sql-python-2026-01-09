@@ -6,7 +6,7 @@ import shutil
 def download_file(url: str, dir_path: str, local_path: str) -> None:
     os.makedirs(
         os.path.dirname(dir_path),
-        exists_ok=True,
+        exist_ok=True,
     )
 
     with urllib.request.urlopen(url) as response, open(local_path, "wb") as out_file:
