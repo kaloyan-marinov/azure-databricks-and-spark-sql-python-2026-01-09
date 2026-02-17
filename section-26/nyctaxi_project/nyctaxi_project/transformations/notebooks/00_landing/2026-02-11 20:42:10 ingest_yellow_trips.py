@@ -48,18 +48,16 @@ local_path = os.path.join(
     filename,
 )
 
-try:
-    # Check if the file already exists
-    dbutils.fs.ls(local_path)
+if os.path.exists(local_path):
+    # Signal that the pipeline for incremental processing should terminate.
+    print('File already exists - aborting downstream tasks')
 
-    # If the file exists,
-    # signal that the pipeline for incremental processing should terminate.
     dbutils.jobs.taskValues.set(
         key='continue_downstream',
         value='no',
     )
 
-except:
+else:
     try:
         url = f"https://d37ci6vzurychx.cloudfront.net/trip-data/{filename}"
 
