@@ -5,7 +5,7 @@ import shutil
 
 def download_file(url: str, dir_path: str, local_path: str) -> None:
     os.makedirs(
-        os.path.dirname(dir_path),
+        dir_path,
         exist_ok=True,
     )
 
