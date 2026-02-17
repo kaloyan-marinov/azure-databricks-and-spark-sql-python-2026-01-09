@@ -16,6 +16,7 @@ project_root = os.path.join(
     os.getcwd(),
     '..',
     '..',
+    '..',
 )
 project_root = os.path.abspath(project_root)
 
