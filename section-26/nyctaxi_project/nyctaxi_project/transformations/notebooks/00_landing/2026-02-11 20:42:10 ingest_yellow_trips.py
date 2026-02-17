@@ -81,3 +81,5 @@ else:
         )
 
         print(f'File download failed: {str(e)}')
+
+        raise RuntimeError from e
