@@ -12,6 +12,10 @@
 import os
 import sys
 
+print(f"{sys.path = }")
+
+# COMMAND ----------
+
 project_root = os.path.join(
     os.getcwd(),
     '..',
@@ -22,8 +26,11 @@ project_root = os.path.abspath(project_root)
 if project_root not in sys.path:
     sys.path.append(project_root)
 
-from modules.data_loader.file_downloader import download_file
+print(f"{sys.path = }")
 
+# COMMAND ----------
+
+from modules.data_loader.file_downloader import download_file
 
 # COMMAND ----------
 
