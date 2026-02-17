@@ -48,6 +48,11 @@ try:
     # Download the file
     download_file(url, dir_path, local_path)
 
+    dbutils.job.taskValues.set(
+        key='continue_downstream',
+        value='yes',
+    )
+
     print('File successfully downloaded')
 
 except Exception as e:
