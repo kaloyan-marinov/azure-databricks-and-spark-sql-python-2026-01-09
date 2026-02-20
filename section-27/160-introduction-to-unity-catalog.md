@@ -1,5 +1,7 @@
 # 160-introduction-to-unity-catalog.md
 
+(A lot of this file comes from https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/#-the-unity-catalog-object-model .)
+
 ## Recall
 
 We've actually been using <u>Unity Catalog</u>
@@ -7,8 +9,8 @@ since pretty much the beginning of this course -
 we've used:
 
 - catalogs
-- schemas, volumes
-- tables and views
+- schemas
+- volumes, tables and views
 
 Those are all objects in <u>Unity Catalog</u>.
 
