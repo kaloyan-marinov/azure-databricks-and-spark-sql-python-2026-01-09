@@ -19,7 +19,7 @@ The Databricks Account Console is:
 Under «Workspaces», you can
 see every single Databricks workspace in your Azure account.
 
-Under (the misleadingly-named) «Catalog», you can
+Under «Catalog» (which can sound misleadingly and should perhaps have been named «Unity Catalog»), you can
 see and manage all of the <u>metastores</u> in your account.
 
   - create additional <u>metastores</u>
