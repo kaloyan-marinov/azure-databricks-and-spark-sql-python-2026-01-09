@@ -28,6 +28,17 @@ There are three types of <u>Azure Databricks identity</u>:
 
 
 
+Remarks:
+
+- every <u>user</u> you add to a Databricks workspace
+  is automatically put in
+  the built-in <u>Users</u> group
+
+- by default, the built-in <u>Users</u> group gets workspace access
+  (allowing its members to create notebooks, Lakeflow jobs, and so on)
+
+
+
 ## How to manage Azure Databricks identities
 
 The following are <u>the administrative roles</u> that can manage <u>Azure Databricks identities</u>:
@@ -87,3 +98,11 @@ Databricks recommends:
 
   > All <u>Azure Databricks identities</u> can be assigned as members of <u>groups</u>,
   > and members inherit permissions that are assigned to their <u>group</u>.
+
+
+
+## Other account-level roles
+
+- <u>marketplace admins</u>
+
+- <u>billing admins</u>
