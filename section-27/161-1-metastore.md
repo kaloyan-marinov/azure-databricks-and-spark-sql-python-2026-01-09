@@ -39,6 +39,8 @@ Remarks:
 
 - That means that <u>metastores</u> are regional.
 
+  - Only one <u>metastore</u> per region is allowed.
+
 - A Databricks workspace can be attached to only one <u>metastore</u>,
   and they need co-located in the same region.
 
