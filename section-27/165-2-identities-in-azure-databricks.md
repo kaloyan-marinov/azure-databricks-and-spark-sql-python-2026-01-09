@@ -2,6 +2,7 @@
 
 (A lot of this file comes from https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/best-practices .)
 
+(The following resource might even be a more well-written version of the previous resource: https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/#identity-model )
 
 
 ## Azure Databricks identities
@@ -57,14 +58,31 @@ The following are <u>the administrative roles</u> that can manage <u>Azure Datab
 
    - manage roles on a <u>service principal</u>
 
-Databricks recommends that there be a limited number of account admins per account and workspace admins in each workspace.
+
+
+## Opinionated perspective on how to best configure identity in Azure Databricks
+
+Before proceeding,
+it might be helpful to re-read `section-27/165-1-roles-in-the-databricks-account.md`.
 
 
 
-<u>Databricks recommends</u> creating service principals to run production jobs or modify production data.
+Databricks recommends:
 
-> If all processes that act on production data run using service principals,
-> interactive users do not need any write, delete, or modify privileges in production.
-> This eliminates the risk of a user overwriting production data by accident.
+- that there be a limited number of
 
-It is best practice to assign access to workspaces and access-control policies in Unity Catalog to groups, instead of to users individually. All Azure Databricks identities can be assigned as members of groups, and members inherit permissions that are assigned to their group.
+  - <u>account admins</u> per account and
+  
+  - <u>workspace admins</u> in each workspace
+
+- creating <u>service principals</u> to run production jobs or modify production data.
+
+  > If all processes that act on production data run using service principals,
+  > interactive users do not need any write, delete, or modify privileges in production.
+  > This eliminates the risk of a user overwriting production data by accident.
+
+- assigning
+  access to workspaces and access-control policies in Unity Catalog
+  to <u>groups</u>, instead of to <u>users</u> individually.
+  All <u>Azure Databricks identities</u> can be assigned as members of <u>groups</u>,
+  and members inherit permissions that are assigned to their <u>group</u>.
