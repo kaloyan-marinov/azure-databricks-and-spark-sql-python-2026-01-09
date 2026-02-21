@@ -24,7 +24,7 @@ There are three types of <u>Azure Databricks identity</u>:
 
   This type of identity plays an auxiliary but important role in that
   its aim is to simplify identity management
-  (making it easier to assign access to workspaces, data, and other securable objects).
+  (making it easier to assign access to Databricks workspaces, data, and other securable objects).
 
 
 
@@ -38,15 +38,15 @@ The following are <u>the administrative roles</u> that can manage <u>Azure Datab
     and
     assign them admin roles
 
-  - give users access to workspaces, as long as those workspaces use identity federation
+  - give users access to Databricks workspaces, as long as those Databricks workspaces use <u>identity federation</u>
 
 - <u>Workspace admins</u> can
 
    - add users, service principals to the Azure Databricks account
    
-   - add groups to the Azure Databricks account if their workspaces are enabled for identity federation
+   - add groups to the Azure Databricks account if their Databricks workspaces are enabled for <u>identity federation</u>
    
-   - grant users, service principals, and groups access to their workspaces
+   - grant users, service principals, and groups access to their Databricks workspaces
 
 - <u>Group managers</u> can
 
@@ -77,12 +77,13 @@ Databricks recommends:
 
 - creating <u>service principals</u> to run production jobs or modify production data.
 
-  > If all processes that act on production data run using service principals,
-  > interactive users do not need any write, delete, or modify privileges in production.
+  > If all processes that act on production data run using <u>service principals</u>,
+  > interactive users do not need any «write privileges», «delete privileges», or «modify privileges» in production.
   > This eliminates the risk of a user overwriting production data by accident.
 
 - assigning
-  access to workspaces and access-control policies in Unity Catalog
+  access to Databricks workspaces and access-control policies in <u>Unity Catalog</u>
   to <u>groups</u>, instead of to <u>users</u> individually.
-  All <u>Azure Databricks identities</u> can be assigned as members of <u>groups</u>,
-  and members inherit permissions that are assigned to their <u>group</u>.
+
+  > All <u>Azure Databricks identities</u> can be assigned as members of <u>groups</u>,
+  > and members inherit permissions that are assigned to their <u>group</u>.
