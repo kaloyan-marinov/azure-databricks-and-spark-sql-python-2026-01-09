@@ -4,19 +4,67 @@
 
 
 
-There are three types of Azure Databricks identity:
+## Azure Databricks identities
 
-Users: User identities recognized by Azure Databricks and represented by email addresses.
-Service principals: Identities for use with jobs, automated tools, and systems such as scripts, apps, and CI/CD platforms.
-Groups: Groups simplify identity management, making it easier to assign access to workspaces, data, and other securable objects.
-Databricks recommends creating service principals to run production jobs or modify production data. If all processes that act on production data run using service principals, interactive users do not need any write, delete, or modify privileges in production. This eliminates the risk of a user overwriting production data by accident.
+There are three types of <u>Azure Databricks identity</u>:
+
+- <u>Users</u>
+
+  This type of identity is represented by an email address.
+
+- <u>Service principals</u>
+
+  This type of identity is intended to be used with
+  - jobs,
+  - automated tools, and
+  - systems such as scripts, apps, and CI/CD platforms.
+
+- <u>Groups</u>
+
+  This type of identity plays an auxiliary but important role in that
+  its aim is to simplify identity management
+  (making it easier to assign access to workspaces, data, and other securable objects).
+
+
+
+## How to manage Azure Databricks identities
+
+The following are <u>the administrative roles</u> that can manage <u>Azure Databricks identities</u>:
+
+- <u>Account admins</u> can
+
+  - add users, service principals, and groups to the account
+    and
+    assign them admin roles
+
+  - give users access to workspaces, as long as those workspaces use identity federation
+
+- <u>Workspace admins</u> can
+
+   - add users, service principals to the Azure Databricks account
+   
+   - add groups to the Azure Databricks account if their workspaces are enabled for identity federation
+   
+   - grant users, service principals, and groups access to their workspaces
+
+- <u>Group managers</u> can
+
+   - manage group membership
+   
+   - assign <u>the group manager role</u> to other users
+
+- <u>Service principal managers</u> can
+
+   - manage roles on a <u>service principal</u>
+
+Databricks recommends that there be a limited number of account admins per account and workspace admins in each workspace.
+
+
+
+<u>Databricks recommends</u> creating service principals to run production jobs or modify production data.
+
+> If all processes that act on production data run using service principals,
+> interactive users do not need any write, delete, or modify privileges in production.
+> This eliminates the risk of a user overwriting production data by accident.
 
 It is best practice to assign access to workspaces and access-control policies in Unity Catalog to groups, instead of to users individually. All Azure Databricks identities can be assigned as members of groups, and members inherit permissions that are assigned to their group.
-
-The following are the administrative roles that can manage Azure Databricks identities:
-
-Account admins can add users, service principals, and groups to the account and assign them admin roles. They can give users access to workspaces, as long as those workspaces use identity federation.
-Workspace admins can add users, service principals to the Azure Databricks account. They can also add groups to the Azure Databricks account if their workspaces are enabled for identity federation. Workspace admins can grant users, service principals, and groups access to their workspaces.
-Group managers can manage group membership. They can also assign other users the group manager role.
-Service principal managers can manage roles on a service principal.
-Databricks recommends that there be a limited number of account admins per account and workspace admins in each workspace.
