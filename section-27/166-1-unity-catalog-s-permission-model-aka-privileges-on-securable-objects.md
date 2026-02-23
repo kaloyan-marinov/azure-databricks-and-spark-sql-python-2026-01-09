@@ -55,6 +55,3 @@ Different <u>securable objects</u> have different permission types.
 The following table lists the privilege types
 that apply to each <u>securable object</u> in <u>Unity Catalog</u>.
 https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/privileges#privilege-types
-
-
-https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/
