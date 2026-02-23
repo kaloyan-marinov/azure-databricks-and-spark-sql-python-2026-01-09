@@ -1,4 +1,4 @@
-# 166-unity-catalog-privileges-and-securable-objects.md
+# 166-1-unity-catalog-s-permission-model-aka-privileges-on-securable-objects.md
 
 (A lot of this file comes from https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/privileges .)
 
