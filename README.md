@@ -32,6 +32,21 @@ that was involved in building «Apache Spark»
 
 
 
+## Integrations
+
+2017:
+«Microsoft Azure» integrated Databricks as «Azure Databricks»
+
+2024:
+Databricks decided to run their products
+on top of «AWS» via the new button called "Buy with AWS"
+
+2025:
+Databricks announced a partnership with «Google Cloud Platform»
+to integrate its platform with Google Cloud services
+
+
+
 ## Products
 
 Databricks, Inc. has created:
