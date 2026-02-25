@@ -1,11 +1,26 @@
-# Databricks, Inc.
+# Introduction
 
-source:
-https://en.wikipedia.org/wiki/Databricks
+This repository contains materials about «Azure Databricks».
+
+«Azure Databricks» is an integration
+
+- of a cloud-based platform for data processing,
+  which is offered by a company called «Databricks, Inc.»
+
+- with «Microsoft Azure»
 
 
 
-## Introduction
+# «Databricks, Inc.»
+
+Before we dive into «Azure Databricks»,
+it is very worthwhile to build a basic understanding of «Databricks, Inc.» as a company.
+
+(The remainder of this file comes from https://en.wikipedia.org/wiki/Databricks .)
+
+
+
+## The company at a glance
 
 Databricks, Inc.:
 
