@@ -7,7 +7,7 @@ https://docs.databricks.com/aws/en/getting-started/concepts
 
 A «Databricks workspace» is
 a Databricks deployment in the cloud
-that functions as an environment for your team to access «Databricks assets».
+that functions as an environment for your team to access « data and AI «securable objects» ».
 (Your organization can choose to have either multiple workspaces or just one,
 depending on its needs.)
 
