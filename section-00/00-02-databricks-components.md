@@ -55,3 +55,16 @@ and, for each type, there is different «access control system».
 | workspace-level «securable objects» | Access control lists (ACLs)       |
 | account-level «securable objects»   | Account role based access control |
 | data and AI «securable objects»     | «Unity Catalog»                   |
+
+## Revisit «Databricks workspaces»
+
+A «Databricks workspace» is an environment, which:
+
+- organizes workspace-level «securable objects»
+  (such as notebooks, libraries, dashboards, and experiments)
+  into folders
+
+- provides access
+  to data and AI «securable objects»
+  and
+  to computational resources
