@@ -7,7 +7,7 @@ https://docs.databricks.com/aws/en/getting-started/concepts
 
 A «Databricks workspace» is
 a Databricks deployment in the cloud
-that functions as an environment for your team to access « data and AI «securable objects» ».
+that functions as an environment for your team to access data-and-AI «securable objects».
 (Your organization can choose to have either multiple workspaces or just one,
 depending on its needs.)
 
@@ -54,7 +54,7 @@ and, for each type, there is different «access control system».
 | ----------------------------------- | --------------------------------- |
 | workspace-level «securable objects» | Access control lists (ACLs)       |
 | account-level «securable objects»   | Account role based access control |
-| data and AI «securable objects»     | «Unity Catalog»                   |
+| data-and-AI «securable objects»     | «Unity Catalog»                   |
 
 ## Revisit «Databricks workspaces»
 
@@ -65,6 +65,6 @@ A «Databricks workspace» is an environment, which:
   into folders
 
 - provides access
-  to data and AI «securable objects»
+  to data-and-AI «securable objects»
   and
   to computational resources
