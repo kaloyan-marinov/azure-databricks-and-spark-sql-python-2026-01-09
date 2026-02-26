@@ -40,3 +40,18 @@ for authentication and access control:
 
   This plays an auxiliary but important role in that
   its make easier (and streamlines) the task of managing access to «securable objects».
+
+## «Securable objects» and «access control systems»
+
+source:
+https://docs.databricks.com/aws/en/security/auth/
+
+In Databricks,
+there are different types of «securable objects»
+and, for each type, there is different «access control system».
+
+| type of «securable objects»         | «access control system»           |
+| ----------------------------------- | --------------------------------- |
+| workspace-level «securable objects» | Access control lists (ACLs)       |
+| account-level «securable objects»   | Account role based access control |
+| data and AI «securable objects»     | «Unity Catalog»                   |
