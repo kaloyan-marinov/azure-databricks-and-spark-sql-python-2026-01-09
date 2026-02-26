@@ -1,10 +1,9 @@
 # 00-02-databricks-components.md
 
-## Source
-
-https://docs.databricks.com/aws/en/getting-started/concepts
-
 ## Accounts and workspaces
+
+source:
+https://docs.databricks.com/aws/en/getting-started/concepts
 
 A «Databricks workspace» is
 a Databricks deployment in the cloud
@@ -17,3 +16,27 @@ that can include multiple «Databricks workspaces».
 (A «Databricks account» enabled for «Unity Catalog»
 can be used to manage users and their access to data
 centrally across all of the «Databricks workspaces» in said account.)
+
+## Identities
+
+source:
+https://docs.databricks.com/aws/en/admin/users-groups/
+
+Databricks supports three «Databricks identities»
+for authentication and access control:
+
+- «Users»
+
+  This is represented by an email address.
+
+- «Service principals»
+
+  This is intended to be used with
+  - jobs,
+  - automated tools, and
+  - systems such as scripts, apps, and CI/CD platforms.
+
+- «Groups»
+
+  This plays an auxiliary but important role in that
+  its make easier (and streamlines) the task of managing access to «securable objects».
