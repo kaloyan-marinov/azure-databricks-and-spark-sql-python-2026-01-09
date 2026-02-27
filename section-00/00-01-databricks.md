@@ -140,3 +140,9 @@ to accomplish tasks essential to storing, processing, and analyzing data
   The «Databricks Runtime for Machine Learning» includes libraries
   that allow you
   to integrate existing pre-trained models (or other open source libraries) into your workflow.
+
+## Further reading - intriguing but not urgent
+
+https://docs.databricks.com/aws/en/developers/
+
+https://docs.databricks.com/aws/en/dev-tools/ci-cd/best-practices
