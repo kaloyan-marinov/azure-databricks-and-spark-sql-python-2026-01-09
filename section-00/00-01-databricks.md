@@ -71,9 +71,11 @@ to accomplish tasks essential to storing, processing, and analyzing data
   - compose ETL logic (implemented in SQL, Python, and Scala), and
   - orchestrate scheduled job deployment with a few clicks
 
-- Data governance and secure data sharing
+- «Data governance» and secure data sharing
 
-  «Unity Catalog» provides a unified data governance model for the «data lakehouse».
+  > «Data governance» is a framework of policies, processes, roles, and technical controls that ensures your organization's data is secure, trustworthy, and used responsibly throughout its lifecycle. Effective data governance enables you to maintain data quality, protect sensitive information, meet regulatory requirements, and maximize the value of your data assets.
+
+  «Unity Catalog» provides a unified «data governance» model for the «data lakehouse».
 
   - «Cloud administrators» configure and integrate coarse access control permissions for «Unity Catalog», and then
   

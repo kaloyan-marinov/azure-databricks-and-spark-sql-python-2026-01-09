@@ -31,11 +31,11 @@ across your Databricks workspaces.
 
 ## Introduction
 
-<u>Unity Catalog</u> is the governance solution for Data and AI assets in Databricks.
+<u>Unity Catalog</u> is the governance solution for data-and-AI «securable objects» on Databricks.
 
 
 
-<u>Data governance</u> is the framework of roles, policies, and controls
+«Data governance» is the framework of roles, policies, and controls
 that decide
 
 - who can do what with which data,
