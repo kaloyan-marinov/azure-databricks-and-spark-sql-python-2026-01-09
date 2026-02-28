@@ -1,8 +1,8 @@
 # 165-2-identities-in-azure-databricks.md
 
-(A lot of this file comes from https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/best-practices .)
+(A lot of this file comes from https://docs.databricks.com/aws/en/admin/users-groups/best-practices , which is _essentially_ the same as https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/best-practices .)
 
-(The following resource might even be a more well-written version of the previous resource: https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/#identity-model )
+(The following resource might even be a more well-written version of the previous resource: https://docs.databricks.com/aws/en/admin/users-groups/ , which is _essentially_ the same as https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/#identity-model )
 
 
 ## Databricks identities
