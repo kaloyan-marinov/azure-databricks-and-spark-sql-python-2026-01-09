@@ -73,11 +73,11 @@ to accomplish tasks essential to storing, processing, and analyzing data
 
 - «Data governance» and secure data sharing
 
+  > ## as per https://docs.databricks.com/aws/en/data-governance/
+  >
   > «Data governance» is a framework of policies, processes, and technical controls,
   > which aims to ensure that
   > your organization's data is secure, trustworthy, and used responsibly throughout its lifecycle.
-  >
-  > ---
   >
   > In other words,
   > «data governance» is a framework of policies, processes, and technical controls,
@@ -89,7 +89,7 @@ to accomplish tasks essential to storing, processing, and analyzing data
   >
   > (c) meet regulatory requirements.
   >
-  > ---
+  > ## (as per my good-faith understanding)
   >
   > Ultimately,
   > altough effective «data governance» compels you to do certain things,
