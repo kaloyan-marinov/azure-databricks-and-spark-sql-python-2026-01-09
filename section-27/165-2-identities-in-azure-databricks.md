@@ -73,38 +73,46 @@ which can be enabled in the Configuration tab of a «Databricks workspace».
 ## How to manage Databricks identities
 
 sources:
-- primary: https://docs.databricks.com/aws/en/admin/users-groups/best-practices
-- secondary: https://docs.databricks.com/aws/en/admin/users-groups/
+- primary: https://docs.databricks.com/aws/en/admin/users-groups/
+- secondary: https://docs.databricks.com/aws/en/admin/users-groups/best-practices
 
-To manage «Databricks identities», you must have one of the following roles:
+To manage «Databricks identities»,
+you must have one of the following «admininistrative roles»
+(aka «admin roles»).
 
-- «Account admins» can
+(The capabilities of each «admin role» are listed below.)
 
-  - add users, service principals, and groups to the account
-    and
-    assign them admin roles
+- «Account admins»
 
-  - give users access to Databricks workspaces, as long as those Databricks workspaces use «identity federation»
+  - Add, update, and delete users, service principals, and groups in the account.
 
-- «Workspace admins» can
+  - Assign admin roles and grant users access to workspaces.
 
-   - add users, service principals to the Databricks account
+  - Automatically have group manager role on all groups and service principal manager role on all service principals in the account.
+
+- «Workspace admins»
+
+   - Add users, service principals, and groups to the Databricks account.
+
+     > Whenever a new user or service principal is added to a workspace using workspace-level interfaces, that user or service principal is synchronized to the account-level. This enables you to have one consistent set of users and service principals in your account.
    
-   - add groups to the Databricks account if their Databricks workspaces are enabled for «identity federation»
+   - Cannot update or delete users or service principals in the account.
 
-   > Whenever a new user or service principal is added to a workspace using workspace-level interfaces, that user or service principal is synchronized to the account-level. This enables you to have one consistent set of users and service principals in your account.
+   - Grant users, service principals, and groups access to their workspaces.
+
+   - Automatically have group manager role on groups they create and service principal manager role on service principals they create.
+
+   - Manage legacy «workspace-local groups».
+
+- «Group managers»
+
+   - Manage group membership and delete groups.
    
-   - grant users, service principals, and groups access to their Databricks workspaces
+   - Assign the group manager role to other users.
 
-- «Group managers» can
+- «Service principal managers»
 
-   - manage group membership
-   
-   - assign «the group manager role» to other users
-
-- «Service principal managers» can
-
-   - manage roles on a «service principal»
+   - Add, update, and remove roles on service principals.
 
 
 
