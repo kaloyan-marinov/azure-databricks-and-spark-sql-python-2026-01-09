@@ -73,7 +73,27 @@ to accomplish tasks essential to storing, processing, and analyzing data
 
 - «Data governance» and secure data sharing
 
-  > «Data governance» is a framework of policies, processes, roles, and technical controls that ensures your organization's data is secure, trustworthy, and used responsibly throughout its lifecycle. Effective data governance enables you to maintain data quality, protect sensitive information, meet regulatory requirements, and maximize the value of your data assets.
+  > «Data governance» is a framework of policies, processes, and technical controls,
+  > which aims to ensure that
+  > your organization's data is secure, trustworthy, and used responsibly throughout its lifecycle.
+  >
+  > ---
+  >
+  > In other words,
+  > «data governance» is a framework of policies, processes, and technical controls,
+  > which compels you to:
+  >
+  > (a) maintain data quality;
+  >
+  > (b) protect sensitive information;
+  >
+  > (c) meet regulatory requirements.
+  >
+  > ---
+  >
+  > Ultimately,
+  > altough effective «data governance» compels you to do certain things,
+  > it enables you to - directly or indirectly - maximize the value of your data.
 
   «Unity Catalog» provides a unified «data governance» model for the «data lakehouse».
 
