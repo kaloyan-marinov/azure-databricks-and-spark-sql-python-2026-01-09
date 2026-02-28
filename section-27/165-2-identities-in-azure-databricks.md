@@ -174,27 +174,27 @@ Databricks recommends:
 
 - that there be a limited number of
 
-  - <u>account admins</u> per account and
+  - «account admins» per account and
   
-  - <u>workspace admins</u> in each workspace
+  - «workspace admins» in each workspace
 
-- creating <u>service principals</u> to run production jobs or modify production data.
+- creating «service principals» to run production jobs or modify production data.
 
-  > If all processes that act on production data run using <u>service principals</u>,
+  > If all processes that act on production data run using «service principals»,
   > interactive users do not need any «write privileges», «delete privileges», or «modify privileges» in production.
   > This eliminates the risk of a user overwriting production data by accident.
 
 - assigning
-  access to Databricks workspaces and access-control policies in <u>Unity Catalog</u>
-  to <u>groups</u>, instead of to <u>users</u> individually.
+  access to «Databricks workspaces» and access-control policies in «Unity Catalog»
+  to «groups», instead of to «users» individually.
 
-  > All <u>Databricks identities</u> can be assigned as members of <u>groups</u>,
-  > and members inherit permissions that are assigned to their <u>group</u>.
+  > All «Databricks identities» can be assigned as members of «groups»,
+  > and members inherit permissions that are assigned to their «group».
 
 
 
 ## Other account-level roles
 
-- <u>marketplace admins</u>
+- «marketplace admins»
 
-- <u>billing admins</u>
+- «billing admins»
