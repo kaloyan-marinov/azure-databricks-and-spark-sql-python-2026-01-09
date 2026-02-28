@@ -5,36 +5,27 @@
 (The following resource might even be a more well-written version of the previous resource: https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/#identity-model )
 
 
-## Azure Databricks identities
+## Databricks identities
 
-There are three types of <u>Azure Databricks identity</u>:
+Recall from `section-00/00-02-databricks-components.md`:
+Databricks supports three «Databricks identities»
+for authentication and access control:
 
-- <u>Users</u>
+- «Users»
 
-  This type of identity is represented by an email address.
+- «Service principals»
 
-- <u>Service principals</u>
-
-  This type of identity is intended to be used with
-  - jobs,
-  - automated tools, and
-  - systems such as scripts, apps, and CI/CD platforms.
-
-- <u>Groups</u>
-
-  This type of identity plays an auxiliary but important role in that
-  its aim is to simplify identity management
-  (making it easier to assign access to Databricks workspaces, data, and other securable objects).
+- «Groups»
 
 
 
 Remarks:
 
-- every <u>user</u> you add to a Databricks workspace
+- every «user» you add to a Databricks workspace
   is automatically put in
-  the built-in <u>Users</u> group
+  the built-in «Users» group
 
-- by default, the built-in <u>Users</u> group gets workspace access
+- by default, the built-in «Users» group gets workspace access
   (allowing its members to create notebooks, Lakeflow jobs, and so on)
 
 
