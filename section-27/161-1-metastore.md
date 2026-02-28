@@ -22,7 +22,14 @@ that:
 
 
 
-## What is a metastore?
+## What is a «metastore»?
+
+It is worthwhile to re-read the relevant portion of `section-00/00-02-databricks-components.md`
+in order to recall what a «metastore» is.
+
+
+
+## Practical aspects of working with a «metastore»
 
 sources:
 
@@ -30,12 +37,7 @@ sources:
   which is _essentially_ the same as
   https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/
 
-In «Unity Catalog», a «metastore» is a top-level container, whose purpose is to register
-(a) metadata about data and AI assets,
-and
-(b) the permissions that govern access to those assets.
-
-The way to enable «Databricks workspace» for «Unity Catalog»
+The way to enable a «Databricks workspace» for «Unity Catalog»
 is
 to attach it to a «metastore» in the same cloud region (as the «Databricks workspace» itself).
 
@@ -51,10 +53,10 @@ Remarks:
 - Any number of «Databricks workspaces» can be attached to the same «metastore».
 
   - This is what enables multiple «Databricks workspaces» in the same region
-    to see the same data and AI assets
+    to see the same data-and-AI «securable objects»
 
 - The «metastore» "sits above" all of its attached «Databricks workspaces».
 
-  - Objects (such as catalogs; schemas; volumes, tables, and views)
+  - Objects (such as «catalogs»; «schemas»; «volumes», «tables», and «views»; etc.)
     that are created via a «Databricks workspace»
     are registered in the «metastore» (not in a single «Databricks workspace»).

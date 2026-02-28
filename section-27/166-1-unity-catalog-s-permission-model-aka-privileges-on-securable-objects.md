@@ -10,7 +10,7 @@
 
 Essentially, they:
 
-- are your data assets under <u>Unity Catalog</u> governance
+- are your "data assets" under <u>Unity Catalog</u> governance
 
 - all live within a <u>metastore</u>
 

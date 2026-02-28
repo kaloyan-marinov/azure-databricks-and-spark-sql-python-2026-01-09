@@ -1,9 +1,7 @@
 # 161-2-the-unity-catalog-object-model.md
 
-The contents of a «Unity Catalog» «metastore»
+The contents of a «metastore»
 are organized in a 3-level hierarchy.
-
-All of the objects in that hierarchy are known as «securable objects» in «Unity Catalog».
 
 
 ```
@@ -19,7 +17,7 @@ metastore
     # data-and-AI «securable objects» (aka "data assets")
     catalog                                 # the top level in the data-isolation scheme
 
-        schema (aka databases)              # organize data and AI assets into logical categories
+        schema (aka databases)              # organize "data assets" into logical categories
                                             # that are more granular than catalogs
             table
             view

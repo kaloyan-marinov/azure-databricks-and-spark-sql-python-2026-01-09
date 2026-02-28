@@ -1,10 +1,37 @@
 # 160-introduction-to-unity-catalog.md
 
-(A lot of this file comes from https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/#-the-unity-catalog-object-model .)
+## Remarks about the sources for this file
 
-## Recall
+sources:
 
-We've actually been using <u>Unity Catalog</u>
+- https://docs.databricks.com/aws/en/data-governance/unity-catalog/ ,
+  which is _essentially_ the same as
+  https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/
+
+
+
+## Recall some theoretical background
+
+To paraphrase a portion of `section-00/00-01-databricks.md`:
+«data governance» is a framework of policies, processes, and technical controls
+that
+- maintain data quality
+- decide
+  - who can do what with which data,
+  - for what purpose, and
+  - how it's verified.
+
+To paraphrase a portion of `section-00/00-02-databricks-components.md`,
+«Unity Catalog» is an open-source «data governance» solution deeply integrated into Databricks,
+which
+- is comprised of [a "catalog" of] data-and-AI «securable objects» and related capabilities;
+- spans your «Databricks workspaces».
+
+
+
+## Practical manifestations
+
+We've actually been using «Unity Catalog»
 since pretty much the beginning of this course -
 we've used:
 
@@ -12,35 +39,7 @@ we've used:
 - schemas
 - volumes, tables and views
 
-Those are all objects in <u>Unity Catalog</u>.
-
-
-
-But <u>Unity Catalog</u> is much more than just that.
-It's a centralized data catalog that provides:
-
-- access control
-- auditing
-- lineage
-- quality monitoring, and
-- data discovery capabilities
-
-across your Databricks workspaces.
-
-
-
-## Introduction
-
-<u>Unity Catalog</u> is the governance solution for data-and-AI «securable objects» on Databricks.
-
-
-
-«Data governance» is the framework of roles, policies, and controls
-that decide
-
-- who can do what with which data,
-- for what purpose, and
-- how it's verified.
+Those are all «securable objects» in «Unity Catalog».
 
 
 
@@ -63,9 +62,9 @@ that decide
 
 4. Data discovery
 
-   - lets you tag and document data assets
+   - lets you tag and document "data assets"
 
-   - provides a search interface to help data consumers find data assets
+   - provides a search interface to help data consumers find "data assets"
 
 5. System tables
 

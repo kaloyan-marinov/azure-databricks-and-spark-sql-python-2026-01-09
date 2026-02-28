@@ -8,7 +8,7 @@ This lecture is a demonstration of how <u>Unity Catalog</u> enables
 
 ## Data discovery
 
-Search for data assets
+Search for "data assets"
 by using the search bars in the web UI of your Databricks workspace.
 
 
