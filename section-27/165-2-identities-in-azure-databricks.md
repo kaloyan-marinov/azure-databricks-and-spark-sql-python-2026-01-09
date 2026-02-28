@@ -1,12 +1,32 @@
 # 165-2-identities-in-azure-databricks.md
 
-(A lot of this file comes from https://docs.databricks.com/aws/en/admin/users-groups/best-practices , which is _essentially_ the same as https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/best-practices .)
 
-(The following resource might even be a more well-written version of the previous resource: https://docs.databricks.com/aws/en/admin/users-groups/ , which is _essentially_ the same as https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/#identity-model )
+
+## Remarks about the sources for this file
+
+sources:
+
+- primary:
+  
+  https://docs.databricks.com/aws/en/admin/users-groups/ ,
+  which is _essentially_ the same as
+  https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups
+
+- secondary:
+  
+  https://docs.databricks.com/aws/en/admin/users-groups/best-practices ,
+  which is _essentially_ the same as https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/best-practices
 
   - https://docs.databricks.com/aws/en/admin/users-groups/scim/
 
     - https://simplecloud.info/ = System for Cross-domain Identity Management (SCIM)
+
+- there is some overlap between the above-mentioned sources
+
+- in my opinion,
+  the primary source is written in a clearer way than the secondary source
+
+
 
 ## Databricks identities
 
@@ -24,7 +44,7 @@ for authentication and access control:
 
 Remarks:
 
-- every «user» you add to a Databricks workspace
+- every «user» you add to a «Databricks workspace»
   is automatically put in
   the built-in «Users» group
 
@@ -35,7 +55,7 @@ Remarks:
 
 ## Identity federation
 
-source:
+sources:
 - https://docs.databricks.com/aws/en/admin/users-groups/
 - https://docs.databricks.com/aws/en/admin/users-groups/best-practices
 
@@ -69,6 +89,8 @@ which can be enabled in the Configuration tab of a «Databricks workspace».
 
 - If your «Databricks workspace» is enabled for «identity federation» by default,
   it cannot be disabled.
+
+
 
 ## How to manage Databricks identities
 
@@ -142,7 +164,11 @@ you must have one of the following «admininistrative roles»
 Before proceeding,
 it might be helpful to re-read `section-27/165-1-roles-in-the-databricks-account.md`.
 
+
+sources:
 https://docs.databricks.com/aws/en/admin/users-groups/best-practices
+
+
 
 Databricks recommends:
 
