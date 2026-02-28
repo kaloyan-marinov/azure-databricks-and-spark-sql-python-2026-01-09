@@ -39,7 +39,7 @@ for authentication and access control:
 - «Groups»
 
   This plays an auxiliary but important role in that
-  its make easier (and streamlines) the task of managing access to «securable objects».
+  it makes easier (and streamlines) the task of managing access to «securable objects».
 
 ## «Securable objects» and «access control systems»
 
