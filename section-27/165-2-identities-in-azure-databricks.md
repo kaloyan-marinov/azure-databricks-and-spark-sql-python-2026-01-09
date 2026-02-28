@@ -172,6 +172,24 @@ https://docs.databricks.com/aws/en/admin/users-groups/best-practices
 
 Databricks recommends:
 
+---
+
+- using «SCIM provisioning»
+  to sync «users» and «groups» automatically
+  from your «identity provider»
+  to your «Databricks account»
+
+- that you synchronize
+  all of the «users» and «groups» in your «identity provider»
+  to the «Databricks account» console
+  (rather than to individual «Databricks workspaces»)
+
+  > This way,
+  > you only need to configure one SCIM provisioning application
+  > to keep all identities consistent across all workspaces in the account.
+
+---
+
 - that there be a limited number of
 
   - «account admins» per account and
