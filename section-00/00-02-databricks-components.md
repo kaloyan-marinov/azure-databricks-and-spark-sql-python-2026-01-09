@@ -200,9 +200,15 @@ https://docs.databricks.com/aws/en/getting-started/concepts
 
 - Query
 
+  a valid SQL statement that allows you to interact with your data
+
 - «SQL warehouse»
 
+  a computation resource on which you run SQL queries
+
 - Query history
+
+  a list of executed queries and their performance characteristics
 
 - etc.
 
