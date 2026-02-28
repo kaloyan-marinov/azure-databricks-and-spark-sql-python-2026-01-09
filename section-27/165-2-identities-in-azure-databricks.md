@@ -84,52 +84,56 @@ you must have one of the following «admininistrative roles»
 - «Account admins»
 
   - Add, update, and delete
-    users, service principals, and groups
+    «users», «service principals», and «groups»
     to the «Databricks account».
 
   - Assign «admin roles»
     and
-    grant users access to «Databricks workspaces»
+    grant «users» access to «Databricks workspaces»
 
-    > as long as those workspaces use identity federation
+    > as long as those «Databricks workspaces» are enabled for «identity federation»
     > (as per https://docs.databricks.com/aws/en/admin/users-groups/best-practices)
 
   - Automatically have
-    - the «group manager» role on each group in the «Databricks account»
-    - the «service principal manager» role on each service principals in the «Databricks account»
+    - the «group manager» role on each «group» in the «Databricks account»
+    - the «service principal manager» role on each «service principals» in the «Databricks account»
 
 - «Workspace admins»
 
    - Add
-     users, service principals, and groups
+     «users», «service principals», and «groups»
      to the «Databricks account»
 
-     > Whenever a new user or service principal is added to a workspace using workspace-level interfaces, that user or service principal is synchronized to the account-level. This enables you to have one consistent set of users and service principals in your account.
+     > Provided that the «Databricks workspace» in question is enabled for «identity federation»:
+     >
+     > Whenever a new «user» or «service principal» is added to a «Databricks workspace» (using workspace-level interfaces),
+     > that «user» or «service principal» is synchronized to the «Databricks account» level.
+     > This enables you to have one consistent set of «users» and «service principals» in your «Databricks account».
      > (as per https://docs.databricks.com/aws/en/admin/users-groups/best-practices)
    
    - Cannot update or delete
-     users or service principals
+     «users» or «service principals»
      in the «Databricks account»
 
    - Grant
-     users, service principals, and groups
+     «users», «service principals», and «groups»
      access to the «Databricks workspace» in question
 
    - Automatically have
-     - the «group manager» role on groups they create
-     - «service principal manager» role on service principals they create
+     - the «group manager» role on «groups» they create
+     - «service principal manager» role on «service principals» they create
 
    - Manage legacy «workspace-local groups»
 
 - «Group managers»
 
-   - Manage group membership and delete groups.
+   - Manage memberships and delete «groups».
    
-   - Assign the «group manager» role to other users.
+   - Assign the «group manager» role to other «users».
 
 - «Service principal managers»
 
-   - Add, update, and remove roles on service principals.
+   - Add, update, and remove roles on «service principals».
 
 
 
