@@ -4,6 +4,9 @@
 
 (The following resource might even be a more well-written version of the previous resource: https://docs.databricks.com/aws/en/admin/users-groups/ , which is _essentially_ the same as https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/#identity-model )
 
+  - https://docs.databricks.com/aws/en/admin/users-groups/scim/
+
+    - https://simplecloud.info/ = System for Cross-domain Identity Management (SCIM)
 
 ## Databricks identities
 
@@ -67,46 +70,50 @@ which can be enabled in the Configuration tab of a «Databricks workspace».
 - If your «Databricks workspace» is enabled for «identity federation» by default,
   it cannot be disabled.
 
+## How to manage Databricks identities
 
+sources:
+- primary: https://docs.databricks.com/aws/en/admin/users-groups/best-practices
+- secondary: https://docs.databricks.com/aws/en/admin/users-groups/
 
-## How to manage Azure Databricks identities
+To manage «Databricks identities», you must have one of the following roles:
 
-The following are <u>the administrative roles</u> that can manage <u>Azure Databricks identities</u>:
-
-- <u>Account admins</u> can
+- «Account admins» can
 
   - add users, service principals, and groups to the account
     and
     assign them admin roles
 
-  - give users access to Databricks workspaces, as long as those Databricks workspaces use <u>identity federation</u>
+  - give users access to Databricks workspaces, as long as those Databricks workspaces use «identity federation»
 
-- <u>Workspace admins</u> can
+- «Workspace admins» can
 
-   - add users, service principals to the Azure Databricks account
+   - add users, service principals to the Databricks account
    
-   - add groups to the Azure Databricks account if their Databricks workspaces are enabled for <u>identity federation</u>
+   - add groups to the Databricks account if their Databricks workspaces are enabled for «identity federation»
+
+   > Whenever a new user or service principal is added to a workspace using workspace-level interfaces, that user or service principal is synchronized to the account-level. This enables you to have one consistent set of users and service principals in your account.
    
    - grant users, service principals, and groups access to their Databricks workspaces
 
-- <u>Group managers</u> can
+- «Group managers» can
 
    - manage group membership
    
-   - assign <u>the group manager role</u> to other users
+   - assign «the group manager role» to other users
 
-- <u>Service principal managers</u> can
+- «Service principal managers» can
 
-   - manage roles on a <u>service principal</u>
+   - manage roles on a «service principal»
 
 
 
-## Opinionated perspective on how to best configure identity in Azure Databricks
+## Opinionated perspective on how to best configure identity in Databricks
 
 Before proceeding,
 it might be helpful to re-read `section-27/165-1-roles-in-the-databricks-account.md`.
 
-
+https://docs.databricks.com/aws/en/admin/users-groups/best-practices
 
 Databricks recommends:
 
@@ -126,7 +133,7 @@ Databricks recommends:
   access to Databricks workspaces and access-control policies in <u>Unity Catalog</u>
   to <u>groups</u>, instead of to <u>users</u> individually.
 
-  > All <u>Azure Databricks identities</u> can be assigned as members of <u>groups</u>,
+  > All <u>Databricks identities</u> can be assigned as members of <u>groups</u>,
   > and members inherit permissions that are assigned to their <u>group</u>.
 
 
