@@ -27,6 +27,40 @@ that:
 It is worthwhile to re-read the relevant portion of `section-00/00-02-databricks-components.md`
 in order to recall what a «metastore» is.
 
+The contents of a «metastore»
+are organized in a 3-level hierarchy.
+
+
+```
+metastore
+
+    # non-data «securable objects»
+    # for managing access to external data sources
+    service credential
+    storage credential
+    external location
+    external metadata
+
+    # data-and-AI «securable objects» (aka "data assets")
+    catalog                                 # the top level in the data-isolation scheme
+
+        schema (aka databases)              # organize "data assets" into logical categories
+                                            # that are more granular than catalogs
+            table
+            view
+            volume
+            function (including models)
+
+    # non-data «securable objects»
+    # for managing access to shared assets
+    share
+    recipient
+    provider
+    connection
+    clean room
+```
+
+
 
 
 ## Practical aspects of working with a «metastore»
