@@ -193,6 +193,14 @@ https://docs.databricks.com/aws/en/getting-started/concepts
 
 - «Delta tables»
 
+  By default, all tables created in Databricks are «Delta tables». 
+
+  «Delta tables» are based on the «Delta Lake» open source project,
+  a framework for high-performance ACID table storage over cloud object stores.
+  A «Delta table» stores data as a directory of files on cloud object storage
+  and
+  registers table metadata to the «metastore» (within a «catalog» and «schema»).
+
 ## Data warehousing
 
 source:
