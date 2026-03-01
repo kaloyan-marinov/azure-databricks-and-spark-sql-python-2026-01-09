@@ -86,9 +86,13 @@ Each of those is a highly privileged role that you should distribute carefully.
 
 ## «Metastore admin»
 
-- owns a specific «Unity Catalog» «metastore»
+- manage privileges of all «securable objects» within a specific «metastore»
 
-  - can create all top-level «securable objects» (within that «metastore»)
+- transfer ownership of all «securable objects» within said «metastore»
+
+- ...
+
+- delete said «metastore»
 
 ---
 
