@@ -1,10 +1,6 @@
-# 165-1-roles-in-the-databricks-account.md
+# 165-3-roles-in-the-databricks-account.md
 
 sources:
-
-- https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/ ,
-  which is _essentially_ the same as
-  https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/
 
 - https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/admin-privileges ,
   which is _essentially_ the same as
