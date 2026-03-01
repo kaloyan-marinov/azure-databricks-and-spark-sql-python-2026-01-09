@@ -208,11 +208,3 @@ Databricks recommends:
 
   > All «Databricks identities» can be assigned as members of «groups»,
   > and members inherit permissions that are assigned to their «group».
-
-
-
-## Other account-level roles
-
-- «marketplace admins»
-
-- «billing admins»

@@ -105,3 +105,11 @@ INCLUDING «account admins» or «workspace admins»:
 
 If any of those actions need to be performed,
 then the «metastore admin» role must be assigned to at least one «Databricks identity».
+
+
+
+## Other account-level roles
+
+- «marketplace admins»
+
+- «billing admins»
