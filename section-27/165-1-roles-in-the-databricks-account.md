@@ -33,17 +33,7 @@ Each of those is a highly privileged role that you should distribute carefully.
 ## «Account admin»
 
   - can create «metastores»
-
-    (
-    
-    and, by default, become the initial «metastore admin»
-
-    = when you create your very first «Databricks workspace»,
-    Databricks automatically creates a «metastore» for you in that region
-    and
-    the «account admin» is automatically given the «metastore admin» role for that «metastore»
-    
-    )
+    (and, by default, become the initial «metastore admin»)
 
   - can link «metastores» to «Databricks workspaces»
 
@@ -57,6 +47,11 @@ Each of those is a highly privileged role that you should distribute carefully.
 
   - enable «system tables» and control who can access them
 
+  ---
+
+  - can restrict the privileges of the «workspace admin» role
+    (using the `RestrictWorkspaceAdmins` setting)
+
 
 
 ## «Metastore admin»
@@ -64,6 +59,16 @@ Each of those is a highly privileged role that you should distribute carefully.
 - owns a specific «Unity Catalog» «metastore»
 
   - can create all top-level «securable objects» (within that «metastore»)
+
+---
+
+The following actions CANNOT be performed by any other role,
+INCLUDING «account admins» or «workspace admins»:
+
+...
+
+If any of those actions need to be performed,
+then the «metastore admin» role must be assigned to at least one «Databricks identity».
 
 
 
@@ -76,3 +81,17 @@ Each of those is a highly privileged role that you should distribute carefully.
   - can manage job ownership
 
   - can view and manage Databricks-workspace objects (such as notebooks, queries, etc.)
+
+  ---
+
+  If your «Databricks workspace» was enabled for «Unity Catalog» automatically, then:
+
+  - Databricks automatically creates a «metastore» for you in the same region as the «Databricks workspace»
+
+  - the «Databricks workspace» is attached to that «metastore»
+
+  - the «metastore» is created without a «metastore admin»
+
+  - the «workspace admin» role has the following privileges on the attached «metastore» by default:
+
+    ...
