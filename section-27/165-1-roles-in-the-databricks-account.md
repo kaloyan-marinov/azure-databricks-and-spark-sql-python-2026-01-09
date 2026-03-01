@@ -2,11 +2,13 @@
 
 sources:
 
+- https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/ ,
+  which is _essentially_ the same as
+  https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/
+
 - https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/admin-privileges ,
   which is _essentially_ the same as
   https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/admin-privileges
-
-https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/
 
 
 
@@ -26,7 +28,7 @@ there exist several «admin roles».
 
 - «Workspace admin» controls an individual «Databricks workspace».
 
-Each of those is a highly privileged role that you should distribute carefully.
+<u>Each of those is a highly privileged role that you should distribute carefully.</u>
 
 
 
