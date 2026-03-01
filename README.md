@@ -47,6 +47,35 @@ Databricks, Inc.:
 - develops «Delta Lake»,
   an open-source project that adds «ACID transaction support» to «data lakes»
 
+  ---
+
+  > from
+  > the paper cited above
+  > and
+  > an earlier paper titled "Delta Lake: High-Performance ACID Table Storage over Cloud Object Stores"
+
+  an open-source storage layer over cloud-based object stores, which:
+
+  - was initially developed at Databricks
+
+  - imbues/endows/provides a cloud-based object store
+    with management and performance features,
+    which are traditionally available only in analytical DBMSs;
+    such features include but are not limited to:
+
+    - ACID guarantees for transactions
+
+    - query optimization
+
+    - time travel
+
+    - fast metadata operations
+      (e.g., the ability to quickly search billions of table partitions for those relevant to a query)
+    
+    - etc.
+
+  ---
+
 
 
 ## History
