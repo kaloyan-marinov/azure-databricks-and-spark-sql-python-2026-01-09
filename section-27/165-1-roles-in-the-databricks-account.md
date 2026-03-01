@@ -15,26 +15,22 @@ https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog
 In Datatricks,
 there exist several «admin roles».
 
-- An «account admin» controls the «Databricks account».
+- An «account admin» controls the entire «Databricks account».
   (This includes being able to delegate itself as either of the following roles.)
 
 - «Metastore admin» controls a specific «Unity Catalog» «metastore».
 
   It is optional.
 
-  Databricks recommends nominating a «group» as the «metastore admin».
+  Databricks recommends assigning the «metastore admin» role to a «group».
 
-- «Workspace admin» controls a specific «Databricks workspace».
+- «Workspace admin» controls an individual «Databricks workspace».
 
 Each of those is a highly privileged role that you should distribute carefully.
 
 
 
-## A more detailed look
-
-«Account admin»:
-
-- have the following privileges:
+## «Account admin»
 
   - can create «metastores»
 
@@ -63,7 +59,7 @@ Each of those is a highly privileged role that you should distribute carefully.
 
 
 
-«Metastore admin»:
+## «Metastore admin»
 
 - owns a specific «Unity Catalog» «metastore»
 
@@ -71,9 +67,7 @@ Each of those is a highly privileged role that you should distribute carefully.
 
 
 
-«Workspace admin»:
-
-- focuses on the operations at the level of an individual «Databricks workspace»
+## «Workspace admin»
 
   - can add users, service principals, and/or groups to the «Databricks workspace»
 
