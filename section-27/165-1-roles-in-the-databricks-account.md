@@ -84,7 +84,11 @@ then the «metastore admin» role must be assigned to at least one «Databricks 
 
   ---
 
-  If your «Databricks workspace» was enabled for «Unity Catalog» automatically, then:
+  If your «Databricks workspace» was created
+  with [automatic enablement of «Unity Catalog»](
+    https://docs.databricks.com/aws/en/data-governance/unity-catalog/get-started#enablement
+  ),
+  then:
 
   - Databricks automatically creates a «metastore» for you in the same region as the «Databricks workspace»
 
