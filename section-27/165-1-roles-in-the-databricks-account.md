@@ -1,6 +1,10 @@
 # 165-roles-in-the-databricks-account.md
 
-(A lot of this file comes from https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/admin-privileges .)
+sources:
+
+- https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/admin-privileges ,
+  which is _essentially_ the same as
+  https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/admin-privileges
 
 https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/
 
@@ -44,7 +48,7 @@ An «account admin» controls the «Databricks account».
 
   - can grant privileges on «metastores»
 
-  - can enable Delta Sharing for a «metastores»
+  - can enable «Delta Sharing» for a «metastores»
 
   - can set up «storage credentials» (for accessing cloud storage)
 
