@@ -34,6 +34,16 @@ Databricks, Inc.:
   which combines elements of «data warehouses» and «data lakes»
   for managing structured data and unstructured data
 
+  ---
+
+  from a paper titled
+  "Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics":
+  > "cloud data lakes, such as S3, ADLS and GCS"
+
+  therefore, a cloud-based «data lake» is a cloud-based object store
+
+  ---
+
 - develops «Delta Lake»,
   an open-source project that adds «ACID transaction support» to «data lakes»
 
