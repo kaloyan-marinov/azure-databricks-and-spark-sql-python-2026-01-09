@@ -54,24 +54,6 @@ Each of those is a highly privileged role that you should distribute carefully.
 
 
 
-## «Metastore admin»
-
-- owns a specific «Unity Catalog» «metastore»
-
-  - can create all top-level «securable objects» (within that «metastore»)
-
----
-
-The following actions CANNOT be performed by any other role,
-INCLUDING «account admins» or «workspace admins»:
-
-...
-
-If any of those actions need to be performed,
-then the «metastore admin» role must be assigned to at least one «Databricks identity».
-
-
-
 ## «Workspace admin»
 
   - can add users, service principals, and/or groups to the «Databricks workspace»
@@ -99,3 +81,21 @@ then the «metastore admin» role must be assigned to at least one «Databricks 
   - the «workspace admin» role has the following privileges on the attached «metastore» by default:
 
     ...
+
+
+
+## «Metastore admin»
+
+- owns a specific «Unity Catalog» «metastore»
+
+  - can create all top-level «securable objects» (within that «metastore»)
+
+---
+
+The following actions CANNOT be performed by any other role,
+INCLUDING «account admins» or «workspace admins»:
+
+...
+
+If any of those actions need to be performed,
+then the «metastore admin» role must be assigned to at least one «Databricks identity».
