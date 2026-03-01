@@ -8,23 +8,23 @@
 
 https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/manage-privileges/#inheritance
 
-<u>Securable objects</u> in <u>Unity Catalog</u> are hierarchical,
+«Securable objects» in «Unity Catalog» are hierarchical,
 and privileges are inherited downward.
 
-The highest-level object that privileges are inherited from is the <u>catalog</u>.
+The highest-level object that privileges are inherited from is the «catalog».
 
 - This means that
-  granting a privilege on a <u>catalog</u> (respectively, <u>schema</u>)
-  automatically grants the privilege to all current and future objects within the <u>catalog</u> (respectively, <u>schema</u>).
+  granting a privilege on a «catalog» (respectively, «schema»)
+  automatically grants the privilege to all current and future objects within the «catalog» (respectively, «schema»).
 
 - For example,
-  if you give a user the `SELECT` privilege on a <u>catalog</u>,
-  then that user will be able to select (= read) all tables and views in that <u>catalog</u>.
+  if you give a user the `SELECT` privilege on a «catalog»,
+  then that user will be able to select (= read) all tables and views in that «catalog».
 
 
 
 BUT: it's also worth noting that
-privileges that are granted on a <u>Unity Catalog</u> <u>metastore</u> are NOT inherited.
+privileges that are granted on a «Unity Catalog» «metastore» are NOT inherited.
 
 
 
@@ -39,7 +39,7 @@ You can grant privileges to
 in a number of ways.
 
 Those ways are:
-- use the UI of the Databricks workspace in the <u>Catalog</u> explorer
+- use the UI of the Databricks workspace in the «Catalog» explorer
 - use ANSI SQL syntax
 
 ```sql
