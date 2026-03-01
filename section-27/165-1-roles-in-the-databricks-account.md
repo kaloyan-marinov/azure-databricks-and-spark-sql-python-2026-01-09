@@ -8,69 +8,69 @@ https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog
 
 ## An overview
 
-An <u>account admin</u> controls the Databricks account.
+An «account admin» controls the «Databricks account».
 (This includes being able to delegate itself as either of the following roles.)
 
-<u>Metastore admin</u> controls a specific <u>Unity Catalog</u> <u>metastore</u>.
+«Metastore admin» controls a specific «Unity Catalog» «metastore».
 
-<u>Workspace admin</u> controls a specific Databricks workspace.
+«Workspace admin» controls a specific «Databricks workspace».
 
 
 
 ## A more detailed look
 
-<u>Account admin</u>:
+«Account admin»:
 
 - is a highly privileged role that you should distribute carefully
 
 - have the following privileges:
 
-  - can create <u>metastores</u>
+  - can create «metastores»
 
     (
     
-    and, by default, become the initial <u>metastore admin</u>
+    and, by default, become the initial «metastore admin»
 
-    = when you create your very first Databricks workspace,
-    Databricks automatically creates a <u>metastore</u> for you in that region
+    = when you create your very first «Databricks workspace»,
+    Databricks automatically creates a «metastore» for you in that region
     and
-    the <u>account admin</u> is automatically given the <u>metastore admin</u> role for that <u>metastore</u>
+    the «account admin» is automatically given the «metastore admin» role for that «metastore»
     
     )
 
-  - can link <u>metastores</u> to Databricks workspaces
+  - can link «metastores» to «Databricks workspaces»
 
-  - can assign the <u>metastore admin</u> role
+  - can assign the «metastore admin» role
 
-  - can grant privileges on <u>metastores</u>
+  - can grant privileges on «metastores»
 
-  - can enable Delta Sharing for a <u>metastores</u>
+  - can enable Delta Sharing for a «metastores»
 
-  - can set up <u>storage credentials</u> (for accessing cloud storage)
+  - can set up «storage credentials» (for accessing cloud storage)
 
-  - enable <u>system tables</u> and control who can access them
-
-
-
-<u>Metastore admin</u>:
-
-- is a highly privileged role that you should distribute carefully
-
-- owns a specific <u>Unity Catalog</u> <u>metastore</u>
-
-  - can create all top-level <u>securable objects</u> (within that <u>metastore</u>)
+  - enable «system tables» and control who can access them
 
 
 
-<u>Workspace admin</u>:
+«Metastore admin»:
 
 - is a highly privileged role that you should distribute carefully
 
-- focuses on the operations at the level of an individual Databricks workspace
+- owns a specific «Unity Catalog» «metastore»
 
-  - can add users, service principals, and/or groups to the Databricks workspace
+  - can create all top-level «securable objects» (within that «metastore»)
 
-  - can assign the <u>workspace admin</u> role to users, service principals, and/or groups
+
+
+«Workspace admin»:
+
+- is a highly privileged role that you should distribute carefully
+
+- focuses on the operations at the level of an individual «Databricks workspace»
+
+  - can add users, service principals, and/or groups to the «Databricks workspace»
+
+  - can assign the «workspace admin» role to users, service principals, and/or groups
 
   - can manage job ownership
 
