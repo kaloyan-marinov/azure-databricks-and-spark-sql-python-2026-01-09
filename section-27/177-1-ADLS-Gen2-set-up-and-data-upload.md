@@ -38,7 +38,7 @@ Here, "external data" refers to files stored in an ADLS Gen2 account.
 
 - In that container, create a folder called `country-data`
 
-- Upload the `countries_population.snappy.parquet` file into that folder.
+- Upload the `section-27/*-countries_population.snappy.parquet` file into that folder.
   (The file is attached in the course materials for this lecture.)
 
 ## Re-iterate the objective
