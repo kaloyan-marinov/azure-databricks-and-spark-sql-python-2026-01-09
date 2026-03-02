@@ -1,10 +1,10 @@
-# 177-1-ADLS-Gen2-set-up-and-data-upload.md
+# 177-1-ADLS-Gen-2-set-up-and-data-upload.md
 
 ## Objective
 
 To learn how to access external data from the Databricks environment.
 
-Here, "external data" refers to files stored in an ADLS Gen2 account.
+Here, "external data" refers to files stored in an ADLS Gen 2 account.
 
 ## Make some preparations
 
@@ -14,7 +14,7 @@ Here, "external data" refers to files stored in an ADLS Gen2 account.
 > and, within that, we provisioned a
 > (a) «Databricks workspace» service
 > and
-> (b) an ADLS Gen2 account with the `Hierarchical namespace` property enabled.
+> (b) an ADLS Gen 2 account with the `Hierarchical namespace` property enabled.
 >
 > e.g.
 > ```
