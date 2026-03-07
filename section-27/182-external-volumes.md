@@ -89,3 +89,44 @@ that are read or written by both Databricks and other/external systems.
 > is achieved by
 > configuring additional policies and credentials directly in your cloud account
 > (so as to ensure such data governance policies are respected outside Databricks).
+
+
+
+## How to create an «external volume»
+
+1. create an ADLS Gen 2 account
+
+2. create a container inside that account
+   (which will underlie/underpin the to-be-created «external volume»)
+
+3. in «Unity Catalog»,
+   create an «external location» associated with the container
+   and
+   associate it with a suitable «storage credential»
+
+4. in the «Databricks workspace»,
+   click on «Catalog»;
+   use the GUI to navigate to `test_catalog_1.default`;
+   click on `Create` and then on `Volume`;
+   fill out the form and click `Create`;
+
+5. use the GUI to navigate to the newly-created «external volume»,
+   we see that we now have access to the directiories and files in the underlying container
+
+
+
+## Paths for accessing files in a volume
+
+The path to access volumes is the same
+whether you use Apache Spark, SQL, Python, or other languages and libraries.
+
+The path to access files in volumes uses the following format:
+```
+/Volumes/<catalog>/<schema>/<volume>/<path>/<file-name>
+```
+
+Databricks also supports an optional `dbfs:/` scheme when working with Apache Spark,
+so the following path also works:
+```
+dbfs:/Volumes/<catalog>/<schema>/<volume>/<path>/<file-name>
+```
