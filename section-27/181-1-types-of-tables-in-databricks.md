@@ -26,9 +26,7 @@ Each type differs in
 
 ## Remarks
 
-- Generally speaking,
-  Databricks recommends using «managed tables»
-  (and they are the default)
+- «managed tables»
 
   1. «Unity Catalog» manages the storage location, data lifecycle, and optimizations
 
@@ -37,13 +35,23 @@ Each type differs in
 
   3. «managed tables» are backed by «Delta Lake» or «Apache Iceberg»
 
-- But «external tables» do have their use cases.
+- «external tables»
 
-register data stored in cloud object storage that you manage
+  1. creating an «external table»
+     means
+     creating a table in the «Unity Catalog» «metastore»,
+     with said table being underpinned/"backed" by
+     data files which reside in cloud object storage
+                                a cloud-based object store
 
-  1. «Unity Catalog» governs data access
+  2. «Unity Catalog»:
+  
+     - governs data access
 
-  2. when you drop a «external table»,
+     - does NOT manage
+       the data's lifecycle, optimization, storage location, or layout
+
+  3. when you drop an «external table»,
      only its metadata is deleted
      (but its underlying data files remain)
 
