@@ -32,28 +32,37 @@ to take advantage of:
      - through «open APIs» and «credential vending»,
        «Unity Catalog» enables external engines to access «managed tables»
 
-       ---
-
-       examples of such external engines:
-
-       - Trino
-
-       - DuckDB
-
-       - Apache Spark
-
-       - Daft
-
-       - Iceberg REST catalog-integrated engines like Dremio and Snowflake
+       > examples of such external engines:
+       >
+       > - Trino
+       >
+       > - DuckDB
+       >
+       > - Apache Spark
+       >
+       > - Daft
+       >
+       > - Iceberg REST catalog-integrated engines like Dremio and Snowflake
 
        ---
 
-       The following «open APIs» provide external systems access to «Unity Catalog» «managed tables»:
-       ...
+       > The following «open APIs» provide external systems access to «Unity Catalog» «managed tables»:
+       >
+       > - «Unity REST API»
+       >
+       >   Provides read-only access for «Delta clients» to «managed tables»
+       >
+       > - «Iceberg REST Catalog (IRC)»
+       >
+       >   Provides
+       >
+       >   (a) read and write access for «Iceberg clients» to managed Iceberg tables, and
+       >
+       >   (b) read-only access to Delta tables with «Iceberg reads enabled (UniForm)».
 
-       ---
-
-     - For external clients that don't support open APIs, ...
+     - For external clients that don't support «open APIs»,
+       you can use «Compatibility Mode» to read «managed tables»
+       using any «Delta Lake client» or «Iceberg client»
 
 
 
