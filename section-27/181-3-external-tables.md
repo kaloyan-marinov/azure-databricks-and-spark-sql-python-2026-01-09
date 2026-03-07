@@ -10,7 +10,7 @@
 
 In «Unity Catalog»,
 an «external table» stores its underlying data files
-in cloud object storage within your cloud tenant.
+a cloud-based object store (within your cloud tenant).
 
 «External tables» support several formats:
 

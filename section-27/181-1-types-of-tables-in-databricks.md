@@ -42,8 +42,7 @@ Each type differs in
      means
      creating a table in the «Unity Catalog» «metastore»,
      with said table being underpinned/"backed" by
-     data files which reside in cloud object storage
-                                a cloud-based object store
+     data files which reside in a cloud-based object store
 
   2. «Unity Catalog»:
   
