@@ -46,7 +46,10 @@ Each type differs in
 
   2. «Unity Catalog»:
   
-     - governs data access
+     - manages the table's metadata
+       
+       (which includes but is not limited to
+       ensuring data governance across all queries)
 
      - does NOT manage
        the data's lifecycle, optimization, storage location, or layout

@@ -12,13 +12,7 @@ In «Unity Catalog»,
 an «external table» stores its underlying data files
 in cloud object storage within your cloud tenant.
 
-- «Unity Catalog» manages the table's metadata,
-  ensuring data governance across all queries
-
-- «Unity Catalog» does NOT manage
-  the data's lifecycle, optimization, storage location, or layout
-
-- «external tables» support several formats:
+«External tables» support several formats:
 
   - «Delta Lake» format (recommended)
   
