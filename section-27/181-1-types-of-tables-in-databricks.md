@@ -37,18 +37,6 @@ Each type differs in
 
   3. «managed tables» are backed by «Delta Lake» or «Apache Iceberg»
 
-  4. «managed tables» provide a suite of features:
-
-     - Automatic optimization for reduced storage and compute costs
-
-     - Faster query performance across all client types
-
-     - Automatic table maintenance
-
-     - Secure access for non-Databricks clients via «open APIs»
-
-     - Automatic upgrades to the latest platform features
-
 - But «external tables» do have their use cases.
 
   1. «Unity Catalog» governs data access

@@ -6,38 +6,56 @@
   which is _essentially_ the same as
   https://learn.microsoft.com/en-us/azure/databricks/tables/managed
 
+- https://docs.databricks.com/aws/en/tables/delta-table#managed-tables
+
 ## Introduction
 
 «Managed tables» are the default and recommended table type in Databricks.
 
-Databricks recommends using «managed tables» to take advantage of:
+Databricks recommends using «managed tables»
+to take advantage of:
 
-- Reduced storage and compute costs.
+0. Support for «Delta Lake» and «Apache Iceberg» formats.
 
-- Faster query performance across all client types.
+1. Automatic upgrades to the latest platform features.
 
-- Automatic table maintenance and optimization.
+2. the following suite of features, which «managed tables» provide:
 
-- Secure access for non-Databricks clients via «open APIs».
+   - Automatic optimization for reduced storage and compute costs
 
-  - and via «credential vending»,
-    «Unity Catalog» enables external engines to access «managed tables»
+   - Faster query performance across all client types
 
-    examples of such external engines:
+   - Automatic table maintenance and optimization
 
-    - Trino
+   - Secure access for non-Databricks clients via «open APIs»
 
-    - DuckDB
+     - through «open APIs» and «credential vending»,
+       «Unity Catalog» enables external engines to access «managed tables»
 
-    - Apache Spark
+       ---
 
-    - Daft
+       examples of such external engines:
 
-    - Iceberg REST catalog-integrated engines like Dremio and Snowflake
+       - Trino
 
-- Support for «Delta Lake» and «Apache Iceberg» formats.
+       - DuckDB
 
-- Automatic upgrades to the latest platform features.
+       - Apache Spark
+
+       - Daft
+
+       - Iceberg REST catalog-integrated engines like Dremio and Snowflake
+
+       ---
+
+       The following «open APIs» provide external systems access to «Unity Catalog» «managed tables»:
+       ...
+
+       ---
+
+     - For external clients that don't support open APIs, ...
+
+
 
 ## Features that are unique to «managed tables» (and that are not available for «external tables» and «foreign tables»)
 
