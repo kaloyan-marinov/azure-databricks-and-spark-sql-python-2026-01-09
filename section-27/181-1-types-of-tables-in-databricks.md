@@ -39,29 +39,13 @@ Each type differs in
 
 - But «external tables» do have their use cases.
 
+register data stored in cloud object storage that you manage
+
   1. «Unity Catalog» governs data access
 
-  2. «Unity Catalog» does NOT manage the storage layout, data lifecycle, or optimizations
-
-  3. when you drop a «external table»,
+  2. when you drop a «external table»,
      only its metadata is deleted
      (but its underlying data files remain)
-
-  4. «external tables» support several formats:
-  
-     - «Delta Lake» format (recommended)
-     
-     - CSV, JSON, AVRO, PARQUET, ORC, and TEXT formats
-
-       «External tables» based on those formats lack
-       the transactional guarantees and performance optimizations of «Delta Lake».
-
-  5. Use «external tables» when you need to:
-
-     - Register existing data that is not compatible with «managed tables»
-
-     - Provide direct data access from non-Databricks clients
-       that do not support other external access patterns
 
 - «foreign tables»: ...
 

@@ -2,7 +2,9 @@
 
 ## Sources
 
-https://docs.databricks.com/aws/en/tables/external
+- https://docs.databricks.com/aws/en/tables/external
+
+- https://docs.databricks.com/aws/en/tables/delta-table#external-tables
 
 ## Introduction
 
@@ -16,30 +18,25 @@ in cloud object storage within your cloud tenant.
 - «Unity Catalog» does NOT manage
   the data's lifecycle, optimization, storage location, or layout
 
-- When you drop an «external table»,
-  «Unity Catalog» deletes the table metadata
-  but does not delete the underlying data files
+- «external tables» support several formats:
 
-- «External tables» can use the following file formats:
+  - «Delta Lake» format (recommended)
+  
+  - CSV, JSON, AVRO, PARQUET, ORC, and TEXT formats
 
-  - DELTA
-  - CSV
-  - JSON
-  - AVRO
-  - PARQUET
-  - ORC
-  - TEXT
+    «External tables» based on those formats lack
+    the transactional guarantees and performance optimizations of «Delta Lake».
 
 ## When to use «external tables»
 
-Databricks recommends using external tables for the following use cases:
+Databricks recommends using «external tables»
+when you need to:
 
-- You need to register a table backed by existing data that is not compatible with «managed tables».
+- Register existing data that is not compatible with «managed tables»
 
-- You also require direct access to the data from non-Databricks clients
-  that do not support other external access patterns.
-
-  ---
+- allow for
+  direct access to the data
+  from non-Databricks clients that do not support other external access patterns
   
   > «Unity Catalog» privileges are NOT enforced
   > when users access data files from external systems.
