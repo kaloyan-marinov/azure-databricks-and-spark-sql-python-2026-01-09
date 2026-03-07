@@ -28,7 +28,8 @@ Each type differs in
 
 - «managed tables»
 
-  1. «Unity Catalog» manages the storage location, data lifecycle, and optimizations
+  1. «Unity Catalog» manages the following:
+     storage location; storage layout; data lifecycle; optimizations;
 
   2. when you drop a «managed table»,
      both its metadata and underlying data files are deleted
@@ -51,8 +52,8 @@ Each type differs in
        (which includes but is not limited to
        ensuring data governance across all queries)
 
-     - does NOT manage
-       the data's lifecycle, optimization, storage location, or layout
+     - does NOT manage any of the following:
+       storage location; storage layout; data lifecycle; optimizations;
 
   3. when you drop an «external table»,
      only its metadata is deleted
