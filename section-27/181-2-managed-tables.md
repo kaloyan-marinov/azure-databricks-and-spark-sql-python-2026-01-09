@@ -10,7 +10,7 @@
 
 ## Introduction
 
-«Managed tables» are the default and recommended table type in Databricks.
+«Managed tables» are <u>the default and recommended table type</u> in Databricks.
 
 Databricks recommends using «managed tables»
 to take advantage of:
