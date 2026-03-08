@@ -1,4 +1,4 @@
-# 183-1-overview-of-part-4.md
+# 183-3-overview-of-part-4.md
 
 
 
@@ -11,16 +11,32 @@ This is also its final phase.
 
 ## The premise
 
-Imagine that
-you have received a requirement from another team.
+Imagine that:
+
+- everything, which has been built in the Project so far,
+  was built by Team A at some company
+
+- you are part of Team A
+
+- Team B is another team at the same company
+  and
+  they have submitted a requirement to Team A
 
 ---
 
 Requirement:
 
-A data team has asked for an export of the `yellow_trips_enriched` (silver) table, partitioned by «vendor» and «month», delivered as «JSON» into «their» Azure Data Lake Storage account. They cannot accept data outside their account.
+Team B asks for an export of the `nyctaxi.02_silver.yellow_trips_enriched` table. That export should be:
 
-Objective:
+- delivered into Team B's ADLS Gen 2 account
+
+- in the JSON format
+
+- partitioned by «vendor» and «month»
+
+
+
+## Breakdown of Part 4 of the Project into stages
 
 Deliver a partitioned JSON export of yellow_trips_enriched every month into their ADLS Gen 2 account named `nyctaxistorage (or similar)`, container `nyctaxi-yellow`, under the folder `nyctaxi_yellow_export/`.
 
