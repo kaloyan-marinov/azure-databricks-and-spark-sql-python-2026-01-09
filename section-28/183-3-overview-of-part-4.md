@@ -30,6 +30,12 @@ Team B asks for an export of the `nyctaxi.02_silver.yellow_trips_enriched` table
 
 - delivered into Team B's ADLS Gen 2 account
 
+  - the account is named `nyctaxistorage<suffix-to-make-its-name-unique>`
+
+  - within that account, there is a container called `nyctaxi-yellow`
+
+  - within the container, there is a folder called `nyctaxi_yellow_export/`
+
 - in the JSON format
 
 - partitioned by «vendor» and «month»
@@ -38,21 +44,25 @@ Team B asks for an export of the `nyctaxi.02_silver.yellow_trips_enriched` table
 
 ## Breakdown of Part 4 of the Project into stages
 
-Deliver a partitioned JSON export of yellow_trips_enriched every month into their ADLS Gen 2 account named `nyctaxistorage (or similar)`, container `nyctaxi-yellow`, under the folder `nyctaxi_yellow_export/`.
-
 What we will build.
 
-1. Simulate the existence of Team B and, more specifically, of their ADLS Gen 2 account
+1. Simulate the existence of Team B and, more specifically, of their ADLS Gen 2 account and container
 
-   We'll create and ADLS Gen 2 account named `nyctaxistorage (or similar)` with container `nyctaxi-yellow` to simulate the account that the data team would have.
+2. Link Team B's container to Team A's «Databricks workspace»
+   (by creating a «Storage Credential» and «External Location»
+   within Team A's «Databricks workspace»)
 
-2. Unity Catalog linkage.
+3. Team A will create a new schema `nyctaxi.04_export`
+   and
+   an «external table» backed by the data files written into Team B's container
+   
+   The motivation/justification/rationale for that is
+   to enable Team A to:
 
-   We'll link this location to Databricks via a «Storage Credential» and «External Location» that point to the container.
-
-3. Export schema & objects.
-
-   In our nyctaxi catalog we'll create a new schema `04_export`, and an «external table» over the export part so that our internal Databricks engineers can browser, query, and manage access from within Databricks.
+   - browse, query, and manage access (from within their own «Databricks workspace»)
+   
+   - perform analysis, data quality checks, and monitoring activities
+     directly on the data files
 
 4. Export job/notebook:
 
