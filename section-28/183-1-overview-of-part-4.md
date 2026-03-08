@@ -28,7 +28,7 @@ What we will build.
 
 1. Azure storage.
 
-   We'll create and ADLS Gen 2 account named `nyctaxistorage (or similar)` with container `nyctaxi-yellow` to simulate the account that the data team would have.
+   We'll create an ADLS Gen 2 account named `nyctaxistorage (or similar)` with container `nyctaxi-yellow` to simulate the account that the data team would have.
 
 2. Unity Catalog linkage.
 
@@ -36,7 +36,7 @@ What we will build.
 
 3. Export schema & objects.
 
-   In our nyctaxi catalog we'll create a new schema `04_export`, and an «external table» over the export part so that our internal Databricks engineers can browser, query, and manage access from within Databricks.
+   In our nyctaxi catalog we'll create a new schema `04_export`, and an «external table» over the export part so that our internal Databricks engineers can browse, query, and manage access from within Databricks.
 
 4. Export job/notebook:
 
