@@ -89,6 +89,13 @@ df_4.display()
 
 # COMMAND ----------
 
+spark.read.table('nyctaxi.`04_export`.yellow_trips_export').\
+    groupBy('year_month').\
+    agg(sf.count('*').alias('total_records')).\
+    orderBy('year_month').display()
+
+# COMMAND ----------
+
 # Demonstrate how «Slowly-Changing Dimensions Type 2» is implemented.
 
 df_5 = spark.read.table('nyctaxi.`02_silver`.taxi_zone_lookup')
