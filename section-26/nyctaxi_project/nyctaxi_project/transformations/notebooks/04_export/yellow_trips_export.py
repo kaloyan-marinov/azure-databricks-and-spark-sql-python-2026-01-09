@@ -15,6 +15,19 @@ from pyspark.sql.functions import (
 
 # COMMAND ----------
 
+url_for_external_location = "abfss://nyctaxi-yellow@nyctaxistorage17.dfs.core.windows.net/"
+target_folder = 'yellow_trips_export/'
+
+catalog = 'nyctaxi'
+
+source_schema = '02_silver'
+source_table = 'yellow_trips_enriched'
+
+target_schema = '04_export'
+target_table = 'yellow_trips_export'
+
+# COMMAND ----------
+
 two_months_ago_start = get_month_start_n_months_ago(months_ago=2)
 
 # COMMAND ----------
@@ -23,7 +36,7 @@ two_months_ago_start = get_month_start_n_months_ago(months_ago=2)
 # and
 # filter its contents appropriately.
 
-df = spark.read.table('nyctaxi.02_silver.yellow_trips_enriched').filter(f"tpep_pickup_datetime > '{two_months_ago_start}'")
+df = spark.read.table(f'{catalog}.{source_schema}.{source_table}').filter(f"tpep_pickup_datetime > '{two_months_ago_start}'")
 
 # Add a column called `year_month`.
 
@@ -39,9 +52,13 @@ df = df.withColumn(
 
 # Append the `DataFrame`'s contents to the specified «external table».
 
-df.write.\
-    option('path', 'abfss://nyctaxi-yellow@nyctaxistorage17.dfs.core.windows.net/yellow_trips_export/').\
-    format('json').\
-    mode('append').\
-    partitionBy('vendor', 'year_month').\
-    saveAsTable('nyctaxi.04_export.yellow_trips_export')
+df.write.saveAsTable(
+    f'{catalog}.{target_schema}.{target_table}',
+    path=f'{url_for_external_location}{target_folder}',
+    mode='append',
+    format='json',
+    partitionBy=[
+        'vendor',
+        'year_month',
+    ],
+)
