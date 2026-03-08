@@ -42,7 +42,7 @@ Deliver a partitioned JSON export of yellow_trips_enriched every month into thei
 
 What we will build.
 
-1. Azure storage.
+1. Simulate the existence of Team B and, more specifically, of their ADLS Gen 2 account
 
    We'll create and ADLS Gen 2 account named `nyctaxistorage (or similar)` with container `nyctaxi-yellow` to simulate the account that the data team would have.
 
