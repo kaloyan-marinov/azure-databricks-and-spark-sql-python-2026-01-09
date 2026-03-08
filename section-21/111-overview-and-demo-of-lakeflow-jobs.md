@@ -2,21 +2,21 @@
 
 
 
-The topic of this lecture is <u>Lakeflow Jobs</u>.
-They used to be called <u>Databricks Jobs</u>.
+The topic of this lecture is «Lakeflow Jobs».
+They used to be called «Databricks Jobs».
 The name might change again in the future,
-so we'll try to refer to them simply as <u>Jobs</u>.
+so we'll try to refer to them simply as «Jobs».
 
-A <u>Job</u> makes it possible to schedule and orchestrate <u>Tasks</u>.
+A «Job» makes it possible to schedule and orchestrate «Tasks».
 
-  - can create a workflow of <u>Tasks</u>
+  - can create a workflow of «Tasks»
     (by creating a directed acyclic graph (DAG)),
-    with each <u>Task</u> being a script or notebook
+    with each «Task» being a script or notebook
 
   - can schedule frequent, repeatable Jobs
 
   - can specify
-    <u>Tasks</u>,
+    «Tasks»,
     their order or dependencies,
     and cluster settings
 
