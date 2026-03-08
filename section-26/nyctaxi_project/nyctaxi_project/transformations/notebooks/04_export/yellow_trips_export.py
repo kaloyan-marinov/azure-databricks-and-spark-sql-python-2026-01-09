@@ -36,7 +36,9 @@ two_months_ago_start = get_month_start_n_months_ago(months_ago=2)
 # and
 # filter its contents appropriately.
 
-df = spark.read.table(f'{catalog}.{source_schema}.{source_table}').filter(f"tpep_pickup_datetime > '{two_months_ago_start}'")
+df = spark.read.table(f'{catalog}.{source_schema}.{source_table}')
+
+df = df.filter(f"tpep_pickup_datetime > '{two_months_ago_start}'")
 
 # Add a column called `year_month`.
 
