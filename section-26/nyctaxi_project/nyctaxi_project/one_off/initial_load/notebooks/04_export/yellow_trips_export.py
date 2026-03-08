@@ -34,9 +34,11 @@ df = df.withColumn(
 
 # Write the `DataFrame` to the specified «external table».
 
-df.write.\
-    option('path', f'{url_for_external_location}{target_folder}').\
-    format('json').\
-    mode('overwrite').\
-    partitionBy('vendor', 'year_month').\
-    saveAsTable(f'{catalog}.{target_schema}.{target_table}')
+(
+    df.write
+    .option('path', f'{url_for_external_location}{target_folder}')
+    .format('json')
+    .mode('overwrite')
+    .partitionBy('vendor', 'year_month')
+    .saveAsTable(f'{catalog}.{target_schema}.{target_table}')
+)
