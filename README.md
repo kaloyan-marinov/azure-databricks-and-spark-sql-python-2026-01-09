@@ -141,3 +141,19 @@ Databricks, Inc. has created:
   - MLflow
 
   - Koalas
+
+
+
+## Remarks about the code within this repository
+
+- within this repository,
+  all code resides within the `section-26/nyctaxi_project/` folder
+
+- take note of the commit, which wrote the current section of the `README.md` file
+
+  - as of that commit,
+    the above-mentioned code is an implementation of «Part 3 of the Project»
+
+  - from that commit onwards,
+    the above-mentioned code will be modified <u>in-place</u>
+    so as to "grow into" an implemenation of «Part 4 of the Project»
