@@ -87,4 +87,10 @@ Team B asks for an export of the `nyctaxi.02_silver.yellow_trips_enriched` table
 
 7. Export job/notebook:
 
-   To our project code we'll add a notebook task to our `nyctaxi_job` that will upload the JSON files to the location every time the pipeline runs, which is once a month. We'll register an external table that points to the location so we can append the data to the location each time
+   Enhance the «Job» for incremental data-processing
+   (which was first introduced in Part 2 of the Project)
+   by supplementing it with a new «notebook task».
+
+   That «notebook task» is to append to the «external table»
+   (by writing new JSON files
+   that correspond ONLY to relevant (i.e. most recently available) month's records).
