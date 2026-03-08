@@ -33,6 +33,11 @@ df = df.withColumn(
 # COMMAND ----------
 
 # Write the `DataFrame` to the specified «external table».
+#
+# Recall that
+# the reason why the following statement will create an «external table»
+# is
+# because the statement provides a value for the `path` keyword argument.
 
 df.write.saveAsTable(
     f'{catalog}.{target_schema}.{target_table}',
