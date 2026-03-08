@@ -2,16 +2,24 @@
 import os
 import sys
 
-# Reach the project root
-project_root = os.path.abspath(os.path.join(os.getcwd(), '../..'))
+project_root = os.path.join(
+    os.getcwd(),
+    '..',
+    '..',
+    '..',
+)
+project_root = os.path.abspath(project_root)
 
 if project_root not in sys.path:
     sys.path.append(project_root)
 
-from modules.utils.date_utils import get_month_start_n_months_ago
+# COMMAND ----------
+
 from pyspark.sql.functions import (
     date_format,
 )
+
+from modules.utils.date_utils import get_month_start_n_months_ago
 
 # COMMAND ----------
 
