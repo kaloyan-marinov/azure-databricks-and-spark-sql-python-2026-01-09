@@ -1,18 +1,18 @@
 # Databricks notebook source
-import pyspark.sql.functions as sf
+import pyspark.sql.functions as fs
 
 # COMMAND ----------
 
 df_1 = (
     spark.read.table('nyctaxi.`01_bronze`.yellow_trips_raw')
     .groupBy(
-        sf.date_format(
+        fs.date_format(
             'tpep_pickup_datetime',
             'yyyy-MM',
         ).alias('year_month')
     )
     .agg(
-        sf.count('*').alias('total_records')
+        fs.count('*').alias('total_records')
     )
     .orderBy('year_month')
 )
@@ -32,13 +32,13 @@ df_1.display()
 df_2 = (
     spark.read.table('nyctaxi.`02_silver`.yellow_trips_cleansed')
     .groupBy(
-        sf.date_format(
+        fs.date_format(
             'tpep_pickup_datetime',
             'yyyy-MM',
         ).alias('year_month')
     )
     .agg(
-        sf.count('*').alias('total_records')
+        fs.count('*').alias('total_records')
     )
     .orderBy('year_month')
 )
@@ -52,13 +52,13 @@ df_2.display()
 df_3 = (
     spark.read.table('nyctaxi.`02_silver`.yellow_trips_enriched')
     .groupBy(
-        sf.date_format(
+        fs.date_format(
             'tpep_pickup_datetime',
             'yyyy-MM',
         ).alias('year_month')
     )
     .agg(
-        sf.count('*').alias('total_records')
+        fs.count('*').alias('total_records')
     )
     .orderBy('year_month')
 )
@@ -72,13 +72,13 @@ df_3.display()
 df_4 = (
     spark.read.table('nyctaxi.`03_gold`.daily_trip_summary')
     .groupBy(
-        sf.date_format(
+        fs.date_format(
             'pickup_date',
             'yyyy-MM',
         ).alias('year_month')
     )
     .agg(
-        sf.sum('total_trips').alias('total_records')
+        fs.sum('total_trips').alias('total_records')
     )
     .orderBy('year_month')
 )
@@ -93,7 +93,7 @@ df_5 = (
     spark.read.table('nyctaxi.`04_export`.yellow_trips_export')
     .groupBy('year_month')
     .agg(
-        sf.count('*').alias('total_records')
+        fs.count('*').alias('total_records')
     )
     .orderBy('year_month')
 )
