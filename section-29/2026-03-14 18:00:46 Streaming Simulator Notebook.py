@@ -13,10 +13,23 @@ volume = 'weather_stream_volume'
 target_dir = f"/Volumes/{catalog}/{schema}/{volume}/source/live_weather"
 os.makedirs(target_dir, exist_ok=True)
 
-cities = ["London", "New York", "Tokyo", "Paris", "Sydney"]
+cities = [
+    "London",
+    "New York",
+    "Tokyo",
+    "Paris",
+    "Sydney",
+]
 
 # Define the column order
-headers = ["event_id", "timestamp", "city", "temperature_c", "humidity_percent", "wind_speed_kmh"]
+headers = [
+    "event_id",
+    "timestamp",
+    "city",
+    "temperature_c",
+    "humidity_percent",
+    "wind_speed_kmh",
+]
 
 while True:
     # Simulate a weather reading.
