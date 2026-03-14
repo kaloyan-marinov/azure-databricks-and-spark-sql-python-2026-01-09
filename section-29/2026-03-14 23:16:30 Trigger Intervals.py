@@ -11,13 +11,21 @@
 
 # COMMAND ----------
 
-sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/live_weather"
+catalog = 'streaming_demo'
+schema = 'weather_stream'
+volume = 'weather_stream_volume'
+
+# COMMAND ----------
+
+parent_dir_for_sink = f"/Volumes/{catalog}/{schema}/{volume}/sink"
+sink_path = f"{parent_dir_for_sink}/live_weather"
+checkpoint_location = f"{parent_dir_for_sink}/checkpoints/_live_weather"
 
 (
     df.writeStream
     .format("cloudFiles")
     .option("cloudFiles.format", "parquet")
-    .option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather")
+    .option("checkpointLocation", checkpoint_location)
     .trigger(processingTime='10 seconds')
     .save(sink_path)
 )
@@ -29,13 +37,15 @@ sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/l
 
 # COMMAND ----------
 
-sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/live_weather"
+parent_dir_for_sink = f"/Volumes/{catalog}/{schema}/{volume}/sink"
+sink_path = f"{parent_dir_for_sink}/live_weather"
+checkpoint_location = f"{parent_dir_for_sink}/checkpoints/_live_weather"
 
 (
     df.writeStream
     .format("cloudFiles")
     .option("cloudFiles.format", "parquet")
-    .option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather")
+    .option("checkpointLocation", checkpoint_location)
     .trigger(availableNow=True)
     .save(sink_path)
 )
@@ -47,13 +57,15 @@ sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/l
 
 # COMMAND ----------
 
-sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/live_weather"
+parent_dir_for_sink = f"/Volumes/{catalog}/{schema}/{volume}/sink"
+sink_path = f"{parent_dir_for_sink}/live_weather"
+checkpoint_location = f"{parent_dir_for_sink}/checkpoints/_live_weather"
 
 (
     df.writeStream
     .format("cloudFiles")
     .option("cloudFiles.format", "parquet")
-    .option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather")
+    .option("checkpointLocation", checkpoint_location)
     .trigger(continuous='1 second')
     .save(sink_path)
 )
