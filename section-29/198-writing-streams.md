@@ -24,16 +24,24 @@ One thing that is required for streaming writes is a «checkpoint location».
 
 
 
-Checkpoints provide processing guarantees for structured streaming workloads.
+«Checkpoints» and «write-ahead logs» work together to provide processing guarantees for «Apache Spark Structured Streaming» workloads.
 
-The checkpoint tracks the information that identifies the query, including the state information and
+The «checkpoint» tracks the information that identifies the query, including state information and processed records.
 
-the process records.
+> Essentially, it is the process of
+> saving the state and the progress of a streaming application
+> to a reliable storage system.
 
-Essentially, it's the process of saving the state and the progress of a streaming application to a
+- If the application crashes or is restarted,
+  then Spark can use the «checkpoint» to resume
+  from where it left off rather than starting over.
 
-reliable storage system.
+- If you delete the files in a «checkpoint» directory
+  or
+  change to a new «checkpoint» location,
+  the next run of the query begins fresh.
 
-If the application crashes or is restarted, then spark can use the checkpoint data to resume from where
 
-it left off rather than starting over.
+
+Each query must have a its own «checkpoint» location.
+(Multiple queries should never share the same «checkpoint» location.)
