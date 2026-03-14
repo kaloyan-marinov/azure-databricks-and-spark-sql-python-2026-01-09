@@ -8,6 +8,19 @@
 
 
 
+## Introduction
+
+You can configure «Auto Loader» to automatically detect the schema of loaded data,
+allowing you to:
+
+(a) initialize tables without explicitly declaring the data schema and
+
+(b) evolve the table schema as new columns are introduced.
+
+This eliminates the need to manually track and apply schema changes over time.
+
+
+
 ## «Schema inference»
 
 When you use «Auto Loader»,
