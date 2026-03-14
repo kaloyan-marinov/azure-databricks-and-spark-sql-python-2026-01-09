@@ -1,3 +1,8 @@
+# 199-trigger-intervals.md
+
+
+
+```python
 # Databricks notebook source
 # MAGIC %md
 # MAGIC You can specify the trigger settings of a streaming query to define the timing of streaming data processing, whether the query is going to be executed as micro-batch query with a fixed batch interval or as a continuous processing query. Here are the different kinds of triggers that are supported.
@@ -69,3 +74,4 @@ checkpoint_location = f"{parent_dir_for_sink}/checkpoints/_live_weather"
     .trigger(continuous='1 second')
     .save(sink_path)
 )
+```
