@@ -19,6 +19,7 @@ cities = ["London", "New York", "Tokyo", "Paris", "Sydney"]
 headers = ["event_id", "timestamp", "city", "temperature_c", "humidity_percent", "wind_speed_kmh"]
 
 while True:
+    # Simulate a weather reading.
     event_id = str(uuid.uuid4())
     timestamp = dt.datetime.now().isoformat()
     city = random.choice(cities)
@@ -35,15 +36,19 @@ while True:
         wind_speed_kmh,
     ]
 
-    # Use timestamp for filename (safe format for files)
+    # Write the simulated weather reading to a single-row CSV.
+    # (Notice how a timestamp is used to construct a filename,
+    # which is a safe format for files.)
     ts_filename = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
     file_path = f"{target_dir}/weather_{ts_filename}.csv"
 
-    # Write single-row CSV
     with open(file_path, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(headers)
         writer.writerow(event)
 
     print(f"Wrote {file_path}: {event}")
-    time.sleep(10)   # wait 10 seconds before writing next weather reading
+
+    # Simulate a scenario,
+    # in which weather readings are made/collected/emitted every 10 seconds.
+    time.sleep(10)
