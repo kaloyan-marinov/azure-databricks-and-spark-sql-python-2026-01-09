@@ -21,10 +21,13 @@ This eliminates the need to manually track and apply schema changes over time.
 
 
 
-## «Schema inference»
+> When you use «Auto Loader»,
+> simply specifying a target directory for the `cloudFiles.schemaLocation` option
+> causes «schema inference» and «schema evolution» to be enabled.
 
-When you use «Auto Loader»,
-simply specifying a value for `cloudFiles.schemaLocation` causes «schema inference» to be enabled.
+
+
+## «Schema inference»
 
 «Schema inference» is the process
 by which Spark or «Auto Loader» automatically detects the structure of incoming data (including column names and data types)
