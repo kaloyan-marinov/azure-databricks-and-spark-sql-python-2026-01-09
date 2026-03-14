@@ -49,7 +49,7 @@ without requiring you to manually define the schema.
 
 ## «Schema evolution»
 
-«Schema evolution» refers to the ability of data processing system to adapt to changes in the structure of incoming data over time,
+«Schema evolution» refers to the ability of a data processing system to adapt to changes in the structure of incoming data over time,
 without breaking the pipeline.
 
 This can be adding a new column to the streaming source, for example.
