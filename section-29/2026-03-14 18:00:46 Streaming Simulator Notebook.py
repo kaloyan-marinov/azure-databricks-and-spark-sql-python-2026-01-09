@@ -1,6 +1,10 @@
 # Databricks notebook source
-import os, time, uuid, random, csv
+import csv
 from datetime import datetime
+import os
+import random
+import time
+import uuid
 
 # Target directory for your streaming source
 target_dir = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/source/live_weather"
