@@ -19,13 +19,20 @@ cities = ["London", "New York", "Tokyo", "Paris", "Sydney"]
 headers = ["event_id", "timestamp", "city", "temperature_c", "humidity_percent", "wind_speed_kmh"]
 
 while True:
+    event_id = str(uuid.uuid4())
+    timestamp = dt.datetime.now().isoformat()
+    city = random.choice(cities)
+    temperature_c = round(random.uniform(-5, 35), 1)
+    humidity_percent = random.randint(30, 90)
+    wind_speed_kmh = round(random.uniform(0, 40), 1)
+
     event = [
-        str(uuid.uuid4()),                # event_id
-        dt.datetime.now().isoformat(),       # timestamp
-        random.choice(cities),            # city
-        round(random.uniform(-5, 35), 1), # temperature_c
-        random.randint(30, 90),           # humidity_percent
-        round(random.uniform(0, 40), 1)   # wind_speed_kmh
+        event_id,
+        timestamp,
+        city,
+        temperature_c,
+        humidity_percent,
+        wind_speed_kmh,
     ]
 
     # Use timestamp for filename (safe format for files)
