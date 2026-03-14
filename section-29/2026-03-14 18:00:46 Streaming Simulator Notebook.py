@@ -1,74 +1,35 @@
 # Databricks notebook source
-import os
-import sys
+import os, time, uuid, random, csv
+from datetime import datetime
 
-project_root = os.path.join(
-    os.getcwd(),
-    '..',
-    '..',
-    '..',
-)
-project_root = os.path.abspath(project_root)
+# Target directory for your streaming source
+target_dir = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/source/live_weather"
+os.makedirs(target_dir, exist_ok=True)
 
-if project_root not in sys.path:
-    sys.path.append(project_root)
+cities = ["London", "New York", "Tokyo", "Paris", "Sydney"]
 
-# COMMAND ----------
+# Define the column order
+headers = ["event_id", "timestamp", "city", "temperature_c", "humidity_percent", "wind_speed_kmh"]
 
-from pyspark.sql.functions import (
-    date_format,
-)
+while True:
+    event = [
+        str(uuid.uuid4()),                # event_id
+        datetime.now().isoformat(),       # timestamp
+        random.choice(cities),            # city
+        round(random.uniform(-5, 35), 1), # temperature_c
+        random.randint(30, 90),           # humidity_percent
+        round(random.uniform(0, 40), 1)   # wind_speed_kmh
+    ]
 
-from modules.utils.date_utils import get_month_start_n_months_ago
+    # Use timestamp for filename (safe format for files)
+    ts_filename = datetime.now().strftime("%Y%m%d_%H%M%S")
+    file_path = f"{target_dir}/weather_{ts_filename}.csv"
 
-# COMMAND ----------
+    # Write single-row CSV
+    with open(file_path, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(headers)
+        writer.writerow(event)
 
-url_for_external_location = "abfss://nyctaxi-yellow@nyctaxistorage17.dfs.core.windows.net/"
-target_folder = 'yellow_trips_export/'
-
-catalog = 'nyctaxi'
-
-source_schema = '02_silver'
-source_table = 'yellow_trips_enriched'
-
-target_schema = '04_export'
-target_table = 'yellow_trips_export'
-
-# COMMAND ----------
-
-two_months_ago_start = get_month_start_n_months_ago(months_ago=2)
-
-# COMMAND ----------
-
-# Read the table
-# and
-# filter its contents appropriately.
-
-df = spark.read.table(f'{catalog}.{source_schema}.{source_table}')
-
-df = df.filter(f"tpep_pickup_datetime > '{two_months_ago_start}'")
-
-# Add a column called `year_month`.
-
-df = df.withColumn(
-    'year_month',
-    date_format(
-        'tpep_pickup_datetime',
-        'yyyy-MM',
-    ),
-)
-
-# COMMAND ----------
-
-# Append the `DataFrame`'s contents to the specified «external table».
-
-df.write.saveAsTable(
-    f'{catalog}.{target_schema}.{target_table}',
-    path=f'{url_for_external_location}{target_folder}',
-    mode='append',
-    format='json',
-    partitionBy=[
-        'vendor',
-        'year_month',
-    ],
-)
+    print(f"Wrote {file_path}: {event}")
+    time.sleep(10)   # wait 10 seconds before writing next weather reading
