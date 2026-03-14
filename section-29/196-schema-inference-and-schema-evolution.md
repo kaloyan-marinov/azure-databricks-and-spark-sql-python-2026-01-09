@@ -49,7 +49,40 @@ without requiring you to manually define the schema.
 
 ## «Schema evolution»
 
-«Schema evolution» refers to the ability of a data processing system to adapt to changes in the structure of incoming data over time,
-without breaking the pipeline.
+«Schema evolution» is a feature of «Auto Loader»
+that enables it to detect the addition of new columns as it processes incoming data.
 
-This can be adding a new column to the streaming source, for example.
+«Auto Loader» supports the following modes for «schema evolution»,
+which you set in the `cloudFiles.schemaEvolutionMode` option:
+
+- `none`
+
+  > This value is the default when a schema is provided.
+
+- `addNewColumns`
+
+  > This value is the default when a schema is not provided.
+
+  When «Auto Loader» detects a new column, these things take place:
+
+  1. «Auto Loader» performs «schema inference» on the latest «micro-batch» of data
+     and
+     updates the schema location with the latest schema by merging new columns to the end of the schema.
+   
+     The data types of existing columns remain unchanged.
+
+  2. The stream fails/stops with an `UnknownFieldException`
+
+- `rescue`
+
+- `failOnNewColumns`
+
+> The «schema evolution» feature can
+> imbue a data-processing system with
+> the ability to adapt to changes in the structure of incoming data over time,
+> without breaking the pipeline.
+
+
+
+Databricks recommends
+configuring «Auto Loader» streams with «Lakeflow Jobs» to restart automatically after such schema changes.
