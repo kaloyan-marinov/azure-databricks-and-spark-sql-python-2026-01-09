@@ -47,6 +47,13 @@ checkpoint_location = f"{parent_dir_for_sink}/checkpoints/_live_weather"
 )
 ```
 
+- A shorter interval gives you lower latency, but it increases the resource usage.
+- So it's a trade off.
+- You should tailor the processing time to balance the cost and performance,
+  especially to avoid frequent checks for small or empty batches.
+
+---
+
 The following will process all of the available data but then it will stop on its own:
 
 ```python
@@ -59,6 +66,13 @@ The following will process all of the available data but then it will stop on it
     .save(sink_path)
 )
 ```
+
+- With `Serverless Compute`,
+  there is no support for default or time-based trigger intervals;
+  only `Trigger.AvailableNow` is supported.
+  That is why all demonstration so far in the current section used an `All-Purpose Compute Cluster`.
+
+---
 
 The following enables low-latency, real-time data processing
 by continuously processing data as it arrives (rather than in «micro-batches»):
@@ -74,33 +88,18 @@ by continuously processing data as it arrives (rather than in «micro-batches»)
 )
 ```
 
+- That causes Spark to start a long-running task that continuously reads and processes data.
+
+- It then commits the progress every second and it will achieve a millisecond-level latency.
+
+- So please keep in mind that continuous mode supports only simple transformations and `outputMode="append"`.
+
+- It's best-suited for real-time applications (like monitoring or fraud detection)
+
 
 
 ## Important to note
 
-A shorter interval gives you lower latency, but it increases the resource usage.
-
-So it's a trade off.
-
-You should tailor the processing time to balance the cost and performance, especially to avoid frequent checks for small or empty batches.
-
----
-
-With `Serverless Compute`,
-there is no support for default or time-based trigger intervals;
-only Trigger.AvailableNow is supported.
-That is why all demonstration so far in the current section used an `All-Purpose Compute Cluster`.
-
----
-
-What that means is spark will start a long running task that continuously reads and processes data.
-
-It then commits the progress every second and it will achieve a millisecond level latency.
-
-So please keep in mind that continuous mode supports only simple transformations and append output mode.
-It's best suited for real time applications like monitoring or fraud detection.
-
----
-
-So when configuring your streaming sink, please choose the trigger mode that best fits your latency,
-your resource requirements, and your use case.
+When configuring your streaming sink,
+please choose the trigger mode that best fits
+your latency requirements, resource requirements, and use case.
