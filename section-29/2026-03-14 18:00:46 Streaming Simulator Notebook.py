@@ -1,6 +1,6 @@
 # Databricks notebook source
 import csv
-from datetime import datetime
+import datetime as dt
 import os
 import random
 import time
@@ -18,7 +18,7 @@ headers = ["event_id", "timestamp", "city", "temperature_c", "humidity_percent",
 while True:
     event = [
         str(uuid.uuid4()),                # event_id
-        datetime.now().isoformat(),       # timestamp
+        dt.datetime.now().isoformat(),       # timestamp
         random.choice(cities),            # city
         round(random.uniform(-5, 35), 1), # temperature_c
         random.randint(30, 90),           # humidity_percent
@@ -26,7 +26,7 @@ while True:
     ]
 
     # Use timestamp for filename (safe format for files)
-    ts_filename = datetime.now().strftime("%Y%m%d_%H%M%S")
+    ts_filename = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
     file_path = f"{target_dir}/weather_{ts_filename}.csv"
 
     # Write single-row CSV
