@@ -63,3 +63,9 @@ duration = '5 minutes'
     .count()
 )
 ```
+
+
+
+## Further reading
+
+https://www.databricks.com/blog/feature-deep-dive-watermarking-apache-spark-structured-streaming
