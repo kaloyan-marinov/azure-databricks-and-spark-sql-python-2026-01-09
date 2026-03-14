@@ -95,7 +95,7 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
    The stream does not fail.
 
    The schema does not get evolved.
-   Instead, there is an `_rescue` column,
+   Instead, there is an `_rescued_data` column,
    where the new columns (and their values) are recorded.
 
 ---
