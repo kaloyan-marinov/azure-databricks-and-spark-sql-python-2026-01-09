@@ -57,11 +57,15 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
 
 - `none`
 
-  > This value is the default when a schema is provided.
+  This value is the default when a schema is provided.
 
 - `addNewColumns`
 
-  > This value is the default when a schema is not provided.
+  ---
+
+  This value is the default when a schema is not provided.
+
+  ---
 
   When «Auto Loader» detects a new column, these things take place:
 
@@ -72,6 +76,12 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
      The data types of existing columns remain unchanged.
 
   2. The stream fails/stops with an `UnknownFieldException`
+
+  ---
+
+  When you rerun the stream, it will add the new column to the schema.
+
+  ---
 
 - `rescue`
 
