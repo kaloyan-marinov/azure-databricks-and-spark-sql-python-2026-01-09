@@ -7,42 +7,46 @@
 
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC ### 📌 Reading a Stream
+catalog = 'streaming_demo'
+schema = 'weather_stream'
+volume = 'weather_stream_volume'
 
 # COMMAND ----------
 
-source_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/source/live_weather"
+parent_dir_for_source = f"/Volumes/{catalog}/{schema}/{volume}/source"
+source_path = f"{parent_dir_for_source}/live_weather"
+schema_location = f"{parent_dir_for_source}/schemas/_live_weather_schema"
 
-schema_location = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/source/schemas/_live_weather_schema"
-
-df = spark.readStream.\
-    format("cloudFiles").\
-    option("cloudFiles.format", "csv").\
-    option("cloudFiles.schemaLocation", schema_location).\
-    load(source_path)
-
+df = (
+    spark.readStream
+    .format("cloudFiles")
+    .option("cloudFiles.format", "csv")
+    .option("cloudFiles.schemaLocation", schema_location)
+    .load(source_path)
+)
 
 df.display()
 
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC ### 📌 Writing a Streaming DataFrame
+parent_dir_for_sink = f"/Volumes/{catalog}/{schema}/{volume}/sink"
+sink_path = f"{parent_dir_for_sink}/live_weather"
+checkpoint_location = f"{parent_dir_for_sink}/checkpoints/_live_weather"
+
+(
+    df.writeStream
+    .format("parquet")
+    .outputMode("append")
+    .option("checkpointLocation", checkpoint_location)
+    .option("path", sink_path)
+    .start()
+)
 
 # COMMAND ----------
 
-sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/live_weather"
-
-checkpoint_location = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather"
-
-df.writeStream.\
-    format("parquet").\
-    outputMode("append").\
-    option("checkpointLocation", checkpoint_location ).\
-    option("path", sink_path).\
-    start()
-
-# COMMAND ----------
-
-spark.read.format("parquet").load(sink_path).display()
+(
+    spark.read
+    .format("parquet")
+    .load(sink_path)
+    .display()
+)
