@@ -13,12 +13,14 @@
 
 sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/live_weather"
 
-df.writeStream.\
-    format("cloudFiles").\
-    option("cloudFiles.format", "parquet").\
-    option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather").\
-    trigger(processingTime='10 seconds').\
-    save(sink_path)
+(
+    df.writeStream
+    .format("cloudFiles")
+    .option("cloudFiles.format", "parquet")
+    .option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather")
+    .trigger(processingTime='10 seconds')
+    .save(sink_path)
+)
 
 # COMMAND ----------
 
@@ -29,12 +31,14 @@ df.writeStream.\
 
 sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/live_weather"
 
-df.writeStream.\
-    format("cloudFiles").\
-    option("cloudFiles.format", "parquet").\
-    option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather").\
-    trigger(availableNow=True).\
-    save(sink_path)
+(
+    df.writeStream
+    .format("cloudFiles")
+    .option("cloudFiles.format", "parquet")
+    .option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather")
+    .trigger(availableNow=True)
+    .save(sink_path)
+)
 
 # COMMAND ----------
 
@@ -45,9 +49,11 @@ df.writeStream.\
 
 sink_path = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/live_weather"
 
-df.writeStream.\
-    format("cloudFiles").\
-    option("cloudFiles.format", "parquet").\
-    option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather").\
-    trigger(continuous='1 second').\
-    save(sink_path)
+(
+    df.writeStream
+    .format("cloudFiles")
+    .option("cloudFiles.format", "parquet")
+    .option("checkpointLocation", "/Volumes/streaming_demo/weather_stream/weather_stream_volume/sink/checkpoints/_live_weather")
+    .trigger(continuous='1 second')
+    .save(sink_path)
+)
