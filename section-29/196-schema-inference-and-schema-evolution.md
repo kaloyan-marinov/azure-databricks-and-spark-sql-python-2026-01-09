@@ -52,25 +52,29 @@ without requiring you to manually define the schema.
 «Schema evolution» is a feature of «Auto Loader»
 that enables it to detect the addition of new columns as it processes incoming data.
 
+<br />
+<br />
+<br />
+
 «Auto Loader» supports the following modes for «schema evolution»,
 which you set in the `cloudFiles.schemaEvolutionMode` option:
 
+---
+
 - `none`
 
-  This value is the default when a schema is provided.
+  (This value is the default when a schema is provided.)
 
   The stream does not fail.
 
   The schema does not get evolved.
   The new columns are ignored.
 
+---
+
 - `addNewColumns`
 
-  ---
-
-  This value is the default when a schema is not provided.
-
-  ---
+  (This value is the default when a schema is not provided.)
 
   When «Auto Loader» detects a new column, these things take place:
 
@@ -82,11 +86,9 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
 
   2. The stream fails/stops with an `UnknownFieldException`
 
-  ---
-
   When you rerun the stream, it will add the new column to the schema.
 
-  ---
+---
 
 - `rescue`
 
@@ -96,6 +98,8 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
    Instead, there is an `_rescue` column,
    where the new columns (and their values) are recorded.
 
+---
+
 - `failOnNewColumns`
 
    The stream fails.
@@ -104,12 +108,20 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
    (a) the provided schema is updated, or
    (b) the offending data files are removed.
 
-> The «schema evolution» feature can
-> imbue a data-processing system with
-> the ability to adapt to changes in the structure of incoming data over time,
-> without breaking the pipeline.
+---
 
+<br />
+<br />
+<br />
 
+The «schema evolution» feature can
+imbue a data-processing system with
+the ability to adapt to changes in the structure of incoming data over time,
+without breaking the pipeline.
 
-Databricks recommends
-configuring «Auto Loader» streams with «Lakeflow Jobs» to restart automatically after such schema changes.
+<br />
+<br />
+<br />
+
+> Databricks recommends
+> configuring «Auto Loader» streams with «Lakeflow Jobs» to restart automatically after such schema changes.
