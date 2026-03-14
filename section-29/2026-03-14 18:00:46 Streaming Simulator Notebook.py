@@ -7,7 +7,10 @@ import time
 import uuid
 
 # Target directory for your streaming source
-target_dir = "/Volumes/streaming_demo/weather_stream/weather_stream_volume/source/live_weather"
+catalog = 'streaming_demo'
+schema = 'weather_stream'
+volume = 'weather_stream_volume'
+target_dir = f"/Volumes/{catalog}/{schema}/{volume}/source/live_weather"
 os.makedirs(target_dir, exist_ok=True)
 
 cities = ["London", "New York", "Tokyo", "Paris", "Sydney"]
