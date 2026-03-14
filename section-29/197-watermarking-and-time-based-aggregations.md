@@ -28,7 +28,7 @@ for how long to continue processing updates for a given «state entity».
 
 Common examples of «state entities» include:
 
-(a) Aggregations over a time window.
+(a) Aggregations over a specified time window.
 
 (b) Unique keys in a `JOIN` between two data streams.
 
@@ -39,3 +39,25 @@ As new data arrives, the state manager
 tracks the most recent timestamp in the specified field
 and
 processes all records within the lateness threshold.
+
+
+
+```python
+import pyspark.sql.functions as Fs
+
+
+col_timestamp = 'event_timestamp'
+watermark_threshold = '10 minutes'
+duration = '5 minutes'
+
+
+(
+    df
+    .withWathermark(col_timestamp, watermark_threshold)
+    .groupBy(
+        fs.window(col_timestamp, duration),
+        'id',
+    )
+    .count()
+)
+```
