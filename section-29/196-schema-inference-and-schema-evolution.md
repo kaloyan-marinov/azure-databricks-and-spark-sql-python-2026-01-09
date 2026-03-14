@@ -59,6 +59,11 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
 
   This value is the default when a schema is provided.
 
+  This doesn't evolve the schema
+  and
+  the new columns are ignored.
+  The stream also does not fail due to schema changes.
+
 - `addNewColumns`
 
   ---
@@ -85,7 +90,18 @@ which you set in the `cloudFiles.schemaEvolutionMode` option:
 
 - `rescue`
 
+   The schema is never evolved, but the stream doesn't fail.
+
+   Instead, there is an `_rescue` column,
+   where the new columns (and their values) are recorded.
+
 - `failOnNewColumns`
+
+   The stream fails.
+
+   The stream does not restart unless
+   (a) the provided schema is updated, or
+   (b) the offending data files are removed.
 
 > The «schema evolution» feature can
 > imbue a data-processing system with
