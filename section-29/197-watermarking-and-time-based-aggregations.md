@@ -23,8 +23,10 @@ in order to avoid infinitely expanding the amount of data kept in state, which c
 
 ## What is a «watermark»?
 
-«Apache Spark Structured Streaming» uses «watermarks» to control the threshold
-for how long to continue processing updates for a given «state entity».
+«Apache Spark Structured Streaming» has a mechanism for handling late-arriving data.
+That mechanism boils down to specifying a threshold-of-lateness
+when your code is processing updates for a given «state entity»;
+that is called a «watermark».
 
 Common examples of «state entities» include:
 
@@ -33,12 +35,12 @@ Common examples of «state entities» include:
 (b) Unique keys in a `JOIN` between two data streams.
 
 When you declare a «watermark», you specify
-a timestamp field and a watermark threshold
+a timestamp field and a threshold-of-lateness
 on a streaming `DataFrame`.
 As new data arrives, the state manager
 tracks the most recent timestamp in the specified field
 and
-processes all records within the lateness threshold.
+processes all records within the threshold-of-lateness.
 
 
 
@@ -47,13 +49,13 @@ import pyspark.sql.functions as Fs
 
 
 col_timestamp = 'event_timestamp'
-watermark_threshold = '10 minutes'
+threshold_of_lateness = '10 minutes'
 duration = '5 minutes'
 
 
 (
     df
-    .withWathermark(col_timestamp, watermark_threshold)
+    .withWathermark(col_timestamp, threshold_of_lateness)
     .groupBy(
         fs.window(col_timestamp, duration),
         'id',
