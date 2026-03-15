@@ -3,6 +3,7 @@
 import time, random
 from datetime import datetime, timezone, timedelta
 
+
 def generate_stream(
     path: str,
     column_name: str,
@@ -11,7 +12,6 @@ def generate_stream(
     device_count: int,
     batch_interval_s: int,
     latency_max_s: int,
-
 ):
     """
     Generic IoT stream generator:
@@ -30,17 +30,20 @@ def generate_stream(
             ts = now - timedelta(seconds=random.uniform(0, latency_max_s))
             value = round(random.uniform(low, high), 4)
             # build a plain dict so we can infer a schema
-            data.append({
-                "device_id":   device_id,
-                "event_time":  ts,
-                column_name:   value
-            })
+            data.append(
+                {
+                    "device_id": device_id,
+                    "event_time": ts,
+                    column_name: value,
+                }
+            )
 
         df = spark.createDataFrame(data)
 
         df.write.format("delta").mode("append").save(path)
 
         time.sleep(batch_interval_s)
+
 
 # COMMAND ----------
 
@@ -51,15 +54,30 @@ from concurrent.futures import ThreadPoolExecutor
 # Assume generate_stream is already defined above
 
 # Common settings
-device_count     = 5
+device_count = 5
 batch_interval_s = 60
-latency_max_s    = 60
+latency_max_s = 60
 
 # (path, column_name, low, high)
 streams = [
-    ("/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature",  "temperature",  19,  23),
-    ("/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration",    "vibration",    0.005, 0.05),
-    ("/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt",         "tilt_angle",   -0.005, 0.005)
+    (
+        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature",
+        "temperature",
+        19,
+        23,
+    ),
+    (
+        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration",
+        "vibration",
+        0.005,
+        0.05,
+    ),
+    (
+        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt",
+        "tilt_angle",
+        -0.005,
+        0.005,
+    ),
 ]
 
 # Start each infinite generator in its own thread
@@ -73,7 +91,7 @@ with ThreadPoolExecutor(max_workers=len(streams)) as executor:
             high,
             device_count,
             batch_interval_s,
-            latency_max_s
+            latency_max_s,
         )
     # Context manager will call shutdown(wait=True) here,
     executor.shutdown(wait=True)
@@ -81,6 +99,7 @@ with ThreadPoolExecutor(max_workers=len(streams)) as executor:
 
 # COMMAND ----------
 
+# fmt: off
 '''
 generate_stream(
                 "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature", 
@@ -112,3 +131,4 @@ generate_stream(
                 60
                 )
 '''
+# fmt: on
