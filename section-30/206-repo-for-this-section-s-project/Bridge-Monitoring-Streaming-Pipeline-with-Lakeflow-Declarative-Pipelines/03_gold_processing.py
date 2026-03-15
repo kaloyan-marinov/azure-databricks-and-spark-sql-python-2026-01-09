@@ -1,8 +1,8 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # Gold: 10-minute windowed metrics combining silver aggregates
 
 # COMMAND ----------
+
+# Gold: compute aggregations of the silver-layer data records over 10-minute windows
 
 import dlt
 from pyspark.sql.functions import col, window, max, avg, round
