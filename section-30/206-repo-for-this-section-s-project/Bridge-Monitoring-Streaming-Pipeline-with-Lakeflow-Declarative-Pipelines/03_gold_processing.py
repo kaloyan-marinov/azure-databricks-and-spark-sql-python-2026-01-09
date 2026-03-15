@@ -39,7 +39,7 @@ def bridge_metrics():
         THRESHOLD_OF_LATENESS,
     )
 
-    # Compute 10-minute tumbling average temperature, retaining metadata
+    # Compute average temperature per `(bridge_id, window_start, window_end)`, retaining metadata
     temp_agg = (
         temp.groupBy(
             window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
@@ -58,9 +58,12 @@ def bridge_metrics():
         )
     )
 
-    # Compute 10-minute max vibration per bridge
+    # Compute max vibration per `(bridge_id, window_start, window_end)`
     vib_agg = (
-        vib.groupBy(window("event_time", WIDTH_OF_TIMESTAMP_WINDOW), col("bridge_id"))
+        vib.groupBy(
+            window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
+            col("bridge_id"),
+        )
         .agg(max("vibration").alias("max_vibration"))
         .select(
             col("bridge_id"),
@@ -70,9 +73,12 @@ def bridge_metrics():
         )
     )
 
-    # Compute 10-minute max tilt angle per bridge
+    # Compute max tilt angle per `(bridge_id, window_start, window_end)`
     tilt_agg = (
-        tilt.groupBy(window("event_time", WIDTH_OF_TIMESTAMP_WINDOW), col("bridge_id"))
+        tilt.groupBy(
+            window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
+            col("bridge_id"),
+        )
         .agg(max("tilt_angle").alias("max_tilt_angle"))
         .select(
             col("bridge_id"),
