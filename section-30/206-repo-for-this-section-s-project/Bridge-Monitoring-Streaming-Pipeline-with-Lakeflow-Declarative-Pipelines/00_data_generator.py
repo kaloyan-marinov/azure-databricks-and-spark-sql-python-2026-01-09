@@ -115,39 +115,3 @@ with ThreadPoolExecutor(
     # Context manager will call shutdown(wait=True) here,
     executor.shutdown(wait=True)
     # and block forever because these tasks never return.
-
-# COMMAND ----------
-
-# fmt: off
-'''
-simulate_data_stream(
-                "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature", 
-                'temperature', 
-                0, 
-                20, 
-                5, 
-                60, 
-                60
-                )
-
-simulate_data_stream(
-                "/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt", 
-                'tilt', 
-                0.005, 
-                0.05, 
-                5, 
-                60, 
-                60
-                )
-
-simulate_data_stream(
-                "/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration", 
-                'vibration', 
-                -0.005, 
-                0.005, 
-                5, 
-                60, 
-                60
-                )
-'''
-# fmt: on
