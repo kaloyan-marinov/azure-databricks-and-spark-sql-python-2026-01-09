@@ -1,8 +1,10 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # Bronze: raw ingestion of three delta streams
 
 # COMMAND ----------
+
+# Bronze: raw ingestion of 3 delta streams
+# Each definition spins up its own "append flow";
+# no manual orchestration or checkpointing code is required.
 
 import dlt
 
