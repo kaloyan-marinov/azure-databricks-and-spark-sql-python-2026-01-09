@@ -26,22 +26,22 @@ BRIDGE_METRICS = "bridge_metrics"
 )
 def bridge_metrics():
     # Read data streams from the preceding layer.
-    temp = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_TEMPERATURE}").withWatermark(
+    stream_df_temp = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_TEMPERATURE}").withWatermark(
         "event_time",
         THRESHOLD_OF_LATENESS,
     )
-    vib = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_VIBRATION}").withWatermark(
+    stream_df_vib = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_VIBRATION}").withWatermark(
         "event_time",
         THRESHOLD_OF_LATENESS,
     )
-    tilt = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_TILT}").withWatermark(
+    stream_df_tilt = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_TILT}").withWatermark(
         "event_time",
         THRESHOLD_OF_LATENESS,
     )
 
     # Compute average temperature per `(bridge_id, window_start, window_end)`, retaining metadata
     temp_agg = (
-        temp.groupBy(
+        stream_df_temp.groupBy(
             window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
             col("bridge_id"),
             col("name"),
@@ -60,7 +60,7 @@ def bridge_metrics():
 
     # Compute max vibration per `(bridge_id, window_start, window_end)`
     vib_agg = (
-        vib.groupBy(
+        stream_df_vib.groupBy(
             window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
             col("bridge_id"),
         )
@@ -75,7 +75,7 @@ def bridge_metrics():
 
     # Compute max tilt angle per `(bridge_id, window_start, window_end)`
     tilt_agg = (
-        tilt.groupBy(
+        stream_df_tilt.groupBy(
             window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
             col("bridge_id"),
         )
