@@ -56,7 +56,7 @@ def bronze_bridge_vibration():
 
 @dlt.table(
     name=f"{SCHEMA_01_BRONZE}.bridge_tilt",
-    comment="Raw tilt‐angle readings",
+    comment="Raw tilt-angle readings",
 )
 def bronze_bridge_tilt():
     return spark.readStream.format("delta").load(f"{_PARENT_PATH}/bridge_tilt")
