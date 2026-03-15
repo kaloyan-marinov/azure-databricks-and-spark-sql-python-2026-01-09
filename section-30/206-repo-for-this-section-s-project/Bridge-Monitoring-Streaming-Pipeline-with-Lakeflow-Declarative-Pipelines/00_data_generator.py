@@ -12,6 +12,10 @@ Each data stream is written to the «managed volume» within the `00_landing` «
 """
 
 # Common settings
+CATALOG = "bridge_monitoring"
+SCHEMA = "00_landing"
+VOLUME = "streaming"
+
 DEVICE_COUNT = 5  # = the # of bridges
 BATCH_INTERVAL_S = 60
 LATENCY_MAX_S = 60
@@ -21,21 +25,22 @@ LATENCY_MAX_S = 60
 (path, metric_measured_by_sensor, low, high)
 '''
 # fmt: on
+_PARENT_PATH = f"/Volumes/{CATALOG}/{SCHEMA}/{VOLUME}"
 DATA_STREAM_PARAMETERIZATIONS = [
     (
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature",
+        f"{_PARENT_PATH}/bridge_temperature",
         "temperature",
         19,
         23,
     ),
     (
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration",
+        f"{_PARENT_PATH}/bridge_vibration",
         "vibration",
         0.005,
         0.05,
     ),
     (
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt",
+        f"{_PARENT_PATH}/bridge_tilt",
         "tilt_angle",
         -0.005,
         0.005,
