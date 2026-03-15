@@ -1,5 +1,16 @@
 # Databricks notebook source
-# Generic stream generator
+
+"""
+This notebook can be run manually
+(and independently of the DLT pipeline,
+which constitutes a practical implementation of `section-30/204-2-solution-architecture.md`).
+
+It continuously simulates 3 data streams from 3 IoT sensors:
+temperature, vibration, and tilt.
+
+Each data stream is written to the «managed volume» within the `00_landing` «schema».
+"""
+
 import datetime as dt
 import random
 import time
