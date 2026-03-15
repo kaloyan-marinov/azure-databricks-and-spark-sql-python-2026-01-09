@@ -1,4 +1,4 @@
---landing
+-- Inspect the `00_landing` zone.
 SELECT
     *
 FROM
@@ -19,7 +19,7 @@ FROM
 
 
 
---bronze
+-- Inspect the `01_bronze` zone.
 SELECT
     *
 FROM
@@ -46,7 +46,7 @@ ORDER BY
 
 
 
---silver
+-- Inspect the `02_silver` zone.
 SELECT
     *
 FROM
@@ -73,7 +73,7 @@ ORDER BY
 
 
 
---gold
+-- Inspect the `03_gold` zone.
 SELECT
     *
 FROM
