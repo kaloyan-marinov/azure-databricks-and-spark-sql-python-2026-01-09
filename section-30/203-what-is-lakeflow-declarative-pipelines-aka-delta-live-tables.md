@@ -83,9 +83,9 @@ A «materialized view»:
 
 - is a form of «Unity Catalog»-managed table
 
-- is a «batch target»
+- is the target of a batch flow
 
-- can have one or more materialized-view flows written into it
+- can have one or more batch flows written into it
 
 A «sink»:
 
