@@ -1,7 +1,8 @@
 # Databricks notebook source
 # Generic stream generator
-import time, random
-from datetime import datetime, timezone, timedelta
+import datetime as dt
+import random
+import time
 
 
 def generate_stream(
@@ -24,10 +25,15 @@ def generate_stream(
     """
 
     while True:
-        now = datetime.now(timezone.utc)
+        now = dt.datetime.now(dt.timezone.utc)
         data = []
         for device_id in range(1, device_count + 1):
-            ts = now - timedelta(seconds=random.uniform(0, latency_max_s))
+            ts = now - dt.timedelta(
+                seconds=random.uniform(
+                    0,
+                    latency_max_s,
+                )
+            )
             value = round(random.uniform(low, high), 4)
             # build a plain dict so we can infer a schema
             data.append(
