@@ -19,6 +19,15 @@ _PARENT_PATH = f"/Volumes/{CATALOG}/{SCHEMA_00_LANDING}/{VOLUME}"
 SCHEMA_01_BRONZE = "01_bronze"
 
 
+# fmt: off
+'''
+In «Lakeflow Declarative Pipelines»,
+you define a «pipeline» and, as part of that definition, you specify a default «catalog».
+
+As a result,
+when referencing tables, you don't have to specify the 3-level namespace.
+'''
+# fmt: on
 @dlt.table(
     name=f"{SCHEMA_01_BRONZE}.bridge_temperature",
     comment="Raw temperature readings",
