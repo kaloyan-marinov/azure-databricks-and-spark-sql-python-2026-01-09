@@ -57,3 +57,55 @@ and then,
 > You spend your time modeling your pipeline and business logic, and
 >
 > the framework takes care of reliability, monitoring, and performance optimizations for you.
+
+
+
+## The core concepts of «Delta Live Tables»
+
+A «flow»:
+
+- is the foundational data-processing concept in DLT
+
+- supports both «batch semantics» and «streaming semantics»
+
+- reads data from a source,
+  applies user-defined processing logic,
+  and writes the result into a target
+
+«Streaming tables»:
+
+- are «Unity Catalog» tables that
+  receive one or more streaming flows
+  and
+  continuously ingest new data
+
+A «materialized view»:
+
+- is a form of «Unity Catalog»-managed table
+
+- is a «batch target»
+
+- can have one or more materialized-view flows written into it
+
+A «sink»:
+
+- is a streaming target for DLT
+
+- currently supports
+  - «Delta Tables»,
+  - Apache Kafka Topics, and
+  - Azure Event Hubs topics
+
+- can have one or more streaming flows written into it
+
+«Pipelines»:
+
+- tie it all together
+
+  You declare your «flows», «streaming tables», «materialized views» and «sinks» in code;
+  
+  DLT automatically
+  infers dependencies,
+  orchestrates execution,
+  handles retries,
+  and scales infrastructure for you.
