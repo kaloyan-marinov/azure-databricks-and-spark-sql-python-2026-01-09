@@ -1,6 +1,4 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # Silver: static metadata + enrichment of each stream with bridge_metadata
 
 # COMMAND ----------
 
@@ -9,11 +7,7 @@ from pyspark.sql.functions import col
 
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC ## Bridge Metadata (Static Table)
-
-# COMMAND ----------
-
+# Static Table with Bridge Metadata
 
 @dlt.table(
     name="02_silver.bridge_metadata",
@@ -74,14 +68,9 @@ def bridge_metadata():
     ]
     return spark.createDataFrame(bridges)
 
-
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC ## Bridge Temperature (Streaming Table)
-
-# COMMAND ----------
-
+# Streaming Table with records of "Bridge Temperature" readings
 
 @dlt.table(
     name="02_silver.bridge_temperature",
@@ -117,14 +106,9 @@ def silver_bridge_temperature():
         )
     )
 
-
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC ## Bridge Vibration (Streaming Table)
-
-# COMMAND ----------
-
+# Streaming Table with records of "Bridge Vibration" readings
 
 @dlt.table(
     name="02_silver.bridge_vibration",
@@ -160,14 +144,9 @@ def silver_bridge_vibration():
         )
     )
 
-
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC ## Bridge Tilt (Streaming Table)
-
-# COMMAND ----------
-
+# Streaming Table with records of "Bridge Tilt" readings
 
 @dlt.table(
     name="02_silver.bridge_tilt",
