@@ -20,7 +20,18 @@ BRIDGE_METADATA = "bridge_metadata"
 
 # Static Table with Bridge Metadata
 
-
+# fmt: off
+'''
+Since the following function is decorated as it is
+and
+since it's not reading a data stream (and is actually just generating some static data),
+DLT treats this as a «materialized view» or a «batch table»;
+so, that function will only
+  - run once in our pipeline;
+  - write out the `DataFrame`; and
+  - make it available (for downstream `JOIN`s) in the next code cell.
+'''
+# fmt: on
 @dlt.table(
     name=f"{SCHEMA_02_SILVER}.{BRIDGE_METADATA}",
     comment="Static metadata for five major European bridges",
