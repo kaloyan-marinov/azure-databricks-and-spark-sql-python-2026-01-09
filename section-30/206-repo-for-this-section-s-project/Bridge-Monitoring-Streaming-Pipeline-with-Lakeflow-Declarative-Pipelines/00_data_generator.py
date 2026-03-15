@@ -97,7 +97,9 @@ data_stream_parameterizations = [
 ]
 
 # Start each infinite generator in its own thread
-with ThreadPoolExecutor(max_workers=len(data_stream_parameterizations)) as executor:
+with ThreadPoolExecutor(
+    max_workers=len(data_stream_parameterizations),
+) as executor:
     for path, metric_measured_by_sensor, low, high in data_stream_parameterizations:
         executor.submit(
             simulate_data_stream,
