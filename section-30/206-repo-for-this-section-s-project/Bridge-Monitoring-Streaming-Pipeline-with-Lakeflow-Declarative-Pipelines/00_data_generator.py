@@ -96,7 +96,8 @@ data_stream_parameterizations = [
     ),
 ]
 
-# Start each infinite generator in its own thread
+# Spawn separate threads,
+# arranging for each thread to execute the `simulate_data_stream` function with a thread-specific input.
 with ThreadPoolExecutor(
     max_workers=len(data_stream_parameterizations),
 ) as executor:
