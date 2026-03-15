@@ -6,34 +6,36 @@
 
 import dlt
 
-# Bronze: raw ingestion of three delta streams
+
+# Common settings
+CATALOG = "bridge_monitoring"
+
+SCHEMA_00_LANDING = "00_landing"
+VOLUME = "streaming"
+_PARENT_PATH = f"/Volumes/{CATALOG}/{SCHEMA_00_LANDING}/{VOLUME}"
+
+SCHEMA_01_BRONZE = "01_bronze"
 
 
 @dlt.table(
-    name="01_bronze.bridge_temperature",
+    name=f"{SCHEMA_01_BRONZE}.bridge_temperature",
     comment="Raw temperature readings",
 )
 def bronze_bridge_temperature():
-    return spark.readStream.format("delta").load(
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature"
-    )
+    return spark.readStream.format("delta").load(f"{_PARENT_PATH}/bridge_temperature")
 
 
 @dlt.table(
-    name="01_bronze.bridge_vibration",
+    name=f"{SCHEMA_01_BRONZE}.bridge_vibration",
     comment="Raw vibration readings",
 )
 def bronze_bridge_vibration():
-    return spark.readStream.format("delta").load(
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration"
-    )
+    return spark.readStream.format("delta").load(f"{_PARENT_PATH}/bridge_vibration")
 
 
 @dlt.table(
-    name="01_bronze.bridge_tilt",
+    name=f"{SCHEMA_01_BRONZE}.bridge_tilt",
     comment="Raw tilt‐angle readings",
 )
 def bronze_bridge_tilt():
-    return spark.readStream.format("delta").load(
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt"
-    )
+    return spark.readStream.format("delta").load(f"{_PARENT_PATH}/bridge_tilt")
