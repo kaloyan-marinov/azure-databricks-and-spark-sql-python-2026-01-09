@@ -16,7 +16,7 @@ import random
 import time
 
 
-def generate_stream(
+def simulate_data_stream(
     path: str,
     column_name: str,
     low: float,
@@ -64,7 +64,7 @@ def generate_stream(
 
 from concurrent.futures import ThreadPoolExecutor
 
-# Assume generate_stream is already defined above
+# Assume simulate_data_stream is already defined above
 
 # Common settings
 device_count = 5
@@ -101,7 +101,7 @@ streams = [
 with ThreadPoolExecutor(max_workers=len(streams)) as executor:
     for path, column_name, low, high in streams:
         executor.submit(
-            generate_stream,
+            simulate_data_stream,
             path,
             column_name,
             low,
@@ -118,7 +118,7 @@ with ThreadPoolExecutor(max_workers=len(streams)) as executor:
 
 # fmt: off
 '''
-generate_stream(
+simulate_data_stream(
                 "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature", 
                 'temperature', 
                 0, 
@@ -128,7 +128,7 @@ generate_stream(
                 60
                 )
 
-generate_stream(
+simulate_data_stream(
                 "/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt", 
                 'tilt', 
                 0.005, 
@@ -138,7 +138,7 @@ generate_stream(
                 60
                 )
 
-generate_stream(
+simulate_data_stream(
                 "/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration", 
                 'vibration', 
                 -0.005, 
