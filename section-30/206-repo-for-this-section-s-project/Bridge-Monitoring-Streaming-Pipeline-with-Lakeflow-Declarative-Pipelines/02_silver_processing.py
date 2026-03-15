@@ -9,9 +9,12 @@ from pyspark.sql.functions import col
 CATALOG = "bridge_monitoring"
 
 SCHEMA_01_BRONZE = "01_bronze"
+BRIDGE_TEMPERATURE = "bridge_temperature"
+BRIDGE_VIBRATION = "bridge_vibration"
+BRIDGE_TILT = "bridge_tilt"
 
 SCHEMA_02_SILVER = "02_silver"
-BRIDGE_METADATA = 'bridge_metadata'
+BRIDGE_METADATA = "bridge_metadata"
 
 # COMMAND ----------
 
@@ -84,7 +87,7 @@ def bridge_metadata():
 
 
 @dlt.table(
-    name=f"{SCHEMA_02_SILVER}.bridge_temperature",
+    name=f"{SCHEMA_02_SILVER}.{BRIDGE_TEMPERATURE}",
     comment="Temperature enriched with metadata",
 )
 @dlt.expect_or_drop(
@@ -97,7 +100,7 @@ def bridge_metadata():
 )
 def silver_bridge_temperature():
     return (
-        dlt.read_stream(f"{SCHEMA_01_BRONZE}.bridge_temperature")
+        dlt.read_stream(f"{SCHEMA_01_BRONZE}.{BRIDGE_TEMPERATURE}")
         .withColumn(
             "event_time",
             col("event_time").cast("timestamp"),
@@ -124,7 +127,7 @@ def silver_bridge_temperature():
 
 
 @dlt.table(
-    name=f"{SCHEMA_02_SILVER}.bridge_vibration",
+    name=f"{SCHEMA_02_SILVER}.{BRIDGE_VIBRATION}",
     comment="Vibration enriched with metadata",
 )
 @dlt.expect_or_drop(
@@ -137,7 +140,7 @@ def silver_bridge_temperature():
 )
 def silver_bridge_vibration():
     return (
-        dlt.read_stream(f"{SCHEMA_01_BRONZE}.bridge_vibration")
+        dlt.read_stream(f"{SCHEMA_01_BRONZE}.{BRIDGE_VIBRATION}")
         .withColumn(
             "event_time",
             col("event_time").cast("timestamp"),
@@ -164,7 +167,7 @@ def silver_bridge_vibration():
 
 
 @dlt.table(
-    name=f"{SCHEMA_02_SILVER}.bridge_tilt",
+    name=f"{SCHEMA_02_SILVER}.{BRIDGE_TILT}",
     comment="Tilt angle enriched with metadata",
 )
 @dlt.expect_or_drop(
@@ -177,7 +180,7 @@ def silver_bridge_vibration():
 )
 def silver_bridge_tilt():
     return (
-        dlt.read_stream(f"{SCHEMA_01_BRONZE}.bridge_tilt")
+        dlt.read_stream(f"{SCHEMA_01_BRONZE}.{BRIDGE_TILT}")
         .withColumn(
             "event_time",
             col("event_time").cast("timestamp"),
