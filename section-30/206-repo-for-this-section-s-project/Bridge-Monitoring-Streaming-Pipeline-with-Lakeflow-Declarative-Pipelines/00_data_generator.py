@@ -58,7 +58,11 @@ device_count = 5
 batch_interval_s = 60
 latency_max_s = 60
 
-# (path, column_name, low, high)
+# fmt: off
+'''
+(path, column_name, low, high)
+'''
+# fmt: on
 streams = [
     (
         "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature",
