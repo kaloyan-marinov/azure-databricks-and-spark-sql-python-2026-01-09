@@ -102,6 +102,8 @@ def bridge_metadata():
 '''
 The `@dlt.expect_or_drop` and `@dlt.expect` are data-quality checks,
 which are declarative in nature.
+
+Furthermore, the function performs a stream-to-static `JOIN`.
 '''
 # fmt: on
 @dlt.table(
