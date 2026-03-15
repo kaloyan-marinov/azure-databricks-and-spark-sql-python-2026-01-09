@@ -7,6 +7,22 @@
 This section covers «Lakeflow Declarative Pipelines»,
 but it does that in a purely project-based way.
 
+(
+Occasionally, Databricks makes updates to their products.
+
+«Lakeflow Declarative Pipelines»
+used to be called
+«Delta Live Tables» (DLT).
+)
+
+> As a disclaimer:
+> 
+> This is not going to cover every aspect of the topic,
+> because that would require a full course in itself.
+>
+> But it will cover all of the key concepts
+> in a way that will enable you to continue learning on your own.
+
 
 
 ## Sources
