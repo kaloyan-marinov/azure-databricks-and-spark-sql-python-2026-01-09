@@ -63,11 +63,7 @@ def simulate_data_stream(
 
 # COMMAND ----------
 
-# Launch all three generators concurrently without a wrapper
-
 from concurrent.futures import ThreadPoolExecutor
-
-# Assume simulate_data_stream is already defined above
 
 # Common settings
 device_count = 5
