@@ -26,6 +26,16 @@ you define a «pipeline» and, as part of that definition, you specify a default
 
 As a result,
 when referencing tables, you don't have to specify the 3-level namespace.
+
+---
+
+DLT writes
+    the streaming `DataFrame` returned by the decorated function
+to
+    the table specified in the decorator.
+
+(This recipe causes Spark to continuously monitor the location specified in the `.load` call for new files,
+so each new «micro-batch» gets automatically ingested and made available for downstream processing.)
 '''
 # fmt: on
 @dlt.table(
