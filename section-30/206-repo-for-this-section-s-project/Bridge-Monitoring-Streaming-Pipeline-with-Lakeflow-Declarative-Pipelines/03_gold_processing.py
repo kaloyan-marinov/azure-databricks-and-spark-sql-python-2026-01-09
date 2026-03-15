@@ -7,22 +7,32 @@
 import dlt
 from pyspark.sql.functions import col, window, max, avg, round
 
+# Common settings
+SCHEMA_02_SILVER = "02_silver"
+BRIDGE_TEMPERATURE = "bridge_temperature"
+BRIDGE_VIBRATION = "bridge_vibration"
+BRIDGE_TILT = "bridge_tilt"
+
+SCHEMA_03_GOLD = '03_gold'
+BRIDGE_METRICS = 'bridge_metrics'
+
+
 
 @dlt.table(
-    name="03_gold.bridge_metrics",
+    name=f"{SCHEMA_03_GOLD}.{BRIDGE_METRICS}",
     comment="10-min avg temperature, max vibration & max tilt per bridge with window start/end",
 )
 def bridge_metrics():
     # Apply a 2-minute watermark to bound late data for stateful ops
-    temp = dlt.read_stream("02_silver.bridge_temperature").withWatermark(
+    temp = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_TEMPERATURE}").withWatermark(
         "event_time",
         "2 minutes",
     )
-    vib = dlt.read_stream("02_silver.bridge_vibration").withWatermark(
+    vib = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_VIBRATION}").withWatermark(
         "event_time",
         "2 minutes",
     )
-    tilt = dlt.read_stream("02_silver.bridge_tilt").withWatermark(
+    tilt = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_TILT}").withWatermark(
         "event_time",
         "2 minutes",
     )
