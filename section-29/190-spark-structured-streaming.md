@@ -12,7 +12,9 @@ https://learn.microsoft.com/en-us/azure/databricks/structured-streaming/concepts
 
 In this section of the course, we're going to focus on «real-time data streaming».
 
-«Apache Spark Structured Streaming» is an engine
+[«Apache Spark Structured Streaming»](
+  https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html
+) is an engine
 that lets you read data streams and write data streams.
 
 
