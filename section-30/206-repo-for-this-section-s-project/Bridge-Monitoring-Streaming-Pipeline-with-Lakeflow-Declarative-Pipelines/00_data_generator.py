@@ -27,32 +27,35 @@ def simulate_data_stream(
 ):
     """
     Simulate a data stream from an IoT sensor.
-    
+
     The emitted readings are appended to a «Delta Table» located at `path`.
     """
 
     while True:
         now = dt.datetime.now(dt.timezone.utc)
-        data = []
+
+        data_records = []
         for device_id in range(1, device_count + 1):
-            ts = now - dt.timedelta(
+            delay_due_to_network_latency = dt.timedelta(
                 seconds=random.uniform(
                     0,
                     latency_max_s,
                 )
             )
-            value = round(random.uniform(low, high), 4)
-            # build a plain dict so we can infer a schema
-            data.append(
-                {
-                    "device_id": device_id,
-                    "event_time": ts,
-                    column_name: value,
-                }
-            )
+            event_time = now - delay_due_to_network_latency
 
-        df = spark.createDataFrame(data)
+            sensor_reading = round(random.uniform(low, high), 4)
 
+            # Build a `dict` (to make it possible to infer a schema).
+            data_record = {
+                "device_id": device_id,
+                "event_time": event_time,
+                column_name: sensor_reading,
+            }
+
+            data_records.append(data_record)
+
+        df = spark.createDataFrame(data_record)
         df.write.format("delta").mode("append").save(path)
 
         time.sleep(batch_interval_s)
