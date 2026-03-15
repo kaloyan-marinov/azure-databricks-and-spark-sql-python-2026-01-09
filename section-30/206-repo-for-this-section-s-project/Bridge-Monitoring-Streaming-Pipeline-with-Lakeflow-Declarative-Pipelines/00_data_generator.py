@@ -75,7 +75,7 @@ latency_max_s = 60
 (path, metric_measured_by_sensor, low, high)
 '''
 # fmt: on
-streams = [
+data_stream_parameterizations = [
     (
         "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature",
         "temperature",
@@ -97,8 +97,8 @@ streams = [
 ]
 
 # Start each infinite generator in its own thread
-with ThreadPoolExecutor(max_workers=len(streams)) as executor:
-    for path, metric_measured_by_sensor, low, high in streams:
+with ThreadPoolExecutor(max_workers=len(data_stream_parameterizations)) as executor:
+    for path, metric_measured_by_sensor, low, high in data_stream_parameterizations:
         executor.submit(
             simulate_data_stream,
             path,
