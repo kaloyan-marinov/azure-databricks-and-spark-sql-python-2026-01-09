@@ -26,11 +26,15 @@ BRIDGE_METRICS = "bridge_metrics"
 )
 def bridge_metrics():
     # Read data streams from the preceding layer.
-    stream_df_temp = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_TEMPERATURE}").withWatermark(
+    stream_df_temp = dlt.read_stream(
+        f"{SCHEMA_02_SILVER}.{BRIDGE_TEMPERATURE}"
+    ).withWatermark(
         "event_time",
         THRESHOLD_OF_LATENESS,
     )
-    stream_df_vib = dlt.read_stream(f"{SCHEMA_02_SILVER}.{BRIDGE_VIBRATION}").withWatermark(
+    stream_df_vib = dlt.read_stream(
+        f"{SCHEMA_02_SILVER}.{BRIDGE_VIBRATION}"
+    ).withWatermark(
         "event_time",
         THRESHOLD_OF_LATENESS,
     )
@@ -88,7 +92,7 @@ def bridge_metrics():
         )
     )
 
-    # Join silver aggregates on bridge_id + window bounds
+    # Join the streaming aggregates on `(bridge_id, window_start, window_end)`
     return (
         temp_agg.alias("t")
         .join(
@@ -107,7 +111,10 @@ def bridge_metrics():
             col("location"),
             col("window_start"),
             col("window_end"),
-            round(col("avg_temperature"), 2).alias("avg_temperature"),
+            round(
+                col("avg_temperature"),
+                2,
+            ).alias("avg_temperature"),
             col("max_vibration"),
             col("max_tilt_angle"),
         )
