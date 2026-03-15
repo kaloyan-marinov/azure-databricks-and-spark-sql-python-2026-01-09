@@ -92,7 +92,10 @@ def bridge_metrics():
         )
     )
 
-    # Join the streaming aggregates on `(bridge_id, window_start, window_end)`
+    # Combine the streaming aggregates
+    # by performing a stream-to-stream `JOIN` on `(bridge_id, window_start, window_end)`.
+    # (All of those streaming aggregates use identical window boundaries and «watermarks»,
+    # guaranteeing the `JOIN` is perfectly aligned and remains "append only".)
     return (
         temp_agg.alias("t")
         .join(
