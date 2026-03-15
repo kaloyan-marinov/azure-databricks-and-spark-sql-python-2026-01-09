@@ -11,6 +11,7 @@ CATALOG = "bridge_monitoring"
 SCHEMA_01_BRONZE = "01_bronze"
 
 SCHEMA_02_SILVER = "02_silver"
+BRIDGE_METADATA = 'bridge_metadata'
 
 # COMMAND ----------
 
@@ -18,7 +19,7 @@ SCHEMA_02_SILVER = "02_silver"
 
 
 @dlt.table(
-    name=f"{SCHEMA_02_SILVER}.bridge_metadata",
+    name=f"{SCHEMA_02_SILVER}.{BRIDGE_METADATA}",
     comment="Static metadata for five major European bridges",
 )
 def bridge_metadata():
@@ -103,7 +104,7 @@ def silver_bridge_temperature():
         )
         .withColumnRenamed("device_id", "bridge_id")
         .join(
-            dlt.read(f"{SCHEMA_02_SILVER}.bridge_metadata"),
+            dlt.read(f"{SCHEMA_02_SILVER}.{BRIDGE_METADATA}"),
             on="bridge_id",
             how="left",
         )
@@ -143,7 +144,7 @@ def silver_bridge_vibration():
         )
         .withColumnRenamed("device_id", "bridge_id")
         .join(
-            dlt.read(f"{SCHEMA_02_SILVER}.bridge_metadata"),
+            dlt.read(f"{SCHEMA_02_SILVER}.{BRIDGE_METADATA}"),
             on="bridge_id",
             how="left",
         )
@@ -183,7 +184,7 @@ def silver_bridge_tilt():
         )
         .withColumnRenamed("device_id", "bridge_id")
         .join(
-            dlt.read(f"{SCHEMA_02_SILVER}.bridge_metadata"),
+            dlt.read(f"{SCHEMA_02_SILVER}.{BRIDGE_METADATA}"),
             on="bridge_id",
             how="left",
         )
