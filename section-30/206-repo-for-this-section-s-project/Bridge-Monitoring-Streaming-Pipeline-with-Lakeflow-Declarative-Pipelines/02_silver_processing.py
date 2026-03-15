@@ -47,7 +47,7 @@ def bridge_metadata():
             "length_m": 7845,
             "main_span_m": 490,
             "height_m": 204,
-            "location": "Copenhagen–Malmö, Denmark/Sweden",
+            "location": "Copenhagen-Malmö, Denmark/Sweden",
             "type": "Cable-stayed & tunnel",
             "opened_year": 2000,
         },
