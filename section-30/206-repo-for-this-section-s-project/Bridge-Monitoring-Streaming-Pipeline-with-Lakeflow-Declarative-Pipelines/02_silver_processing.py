@@ -20,6 +20,7 @@ BRIDGE_METADATA = "bridge_metadata"
 
 # Static Table with Bridge Metadata
 
+
 # fmt: off
 '''
 Since the following function is decorated as it is
@@ -95,6 +96,7 @@ def bridge_metadata():
 # COMMAND ----------
 
 # Streaming Table with records of "Bridge Temperature" readings
+
 
 # fmt: off
 '''
