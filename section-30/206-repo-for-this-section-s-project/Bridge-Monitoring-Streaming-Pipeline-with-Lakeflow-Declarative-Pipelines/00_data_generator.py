@@ -11,6 +11,39 @@ temperature, vibration, and tilt.
 Each data stream is written to the «managed volume» within the `00_landing` «schema».
 """
 
+# Common settings
+DEVICE_COUNT = 5  # = the # of bridges
+BATCH_INTERVAL_S = 60
+LATENCY_MAX_S = 60
+
+# fmt: off
+'''
+(path, metric_measured_by_sensor, low, high)
+'''
+# fmt: on
+DATA_STREAM_PARAMETERIZATIONS = [
+    (
+        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature",
+        "temperature",
+        19,
+        23,
+    ),
+    (
+        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration",
+        "vibration",
+        0.005,
+        0.05,
+    ),
+    (
+        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt",
+        "tilt_angle",
+        -0.005,
+        0.005,
+    ),
+]
+
+# COMMAND ----------
+
 import datetime as dt
 import random
 import time
@@ -65,52 +98,21 @@ def simulate_data_stream(
 
 from concurrent.futures import ThreadPoolExecutor
 
-# Common settings
-device_count = 5  # = the # of bridges
-batch_interval_s = 60
-latency_max_s = 60
-
-# fmt: off
-'''
-(path, metric_measured_by_sensor, low, high)
-'''
-# fmt: on
-data_stream_parameterizations = [
-    (
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature",
-        "temperature",
-        19,
-        23,
-    ),
-    (
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration",
-        "vibration",
-        0.005,
-        0.05,
-    ),
-    (
-        "/Volumes/bridge_monitoring/00_landing/streaming/bridge_tilt",
-        "tilt_angle",
-        -0.005,
-        0.005,
-    ),
-]
-
 # Spawn separate threads,
 # arranging for each thread to execute the `simulate_data_stream` function with a thread-specific input.
 with ThreadPoolExecutor(
-    max_workers=len(data_stream_parameterizations),
+    max_workers=len(DATA_STREAM_PARAMETERIZATIONS),
 ) as executor:
-    for path, metric_measured_by_sensor, low, high in data_stream_parameterizations:
+    for path, metric_measured_by_sensor, low, high in DATA_STREAM_PARAMETERIZATIONS:
         executor.submit(
             simulate_data_stream,
             path,
             metric_measured_by_sensor,
             low,
             high,
-            device_count,
-            batch_interval_s,
-            latency_max_s,
+            DEVICE_COUNT,
+            BATCH_INTERVAL_S,
+            LATENCY_MAX_S,
         )
     # Context manager will call shutdown(wait=True) here,
     executor.shutdown(wait=True)
