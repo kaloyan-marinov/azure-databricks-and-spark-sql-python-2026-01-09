@@ -66,7 +66,7 @@ def simulate_data_stream(
 from concurrent.futures import ThreadPoolExecutor
 
 # Common settings
-device_count = 5
+device_count = 5  # = the # of bridges
 batch_interval_s = 60
 latency_max_s = 60
 
