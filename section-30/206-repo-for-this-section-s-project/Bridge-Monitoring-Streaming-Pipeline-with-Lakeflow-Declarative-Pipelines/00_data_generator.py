@@ -32,7 +32,7 @@ def simulate_data_stream(
     """
 
     while True:
-        now = dt.datetime.now(dt.timezone.utc)
+        now = dt.datetime.now(tz=dt.timezone.utc)
 
         data_records = []
         for device_id in range(1, device_count + 1):
