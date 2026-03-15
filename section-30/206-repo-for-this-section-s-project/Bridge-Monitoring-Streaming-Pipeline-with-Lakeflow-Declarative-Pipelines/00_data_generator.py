@@ -18,7 +18,7 @@ import time
 
 def simulate_data_stream(
     path: str,
-    column_name: str,
+    metric_measured_by_sensor: str,
     low: float,
     high: float,
     device_count: int,
@@ -50,7 +50,7 @@ def simulate_data_stream(
             data_record = {
                 "device_id": device_id,
                 "event_time": event_time,
-                column_name: sensor_reading,
+                metric_measured_by_sensor: sensor_reading,
             }
 
             data_records.append(data_record)
@@ -76,7 +76,7 @@ latency_max_s = 60
 
 # fmt: off
 '''
-(path, column_name, low, high)
+(path, metric_measured_by_sensor, low, high)
 '''
 # fmt: on
 streams = [
@@ -102,11 +102,11 @@ streams = [
 
 # Start each infinite generator in its own thread
 with ThreadPoolExecutor(max_workers=len(streams)) as executor:
-    for path, column_name, low, high in streams:
+    for path, metric_measured_by_sensor, low, high in streams:
         executor.submit(
             simulate_data_stream,
             path,
-            column_name,
+            metric_measured_by_sensor,
             low,
             high,
             device_count,
