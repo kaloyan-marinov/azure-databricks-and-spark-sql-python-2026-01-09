@@ -96,7 +96,12 @@ def bridge_metadata():
 
 # Streaming Table with records of "Bridge Temperature" readings
 
-
+# fmt: off
+'''
+The `@dlt.expect_or_drop` and `@dlt.expect` are data-quality checks,
+which are declarative in nature.
+'''
+# fmt: on
 @dlt.table(
     name=f"{SCHEMA_02_SILVER}.{BRIDGE_TEMPERATURE}",
     comment="Temperature enriched with metadata",
