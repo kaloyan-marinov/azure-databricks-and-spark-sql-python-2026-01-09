@@ -5,12 +5,20 @@
 import dlt
 from pyspark.sql.functions import col
 
+# Common settings
+CATALOG = "bridge_monitoring"
+
+SCHEMA_01_BRONZE = "01_bronze"
+
+SCHEMA_02_SILVER = "02_silver"
+
 # COMMAND ----------
 
 # Static Table with Bridge Metadata
 
+
 @dlt.table(
-    name="02_silver.bridge_metadata",
+    name=f"{SCHEMA_02_SILVER}.bridge_metadata",
     comment="Static metadata for five major European bridges",
 )
 def bridge_metadata():
@@ -68,12 +76,14 @@ def bridge_metadata():
     ]
     return spark.createDataFrame(bridges)
 
+
 # COMMAND ----------
 
 # Streaming Table with records of "Bridge Temperature" readings
 
+
 @dlt.table(
-    name="02_silver.bridge_temperature",
+    name=f"{SCHEMA_02_SILVER}.bridge_temperature",
     comment="Temperature enriched with metadata",
 )
 @dlt.expect_or_drop(
@@ -86,14 +96,14 @@ def bridge_metadata():
 )
 def silver_bridge_temperature():
     return (
-        dlt.read_stream("01_bronze.bridge_temperature")
+        dlt.read_stream(f"{SCHEMA_01_BRONZE}.bridge_temperature")
         .withColumn(
             "event_time",
             col("event_time").cast("timestamp"),
         )
         .withColumnRenamed("device_id", "bridge_id")
         .join(
-            dlt.read("02_silver.bridge_metadata"),
+            dlt.read(f"{SCHEMA_02_SILVER}.bridge_metadata"),
             on="bridge_id",
             how="left",
         )
@@ -106,12 +116,14 @@ def silver_bridge_temperature():
         )
     )
 
+
 # COMMAND ----------
 
 # Streaming Table with records of "Bridge Vibration" readings
 
+
 @dlt.table(
-    name="02_silver.bridge_vibration",
+    name=f"{SCHEMA_02_SILVER}.bridge_vibration",
     comment="Vibration enriched with metadata",
 )
 @dlt.expect_or_drop(
@@ -124,14 +136,14 @@ def silver_bridge_temperature():
 )
 def silver_bridge_vibration():
     return (
-        dlt.read_stream("01_bronze.bridge_vibration")
+        dlt.read_stream(f"{SCHEMA_01_BRONZE}.bridge_vibration")
         .withColumn(
             "event_time",
             col("event_time").cast("timestamp"),
         )
         .withColumnRenamed("device_id", "bridge_id")
         .join(
-            dlt.read("02_silver.bridge_metadata"),
+            dlt.read(f"{SCHEMA_02_SILVER}.bridge_metadata"),
             on="bridge_id",
             how="left",
         )
@@ -144,12 +156,14 @@ def silver_bridge_vibration():
         )
     )
 
+
 # COMMAND ----------
 
 # Streaming Table with records of "Bridge Tilt" readings
 
+
 @dlt.table(
-    name="02_silver.bridge_tilt",
+    name=f"{SCHEMA_02_SILVER}.bridge_tilt",
     comment="Tilt angle enriched with metadata",
 )
 @dlt.expect_or_drop(
@@ -162,14 +176,14 @@ def silver_bridge_vibration():
 )
 def silver_bridge_tilt():
     return (
-        dlt.read_stream("01_bronze.bridge_tilt")
+        dlt.read_stream(f"{SCHEMA_01_BRONZE}.bridge_tilt")
         .withColumn(
             "event_time",
             col("event_time").cast("timestamp"),
         )
         .withColumnRenamed("device_id", "bridge_id")
         .join(
-            dlt.read("02_silver.bridge_metadata"),
+            dlt.read(f"{SCHEMA_02_SILVER}.bridge_metadata"),
             on="bridge_id",
             how="left",
         )
