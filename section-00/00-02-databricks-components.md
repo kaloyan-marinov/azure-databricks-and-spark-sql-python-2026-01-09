@@ -129,7 +129,7 @@ https://docs.databricks.com/aws/en/getting-started/concepts
 
   a non-interactive mechanism for orchestrating and scheduling workflows
 
-- Lakeflow Spark Declarative Pipelines
+- Lakeflow Spark Declarative Pipelines (aka «Lakeflow Declarative Pipelines»)
 
   a declarative framework
   for building reliable, maintainable, and testable data-processing pipelines
