@@ -26,13 +26,9 @@ def generate_stream(
     latency_max_s: int,
 ):
     """
-    Generic IoT stream generator:
-      - Emits `device_count` rows each `batch_interval_s` seconds.
-      - Each row has:
-          device_id:    1..device_count
-          event_time:   now - random(0..latency_max_s) seconds
-          <column_name>: random between [low, high]
-      - Appends into a Delta path or Delta table.
+    Simulate a data stream from an IoT sensor.
+    
+    The emitted readings are appended to a «Delta Table» located at `path`.
     """
 
     while True:
