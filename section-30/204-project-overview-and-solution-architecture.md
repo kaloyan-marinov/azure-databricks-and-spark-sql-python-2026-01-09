@@ -33,3 +33,17 @@ In other words:
 Implement a pipeline, which
 processes the sensors' readings - which are data streams! -
 by continuously aggregating and correlating those readings
+
+
+
+## The simulation of the raw data and the pipeline should be realistic
+
+Every real-world installation of sensors is affected by network or processing lag.
+
+For that reason:
+
+- our simulation of the raw data will deliberately offset each reading event's timestamp
+  by a random value between 0 to 60 seconds
+
+- our pipeline will be able to handle "late arrivals"
+  (in a reliable and meaningful way)
