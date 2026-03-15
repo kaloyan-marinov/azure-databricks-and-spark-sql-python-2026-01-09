@@ -43,7 +43,9 @@ def bridge_metrics():
         THRESHOLD_OF_LATENESS,
     )
 
-    # Compute average temperature per `(bridge_id, window_start, window_end)`, retaining metadata
+    # Perform time-based aggregations based on `(bridge_id, window_start, window_end)`.
+    
+    # In this aggregation, retain bridge metadata.
     temp_agg = (
         stream_df_temp.groupBy(
             window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
@@ -62,7 +64,6 @@ def bridge_metrics():
         )
     )
 
-    # Compute max vibration per `(bridge_id, window_start, window_end)`
     vib_agg = (
         stream_df_vib.groupBy(
             window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
@@ -77,7 +78,6 @@ def bridge_metrics():
         )
     )
 
-    # Compute max tilt angle per `(bridge_id, window_start, window_end)`
     tilt_agg = (
         stream_df_tilt.groupBy(
             window("event_time", WIDTH_OF_TIMESTAMP_WINDOW),
