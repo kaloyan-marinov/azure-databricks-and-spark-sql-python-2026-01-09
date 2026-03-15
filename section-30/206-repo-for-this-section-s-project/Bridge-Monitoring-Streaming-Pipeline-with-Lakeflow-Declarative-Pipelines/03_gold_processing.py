@@ -50,11 +50,11 @@ def bridge_metrics():
         .agg(avg("temperature").alias("avg_temperature"))
         .select(
             col("bridge_id"),
-            col("name"),
-            col("location"),
             col("window.start").alias("window_start"),
             col("window.end").alias("window_end"),
             col("avg_temperature"),
+            col("name"),
+            col("location"),
         )
     )
 
