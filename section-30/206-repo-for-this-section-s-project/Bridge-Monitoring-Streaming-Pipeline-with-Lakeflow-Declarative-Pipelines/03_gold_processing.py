@@ -44,7 +44,7 @@ def bridge_metrics():
     )
 
     # Perform time-based aggregations based on `(bridge_id, window_start, window_end)`.
-    
+
     # In this aggregation, retain bridge metadata.
     temp_agg = (
         stream_df_temp.groupBy(
