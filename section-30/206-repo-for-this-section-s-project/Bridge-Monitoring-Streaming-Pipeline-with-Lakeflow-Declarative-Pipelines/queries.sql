@@ -14,7 +14,7 @@ FROM
 SELECT
     *
 FROM
-    delta.`/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibrations/`
+    delta.`/Volumes/bridge_monitoring/00_landing/streaming/bridge_vibration/`
 ;
 
 
