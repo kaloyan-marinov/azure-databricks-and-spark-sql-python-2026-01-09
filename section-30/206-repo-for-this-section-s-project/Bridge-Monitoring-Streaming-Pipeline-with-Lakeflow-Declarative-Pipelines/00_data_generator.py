@@ -85,15 +85,15 @@ def simulate_data_stream(
             sensor_reading = round(random.uniform(low, high), 4)
 
             # Build a `dict` (to make it possible to infer a schema).
-            data_record = {
+            d_r = {
                 "device_id": device_id,
                 "event_time": event_time,
                 metric_measured_by_sensor: sensor_reading,
             }
 
-            data_records.append(data_record)
+            data_records.append(d_r)
 
-        df = spark.createDataFrame(data_record)
+        df = spark.createDataFrame(data_records)
         df.write.format("delta").mode("append").save(path)
 
         time.sleep(batch_interval_s)
