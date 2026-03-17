@@ -81,3 +81,28 @@ FROM
 ORDER BY
     window_start DESC
 ;
+
+
+
+
+
+
+
+
+
+-- Run each of these - individually! - to see how DLT expectations work.
+/*
+INSERT INTO
+    delta.`/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature/`
+VALUES
+    ('1', NULL, 20)
+;
+*/
+
+/*
+INSERT INTO
+    delta.`/Volumes/bridge_monitoring/00_landing/streaming/bridge_temperature/`
+VALUES
+    ('1', '2026-03-17T19:55:30.500', 65)
+;
+*/
