@@ -55,3 +55,18 @@ End-to-end tests and data validation are run:
 
 - (This ensures that
   what reaches «production» has already been reviewed, validated, and approved.)
+
+
+
+## Further learning
+
+This section has given an overview CI/CD.
+
+The practical, hands-on implementation of a full CI/CD workflow in Databricks
+could easily fill an entire course by itself.
+
+For example, the course called [CI/CD with Databricks Asset Bundles](
+    https://www.udemy.com/course/cicd-with-databricks-asset-bundles/
+) covers
+how to use «Databricks Asset Bundles» and «GitHub actions»
+to implement source control, code review, automated testing, and CI/CD for a "data projects".
