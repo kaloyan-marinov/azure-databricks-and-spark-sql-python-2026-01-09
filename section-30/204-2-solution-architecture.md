@@ -48,7 +48,9 @@ Be advised that:
 ## The «gold» layer
 
 - compute 10-minute aggregates of the readings for each bridge,
-  over «tumbling windows»
+  over [«tumbling windows»](
+    https://learn.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics
+  )
 
   - the average temperature in each 10-minute window
 
