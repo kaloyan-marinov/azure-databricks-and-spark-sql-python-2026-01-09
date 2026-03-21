@@ -330,4 +330,108 @@ Concrete examples of those include:
   - operational systems such as point-of-sale systems, inventory management systems, or marketing or sales databases
 
   - operational data store[s]
-```
+
+
+
+
+## Key characteristics of an EDW
+
+By consolidating information into one system, an EDW ensures that executives, analysts and operational teams are working from the same definitions and datasets. This consistency is vital for accurate forecasting, regulatory compliance and strategic planning.
+
+This helps ensure that insights reflect the full scope of business rather than isolated silos.
+
+By enforcing standards and integrating data, an EDW allows all users — from executives to analysts —to work from the same vetted information.
+
+They also support online analytical processing (OLAP), which is ideal for trend analysis and forecasting, as opposed to online transaction processing (OLTP) systems that handle day‑to‑day transactions.
+
+EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.
+
+
+
+# How an EDW works = How an EDW operates = EDW operations
+
+EDW operations involve an essentially continuous process that moves data
+from «everyday business systems»
+to a centralized environment.
+
+
+
+There are different ways for realizing/implementing that process in practice:
+
+- Extract-Transform-Load (ETL) + Analyze
+
+  ---
+
+  extract data from «everyday business systems»
+
+  transform data
+
+  load it in the EDW
+
+  \+ analyze the finalized data
+
+- Extract-Load-Transform (ELT) + Analyze
+
+  ---
+
+  extract data from «everyday business systems»
+
+  load the raw data in the EDW
+
+  within the EDW, transform the loaded raw data
+
+  \+ analyze the finalized data
+
+
+
+> (
+>
+> It is important to note that,
+> regardless of the implementation,
+> the process follows a clear, repeatable sequence.
+>
+> )
+
+
+
+Last but not least,
+let us clarify that "transform data" means the following:
+
+- Data cleansing
+
+  removing duplicates
+  
+  fixing errors
+
+- Standardization
+
+  enforcing consistent formats for dates, currencies, codes, etc.
+
+  (application of "business" rules for)
+  aligning data with "organizational" definitions
+
+- Integration
+
+  combining related data from multiple «everyday business systems»  
+
+
+
+> (
+>
+> ETL is often considered the "traditional" approach.
+> 
+> However, many cloud platforms now often favor ELT,
+> because
+> 
+> (a)
+> on cloud platforms,
+> storage and compute are separated,
+> which makes it possible to scale each (of those resources) independently,
+> 
+> which causes
+> 
+> (b)
+> on cloud platforms,
+> ELT to be faster and more scalable.
+>
+> )
