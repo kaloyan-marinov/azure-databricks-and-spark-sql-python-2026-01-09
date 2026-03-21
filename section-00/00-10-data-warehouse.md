@@ -222,6 +222,8 @@ by any one of the following names:
 
 - business areas
 
+(Examples include finance, operations, etc.)
+
 
 
 # Glossary / Terminology / Vocabulary / Definitions
@@ -242,54 +244,90 @@ such as «data warehouse» (DW) or «data warehousing» (DWH).
   Whenever someone uses the terms EDW, DW and/or DWH,
   it would be advisable to ask them to clarify what specific meaning they encapsulate within each of those terms.
 
+---
 
-
-## Direct quotes
-
-an Enterprise Data Warehouse (EDW) is
-
-- and ... serves as a central repository for structured business data
-
-- a centralized, structured repository designed to consolidate and manage organizational data
-
-- a unified storage solution
-
-- a centralized storage system that brings together data from across an entire organization to provide a single source of truth for data-driven decision making
-
-
-
-```
-[ https://www.databricks.com/blog/what-is-edw ]
-multiple sources
-disparate systems
-data across a variety of departments
-a wide range of sources
-isolated silos
-everyday business systems
-systems that record business activities
-source systems
-data across multiple business areas
-data across all departments
-diverse enterprise systems
-siloed systems
-
-[ https://www.databricks.com/discover/data-warehouse ]
-various sources
-many sources
-dozens or even hundreds of individual data stores
+A DW is
+a storage system that
+serves a single department.
 
 ---
 
-those include
+An EDW is
+a storage system that
+brings together data from all of an enterprise's constituent departments.
+(
+In other words:
+An EDW is
+a centralized repository for all departments' data.
+)
 
-[ https://www.databricks.com/blog/what-is-edw ]
-customer relationship management (CRM) systems/platforms
-enterprise resource planning (ERP) systems/platforms
-transactional databases
-software‑as‑a‑service (SaaS) applications
-other operational databases
+Its primary purpose is
+to provide a single source of truth for
+cross-functional "data-driven decision making".
+(
+In other words:
+Its primary purpose is
+to provide a single source of truth for
+analyzing the past and forecasting the future in a cross-functional manner.
+)
 
-[ https://www.databricks.com/discover/data-warehouse ]
-operational systems such as point-of-sale systems, inventory management systems, or marketing or sales databases
-"an operational data store"
+---
+
+Be advised that that
+the following phrases are synonyms or near-synonyms
+of the phrase "data from all of an enterprise's constituent departments":
+
+- [ used in https://www.databricks.com/blog/what-is-edw ]
+  
+  - multiple sources
+  
+  - disparate systems
+  
+  - data across a variety of departments
+  
+  - a wide range of sources
+  
+  - isolated silos
+  
+  - everyday business systems
+  
+  - systems that record business activities
+  
+  - source systems
+  
+  - data across multiple business areas
+  
+  - data across all departments
+  
+  - diverse enterprise systems
+
+  - siloed systems
+
+- [ used in https://www.databricks.com/discover/data-warehouse ]
+  
+  - various sources
+  
+  - many sources
+  
+  - dozens or even hundreds of individual data stores
+
+Concrete examples of those include:
+
+- [ as per https://www.databricks.com/blog/what-is-edw ]
+
+  - customer relationship management (CRM) systems/platforms
+
+  - enterprise resource planning (ERP) systems/platforms
+
+  - transactional databases
+
+  - software‑as‑a‑service (SaaS) applications
+
+  - other operational databases
+
+- [ as per https://www.databricks.com/discover/data-warehouse ]
+  
+  - operational systems such as point-of-sale systems, inventory management systems, or marketing or sales databases
+
+  - operational data store[s]
 ```
