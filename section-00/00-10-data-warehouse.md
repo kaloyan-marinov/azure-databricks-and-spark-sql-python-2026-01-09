@@ -566,3 +566,65 @@ A «data mart» is a storage system, which:
 - addresses a single subject area or serves a single department
 
 - is often sourced from an EDW
+
+
+
+Possible deployment environments for an EDW:
+
+- cloud-based approach
+
+  - flexibility
+
+  - lower upfront costs
+
+    shift spending
+    from «capital expenditures» to «operating expenditures»,
+    making costs more predictable
+    and
+    enabling enterprises to adapt quickly to changing data demands with large infrastructure investments
+
+  - deployment is typically faster than other options
+    (and is often completed in 6 to 12 months)
+
+- on-premises approach
+  
+  (= within an enterprise's own data centers)
+
+  - agility and scalability are often limited,
+    which can slow innovation and adaptation to change
+  
+  - costs are generally higher than other approaches
+  
+    upfront investment ranging from $500,000 to more than $5 million,
+    plus ongoing maintenance
+  
+  - deployments have long timelines
+    (often lasting a year and sometimes as many as 5)
+  
+  - provides maximum control over infrastructure and data
+  
+    so it is well-suited to meeting strict compliance or sovereignty requirements
+
+    some enterprises are bound by regulatory requirements to use on‑premises storage;
+    and those with existing infrastructure investments may also find the on-premises approach to be the most practical;
+
+- hybrid approach
+
+  - For example,
+
+    (a)
+    sensitive data can be stored on‑premises
+    to achieve compliance with regulations, while
+    
+    (b)
+    cloud platforms handle analytical workloads
+  
+  - may require integration across environments,
+    which can introduce complexity
+    (that makes operations and management of your EDW more difficult)
+  
+  - typically best-suited for:
+  
+    - enterprises that are transitioning from legacy systems to cloud;
+    
+    - enterprises that need both "data sovereignty" and scalability;
