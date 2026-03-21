@@ -184,3 +184,115 @@ Databricks provides an intelligent «data warehouse», [Databricks SQL](
 Databricks SQL is part of an integrated platform, Databricks' [Data Intelligence Platform](
   https://www.databricks.com/product/data-intelligence-platform
 )
+
+
+
+---
+
+
+
+https://www.databricks.com/glossary/edw
+
+<u>TODO (2026/03/21, 12:16): re-read `talk-by-andrew-ng-on-the-state-of-artificial-intelligence-AI/` and re-watch the talk</u>
+
+
+
+# Context
+
+The following terms will be used interchangeably:
+
+- a company
+
+- an organization (and an entire organization)
+
+- a business
+
+- an enterprise (and an entire enterprise)
+
+
+
+The constituent parts of an enterprise will be called:
+
+- business units
+
+- departments
+
+- functions
+
+- business areas
+
+
+
+# Direct quotes
+
+an Enterprise Data Warehouse (EDW) is
+
+- and ... serves as a central repository for structured business data
+
+- a centralized, structured repository designed to consolidate and manage organizational data
+
+- a unified storage solution
+
+- a centralized storage system that brings together data from across an entire organization to provide a single source of truth for data-driven decision making
+
+
+
+```
+[ https://www.databricks.com/blog/what-is-edw ]
+multiple sources
+disparate systems
+data across a variety of departments
+a wide range of sources
+isolated silos
+everyday business systems
+systems that record business activities
+source systems
+data across multiple business areas
+data across all departments
+diverse enterprise systems
+siloed systems
+
+[ https://www.databricks.com/discover/data-warehouse ]
+various sources
+many sources
+dozens or even hundreds of individual data stores
+
+---
+
+those include
+
+[ https://www.databricks.com/blog/what-is-edw ]
+customer relationship management (CRM) systems/platforms
+enterprise resource planning (ERP) systems/platforms
+transactional databases
+software‑as‑a‑service (SaaS) applications
+other operational databases
+
+[ https://www.databricks.com/discover/data-warehouse ]
+operational systems such as point-of-sale systems, inventory management systems, or marketing or sales databases
+"an operational data store"
+```
+
+
+
+
+# Glossary / Terminology / Vocabulary / Definitions
+
+The term «Enterprise Data Warehouse» (EDW) is widely used in professional and technical contexts,
+but you may encounter other similar-sounding terms,
+such as «data warehouse» (DW) or «data warehousing» (DWH).
+
+- Those terms are sometimes used interchangeably.
+
+- Stricly speaking, those terms do not have the same meaning.
+
+- Whenever someone uses the terms DW and/or DWH,
+  you need more context to know for sure what they are talking about.
+
+  As an extension of that point:
+  
+  Whenever someone uses the terms EDW, DW and/or DWH,
+  it would be advisable to ask them to clarify what specific meaning they encapsulate within each of those terms.
+
+
+
