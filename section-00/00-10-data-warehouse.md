@@ -211,7 +211,8 @@ The following terms will be used interchangeably:
 
 
 
-The constituent parts of an enterprise will be called:
+The constituent parts of an enterprise will be called
+by any one of the following names:
 
 - business units
 
@@ -223,7 +224,27 @@ The constituent parts of an enterprise will be called:
 
 
 
-# Direct quotes
+# Glossary / Terminology / Vocabulary / Definitions
+
+The term «Enterprise Data Warehouse» (EDW) is widely used in professional and technical contexts,
+but you may encounter other similar-sounding terms,
+such as «data warehouse» (DW) or «data warehousing» (DWH).
+
+- Those terms are sometimes used interchangeably.
+
+- Stricly speaking, those terms do not have the same meaning.
+
+- Whenever someone uses the terms DW and/or DWH,
+  you need more context to know for sure what they are talking about.
+
+  As an extension of that point:
+  
+  Whenever someone uses the terms EDW, DW and/or DWH,
+  it would be advisable to ask them to clarify what specific meaning they encapsulate within each of those terms.
+
+
+
+## Direct quotes
 
 an Enterprise Data Warehouse (EDW) is
 
@@ -272,27 +293,3 @@ other operational databases
 operational systems such as point-of-sale systems, inventory management systems, or marketing or sales databases
 "an operational data store"
 ```
-
-
-
-
-# Glossary / Terminology / Vocabulary / Definitions
-
-The term «Enterprise Data Warehouse» (EDW) is widely used in professional and technical contexts,
-but you may encounter other similar-sounding terms,
-such as «data warehouse» (DW) or «data warehousing» (DWH).
-
-- Those terms are sometimes used interchangeably.
-
-- Stricly speaking, those terms do not have the same meaning.
-
-- Whenever someone uses the terms DW and/or DWH,
-  you need more context to know for sure what they are talking about.
-
-  As an extension of that point:
-  
-  Whenever someone uses the terms EDW, DW and/or DWH,
-  it would be advisable to ask them to clarify what specific meaning they encapsulate within each of those terms.
-
-
-
