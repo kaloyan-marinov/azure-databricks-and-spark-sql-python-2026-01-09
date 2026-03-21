@@ -526,23 +526,34 @@ make the EDW easier to navigate for non‑technical users.
 
 # What benefits can an enterprise expect to reap from implementing/building an EDW?
 
-Single source of truth and data consistency
-One of the most important benefits of an EDW is that it helps establish a single source of truth both for analyzing the past and forecasting the future. In many organizations, departments rely on separate systems for data management and reporting, which can lead to conflicting outputs. For example, if marketing is using one system for BI and finance is using another, they may come up with different customer lifetime values. These sorts of discrepancies can erode overall trust in data outputs for an entire organization.
+single source of truth for
+analyzing the past and forecasting the future
 
-However, an EDW integrates data from all business units, so that users can access the same vetted information they are authorized to use, regardless of what part of the company they work in. This reduces conflicting outputs and thus improves confidence, enabling leaders to make decisions based on reliable, unified data.
+  - enables users to access the same vetted information
 
-Improved data quality and governance
-Another benefit of EDWs is that simply by the way they operate they can help enforce data quality standards, such as removal of duplicate records, standardizing formats and validation rules to ensure completeness. In addition to quality standards, EDWs have strong governance features such as data lineage tracking, compliance support for regulations like GDPR or HIPAA and robust security measures to protect sensitive data, including RBAC, encryption, audit logs and column‑level security.
+  - improves confidence and trust data outputs for the entire enterprise
 
-The combination of reliable quality and strong governance helps users trust that the data they are using for critical business decisions is reliable.
+improved data quality and consistency
 
-Enhanced BI and analytics
-Perhaps a more specific benefit is how an EDW can serve as the foundation for BI initiatives. When reporting and dashboards draw from consistent, accurate data, organizations can more easily conduct cross‑functional analysis that combines departmental information, while historical tracking helps identify trends and patterns that support both strategic and tactical decisions. With self‑service analytics, users can explore data independently without having to rely on IT support and making the benefits of an EDW available to more people.
+  - cf. "Data cleansing" above
 
-Support for ML and AI
-As organizations incorporate more ML and AI into their operations, EDWs can provide the high‑quality, consistent historical data required to train accurate models. Companies can then use those models to enable predictive analytics such as forecasting demand, predicting customer churn or detecting fraud.
+  - cf. "Standardization" above
 
-Many cloud‑based EDWs integrate directly with ML platforms and some even include built‑in ML capabilities, allowing models to be trained and run within the warehouse itself.
+enhanced BI
+
+  - i.e. analyzing the past and forecasting the future in a cross-functional manner
+
+  - is made possible by «self‑service analytics»,
+    which in turn is made possible by an EDW
+
+    «self‑service analytics» consists in
+    enabling users to explore the data within an EDW (!)independently(!) without having to rely on IT support
+
+support for ML and AI
+
+  - by construction, an EDW contains high‑quality, consistent historical data;
+    that data can be utilized for machine learning applications
+    (e.g. to train models for forecasting demand, predicting customer churn or detecting fraud)
 
 
 
