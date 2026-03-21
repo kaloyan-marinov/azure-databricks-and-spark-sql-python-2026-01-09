@@ -222,7 +222,7 @@ by any one of the following names:
 
 - business areas
 
-(Examples include finance, operations, etc.)
+(Examples include finance, operations, sales, etc.)
 
 
 
@@ -435,3 +435,101 @@ let us clarify that "transform data" means the following:
 > ELT to be faster and more scalable.
 >
 > )
+
+
+
+# How an EDW is architected
+
+The classic EDW design is built on three tiers — bottom, middle and top — each serving a distinct purpose.
+
+- The bottom tier
+
+  This is considered the data integration layer, which is where raw data is captured and prepared for storage.
+  
+  ETL or ELT processes integrate data from «everyday business systems» and move it to the EDW.
+  
+  Modern data pipeline tools such as Fivetran, Airbyte and Matillion provide connectors to «everyday business systems».
+
+- The middle tier
+
+  is the actual storage layer (within the EDW itself) where processed data resides
+  
+  traditionally relied on relational databases optimized for "analytics";
+  key techniques/features of such databases,
+  which make analytical workloads efficient and scalable,
+  include
+  
+    columnar storage (storing data by column rather than row for faster queries)
+    
+    compression (reducing storage size)
+    
+    partitioning (splitting data into manageable segments)
+
+- The top tier
+
+  is the query and presentation layer
+  
+  this is where users interact directly with the data
+  to build dashboards and generate reports
+  using
+  
+    various BI tools
+    
+    query engines with massively parallel processing
+    
+    APIs or
+    
+    user interfaces
+
+Additionally, an EDW should be supplemented with a «governance layer», which
+enables/provides strong security practices
+and
+thus helps achieve compliance with regulations (like GDPR or HIPAA)
+
+- role‑based access controls
+
+- metadata management
+
+- column-level security or dynamic data masking (for highly sensitive data, such as personal identifiable information (PII))
+
+- end‑to‑end encryption to protect data at rest and in transit
+
+- audit logs that track every query and access event
+
+- multi‑factor authentication (MFA) to help prevent unauthorized access
+
+- regular security audits and compliance reviews
+
+How data is modeled and organized inside an EDW can
+dramatically improve query speed
+and
+make the EDW easier to navigate for non‑technical users.
+
+- Most EDWs use «dimensional modeling»,
+  which is designed to structure data for optimal query performance and user understanding
+  using «fact tables» and «dimension tables».
+
+  «Fact tables» store data for measurable transactions and events,
+  such as sales revenue, order quantities or units sold.
+  
+  «Dimension tables» store data that provides descriptive context,
+  such as customer location or age, order history and order dates.
+
+- Data is also typically organized into schemas aligned to (!)business units(!) that reflect the (!)company(!)'s (!)operational structure(!). 
+
+  This makes working with the data more intuitive for analysts and managers.
+  (With data organized in «fact tables» and «dimension tables»,
+  they can more easily conduct analysis activities
+  such as comparing sales by region, product or customer segment.)
+
+
+
+# Closing remarks
+
+A «data mart» is a storage system, which:
+
+- holds pre-aggregated data tailored to a specific department's needs
+
+- addresses a single subject area or serves a single department
+
+- is often sourced from an EDW
