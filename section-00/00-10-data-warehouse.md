@@ -321,7 +321,7 @@ Concrete examples of those include:
 
   - transactional databases
 
-  - software‑as‑a‑service (SaaS) applications
+  - software-as-a-service (SaaS) applications
 
   - other operational databases
 
@@ -342,7 +342,7 @@ This helps ensure that insights reflect the full scope of business rather than i
 
 By enforcing standards and integrating data, an EDW allows all users — from executives to analysts —to work from the same vetted information.
 
-They also support online analytical processing (OLAP), which is ideal for trend analysis and forecasting, as opposed to online transaction processing (OLTP) systems that handle day‑to‑day transactions.
+They also support online analytical processing (OLAP), which is ideal for trend analysis and forecasting, as opposed to online transaction processing (OLTP) systems that handle day-to-day transactions.
 
 EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.
 
@@ -495,18 +495,18 @@ thus helps achieve compliance with regulations (like GDPR or HIPAA)
 
 - column-level security or dynamic data masking (for highly sensitive data, such as personal identifiable information (PII))
 
-- end‑to‑end encryption to protect data at rest and in transit
+- end-to-end encryption to protect data at rest and in transit
 
 - audit logs that track every query and access event
 
-- multi‑factor authentication (MFA) to help prevent unauthorized access
+- multi-factor authentication (MFA) to help prevent unauthorized access
 
 - regular security audits and compliance reviews
 
 How data is modeled and organized inside an EDW can
 dramatically improve query speed
 and
-make the EDW easier to navigate for non‑technical users.
+make the EDW easier to navigate for non-technical users.
 
 - Most EDWs use «dimensional modeling»,
   which is designed to structure data for optimal query performance and user understanding
@@ -546,15 +546,15 @@ enhanced BI
 
   - i.e. analyzing the past and forecasting the future in a cross-functional manner
 
-  - is made possible by «self‑service analytics»,
+  - is made possible by «self-service analytics»,
     which in turn is made possible by an EDW
 
-    «self‑service analytics» consists in
+    «self-service analytics» consists in
     enabling users to explore the data within an EDW (!)independently(!) without having to rely on IT support
 
 support for ML and AI
 
-  - by construction, an EDW contains high‑quality, consistent historical data;
+  - by construction, an EDW contains high-quality, consistent historical data;
     that data can be utilized for machine learning applications
     (e.g. to train models for forecasting demand, predicting customer churn or detecting fraud)
 
@@ -591,10 +591,26 @@ Approaches to overcoming common adoption challenges:
 
 | Row # | Challenge | Solution |
 | - | - | - |
-| 1 | Depending on how they are deployed, EDW projects can take from one to five years to fully deploy. | While that may seem daunting, a phased approach will help manage expectations and sustain progress. Start with a high‑value use case, such as sales reporting, to demonstrate ROI and expand from there. |
+| 1 | Depending on how they are deployed, EDW projects can take from one to five years to fully deploy. | While that may seem daunting, a phased approach will help manage expectations and sustain progress. Start with a high-value use case, such as sales reporting, to demonstrate ROI and expand from there. |
 | 2 | Change management is another significant challenge if users are resistant to new tools or processes. | Invest in training, secure and communicate executive-level sponsorship and celebrate early wins to build momentum. |
 | 3 | Data integration is often complex because organizations rely on many systems. | Modern data pipeline tools (like the ones mentioned above) simplify this work, and teams should prioritize the most important sources first. |
 | 4 | Cost concerns can slow adoption. | Cloud platforms offer a lower entry point, and demonstrating early ROI helps justify continued investment. |
+
+
+
+# Conclusion
+
+Implementing/building an EDW is a significant undertaking.
+
+Doing that successfully requires
+both coordination across multiple teams
+and realistic expectations.
+
+If done successfully,
+an EDW can be a strategic asset
+that helps (!)organizations(!) turn data into valuable insights.
+
+
 
 # Closing remarks
 
@@ -644,7 +660,7 @@ Possible deployment environments for an EDW:
   
     so it is well-suited to meeting strict compliance or sovereignty requirements
 
-    some enterprises are bound by regulatory requirements to use on‑premises storage;
+    some enterprises are bound by regulatory requirements to use on-premises storage;
     and those with existing infrastructure investments may also find the on-premises approach to be the most practical;
 
 - hybrid approach
@@ -652,7 +668,7 @@ Possible deployment environments for an EDW:
   - For example,
 
     (a)
-    sensitive data can be stored on‑premises
+    sensitive data can be stored on-premises
     to achieve compliance with regulations, while
     
     (b)
