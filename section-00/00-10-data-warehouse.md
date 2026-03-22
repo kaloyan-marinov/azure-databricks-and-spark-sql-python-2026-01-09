@@ -10,31 +10,6 @@
 redirects to
 https://www.databricks.com/discover/data-warehouse
 
-# What are «data warehouses» used for?
-
-«Data warehouses» are used in "data applications" such as:
-
-- BI,
-
-- analytics,
-
-- reporting,
-
-- data applications,
-
-- preparing data for machine learning,
-
-- and data analysis
-
-(to extract and summarize data from «operational databases»)
-
-
-
-Data from «operational systems» (such as point-of-sale systems, inventory management systems, or marketing or sales databases) may:
-- pass through an ODS
-- require data cleansing to ensure data quality
-- be uploaded to «data warehouses»
-
 
 
 # What is «ETL» in a data warehouse?
@@ -233,6 +208,24 @@ such as «data warehouse» (DW) or «data warehousing» (DWH).
 A DW is
 a storage system that
 serves a single department.
+
+[Source for this paragraph: https://www.databricks.com/discover/data-warehouse ]
+Its primary purpose is
+to provide a single source of truth for
+department-level "data-driven decision making".
+Examples include but are not limited to:
+
+- business intelligence (BI)
+
+- analytics
+
+- reporting
+
+- "data applications"
+
+- preparing data for machine learning
+
+- data analysis
 
 ---
 
