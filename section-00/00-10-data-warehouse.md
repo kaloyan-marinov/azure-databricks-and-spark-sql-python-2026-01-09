@@ -174,7 +174,7 @@ Concrete examples of those include:
 
 
 
-## What does an EDW do?
+## What does an EDW "do"?
 
 EDW operations involve an essentially continuous process that moves data
 from «everyday business systems»
