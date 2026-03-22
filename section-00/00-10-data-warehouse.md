@@ -661,4 +661,8 @@ A «data lakehouse» is a platform for data processing:
 
 - whose architecture combines the benefits of a DW and a «data lake»
 
-- which allows for the storage of raw data in its original format like a data lake while also providing data processing and analytics capabilities like a data warehouse
+- which
+
+  - both allows for the storage of raw data in its original format (like a «data lake» does)
+  
+  - and provides data processing and analytics capabilities like a DW
