@@ -295,40 +295,40 @@ let us clarify that "transform data" means the following:
 
 This section explains what benefits an enterprise can expect to reap from implementing/building an EDW.
 
-single source of truth for
-analyzing the past and forecasting the future
+- single source of truth for
+  analyzing the past and forecasting the future
 
-  - enables all users - from executives to analysts - to work from the same vetted information
+    - enables all users - from executives to analysts - to work from the same vetted information
 
-  - improves confidence and trust data outputs for the entire enterprise
+    - improves confidence and trust data outputs for the entire enterprise
 
-improved data quality and consistency
+- improved data quality and consistency
 
-  - cf. "Data cleansing" above
+    - cf. "Data cleansing" above
 
-  - cf. "Standardization" above
+    - cf. "Standardization" above
 
-[Source for this point: https://www.databricks.com/discover/data-warehouse ] (!)Separate "analytics processing" from "transactional databases",
-improving the performance of both systems(!)
+- [Source for this point: https://www.databricks.com/discover/data-warehouse ] (!)Separate "analytics processing" from "transactional databases",
+  improving the performance of both systems(!)
 
-enhanced BI
+- enhanced BI
 
-  - i.e. analyzing the past and forecasting the future in a cross-functional manner
+    - i.e. analyzing the past and forecasting the future in a cross-functional manner
 
-    insights reflect the full scope of (!)business(!)
-    (rather than different (and possibly isolated) departments' «everyday business systems»)
+      insights reflect the full scope of (!)business(!)
+      (rather than different (and possibly isolated) departments' «everyday business systems»)
 
-  - is made possible by «self-service analytics»,
-    which in turn is made possible by an EDW
+    - is made possible by «self-service analytics»,
+      which in turn is made possible by an EDW
 
-    «self-service analytics» consists in
-    enabling users to explore the data within an EDW (!)independently(!) without having to rely on IT support
+      «self-service analytics» consists in
+      enabling users to explore the data within an EDW (!)independently(!) without having to rely on IT support
 
-support for ML and AI
+- support for ML and AI
 
-  - by construction, an EDW contains high-quality, consistent historical data;
-    that data can be utilized for machine learning applications
-    (e.g. to train models for forecasting demand, predicting customer churn or detecting fraud)
+    - by construction, an EDW contains high-quality, consistent historical data;
+      that data can be utilized for machine learning applications
+      (e.g. to train models for forecasting demand, predicting customer churn or detecting fraud)
 
 
 
