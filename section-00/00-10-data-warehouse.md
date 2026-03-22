@@ -393,6 +393,8 @@ Additionally:
   thus helps achieve regulatory compliance
   (for example, with GDPR or HIPAA)
 
+  <u>TODO (2026/03/22, 16:51): move the following bulletpoints to the `Implementation considerations` section</u>
+
   - role-based access controls
     that follow [the Principle of Least Privilege](
       https://en.wikipedia.org/wiki/Principle_of_least_privilege
@@ -414,6 +416,8 @@ Additionally:
   dramatically improve query speed
   and
   make the EDW easier to navigate for non-technical users
+
+  <u>TODO (2026/03/22, 16:52): move the following bulletpoints to the `Implementation considerations` section</u>
 
   - Most EDWs use «dimensional modeling»,
     which is designed to structure data for optimal query performance and user understanding
