@@ -471,32 +471,32 @@ Implementing/building an EDW is a significant undertaking in terms of
 
 The remainder of this section provides practical steps for success.
 
-Best practices:
+- Best practices:
 
-- an enterprise must define "business rules"
-  <u>before</u> before implementing the "T" in ELT or ETL;
-  (recall the "improved data quality and consistency" sub-section mentioned earlier)
+  - an enterprise must define "business rules"
+    <u>before</u> before implementing the "T" in ELT or ETL;
+    (recall the "improved data quality and consistency" sub-section mentioned earlier)
 
-  (!)Continuous monitoring (with alerts for anomalies) helps maintain quality over time.(!)
+    (!)Continuous monitoring (with alerts for anomalies) helps maintain quality over time.(!)
 
-- As enterprises grow,
-  data volumes inevitably expand.
+  - As enterprises grow,
+    data volumes inevitably expand.
 
-  An EDW should be designed from the beginning with this growth in mind.
+    An EDW should be designed from the beginning with this growth in mind.
 
-- (!)Because EDWs concentrate so much sensitive information in one place(!),
-  it is essential for it to be supplemented with a «governance layer»
+  - (!)Because EDWs concentrate so much sensitive information in one place(!),
+    it is essential for it to be supplemented with a «governance layer»
   
-  recall that this point was discussed above
+    recall that this point was discussed above
 
-Approaches to overcoming common adoption challenges:
+- Approaches to overcoming common adoption challenges:
 
-| Row # | Challenge | Solution |
-| - | - | - |
-| 1 | Depending on how they are deployed, EDW projects can take from one to five years to fully deploy. | While that may seem daunting, a phased approach will help manage expectations and sustain progress. Start with a high-value use case, such as sales reporting, to demonstrate ROI and expand from there. |
-| 2 | Change management is another significant challenge if users are resistant to new tools or processes. | Invest in training, secure and communicate executive-level sponsorship and celebrate early wins to build momentum. |
-| 3 | Data integration is often complex because organizations rely on many systems. | Modern data pipeline tools (like the ones mentioned above) simplify this work, and teams should prioritize the most important sources first. |
-| 4 | Cost concerns can slow adoption. | Cloud platforms offer a lower entry point, and demonstrating early ROI helps justify continued investment. |
+  | Row # | Challenge | Solution |
+  | - | - | - |
+  | 1 | Depending on how they are deployed, EDW projects can take from one to five years to fully deploy. | While that may seem daunting, a phased approach will help manage expectations and sustain progress. Start with a high-value use case, such as sales reporting, to demonstrate ROI and expand from there. |
+  | 2 | Change management is another significant challenge if users are resistant to new tools or processes. | Invest in training, secure and communicate executive-level sponsorship and celebrate early wins to build momentum. |
+  | 3 | Data integration is often complex because organizations rely on many systems. | Modern data pipeline tools (like the ones mentioned above) simplify this work, and teams should prioritize the most important sources first. |
+  | 4 | Cost concerns can slow adoption. | Cloud platforms offer a lower entry point, and demonstrating early ROI helps justify continued investment. |
 
 
 
