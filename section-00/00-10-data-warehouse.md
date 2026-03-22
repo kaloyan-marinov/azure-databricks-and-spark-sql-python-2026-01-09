@@ -22,28 +22,6 @@ A «data warehouse» is a structured repository
 that provides data for business intelligence and analytics.
 Data is cleansed, transformed and integrated into a schema that is optimized for querying and analysis
 (including adding common aggregations).
-
-
-
-# Challenges with data warehouses
-
-- Limited to no support for unstructured data
-
-- As data warehouses grow,
-  they slow down — and in the cloud, that gets expensive quickly with cloud compute costs
-
-  Commercial data warehouses charge you for storing your data, and also for analyzing it.
-  Storage and compute costs are therefore still tightly coupled together.
-
-- No support for AI and machine learning
-
-  Data warehouses are purpose-built and optimized for common data warehouse workloads, including historical reporting, BI and querying —
-  they were never designed for or intended to support machine learning workloads.
-
-- SQL only
-
-  Data warehouses typically offer no support for Python or R,
-  the languages of choice for app developers, data scientists and machine learning engineers.
   
 
 
@@ -663,3 +641,31 @@ Possible deployment environments for an EDW:
     - enterprises that are transitioning from legacy systems to cloud;
     
     - enterprises that need both "data sovereignty" and scalability;
+
+
+
+> (
+>
+> [Source for this parenthetical remark: https://www.databricks.com/discover/data-warehouse ]
+>
+> Challenges with data warehouses
+> 
+> - Limited to no support for unstructured data
+> 
+> - As data warehouses grow,
+>   they slow down — and in the cloud, that gets expensive quickly with cloud compute costs
+> 
+>   Commercial data warehouses charge you for storing your data, and also for analyzing it.
+>   Storage and compute costs are therefore still tightly coupled together.
+> 
+> - No support for AI and machine learning
+> 
+>   Data warehouses are purpose-built and optimized for common data warehouse workloads, including historical reporting, BI and querying —
+>   they were never designed for or intended to support machine learning workloads.
+> 
+> - SQL only
+> 
+>   Data warehouses typically offer no support for Python or R,
+>   the languages of choice for app developers, data scientists and machine learning engineers.
+>
+> )
