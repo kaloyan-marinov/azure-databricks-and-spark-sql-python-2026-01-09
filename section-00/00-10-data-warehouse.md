@@ -6,29 +6,6 @@
 
 
 
-(https://www.databricks.com/glossary >> «Data Warehouse»)
-redirects to
-https://www.databricks.com/discover/data-warehouse
-
-
-
-# What is the difference between a «database» and a «data warehouse»?
-
-A «database» (or a «database management system» (DBMS)) is a collection of structured data,
-extending beyond text and numbers to images, videos and more.
-A DBMS is the storage system for data that feeds applications and analytics.
-
-A «data warehouse» is a structured repository
-that provides data for business intelligence and analytics.
-Data is cleansed, transformed and integrated into a schema that is optimized for querying and analysis
-(including adding common aggregations).
-
-
-
----
-
-
-
 https://www.databricks.com/glossary/edw
 
 <u>TODO (2026/03/21, 12:16): re-read `talk-by-andrew-ng-on-the-state-of-artificial-intelligence-AI/` and re-watch the talk</u>
@@ -382,6 +359,23 @@ with each layer serving a distinct purpose.
 >
 > This architecture was created by Bill Inmon,
 > the computer scientist often considered the father of the DW.
+>
+> )
+
+> (
+>
+> [Source for this parenthetical remark: https://www.databricks.com/discover/data-warehouse ]
+>
+> What is the difference between a «database» and a DW?
+> 
+> - A «database» (or a «database management system» (DBMS)) is a collection of structured data,
+>   extending beyond text and numbers to images, videos and more.
+>   A DBMS is the storage system for data that feeds applications and analytics.
+> 
+> - A DW is a structured repository
+>   that provides data for business intelligence and analytics.
+>   Data is cleansed, transformed and integrated into a schema that is optimized for querying and analysis
+>   (including adding common aggregations).
 >
 > )
 
