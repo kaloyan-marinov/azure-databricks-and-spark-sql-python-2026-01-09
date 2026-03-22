@@ -25,17 +25,6 @@ Data is cleansed, transformed and integrated into a schema that is optimized for
 
 
 
-# What data warehouse benefits can businesses expect?
-
-- The consolidation of data obtained from many sources [into] a single point of access for all data
-
-- Separate "analytics processing" from "transactional databases",
-  improving the performance of both systems
-
-- historical intelligence
-
-
-
 # Challenges with data warehouses
 
 - Limited to no support for unstructured data
@@ -529,6 +518,9 @@ improved data quality and consistency
   - cf. "Data cleansing" above
 
   - cf. "Standardization" above
+
+[Source for this point: https://www.databricks.com/discover/data-warehouse ] (!)Separate "analytics processing" from "transactional databases",
+improving the performance of both systems(!)
 
 enhanced BI
 
