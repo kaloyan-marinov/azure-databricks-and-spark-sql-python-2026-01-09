@@ -10,12 +10,6 @@
 redirects to
 https://www.databricks.com/discover/data-warehouse
 
-# What is a data warehouse?
-
-A «data warehouse» is a data management system
-that stores current and historical data from multiple sources
-in a business-friendly manner for easier insights and reporting.
-
 # variations of a data warehouse
 
 From "less comprehensive" to "more comprehensive":
