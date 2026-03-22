@@ -2,17 +2,15 @@
 
 
 
----
+## Sources
+
+- https://www.databricks.com/glossary/edw
+
+- <u>TODO (2026/03/21, 12:16): re-read `talk-by-andrew-ng-on-the-state-of-artificial-intelligence-AI/` and re-watch the talk</u>
 
 
 
-https://www.databricks.com/glossary/edw
-
-<u>TODO (2026/03/21, 12:16): re-read `talk-by-andrew-ng-on-the-state-of-artificial-intelligence-AI/` and re-watch the talk</u>
-
-
-
-# Context
+## Context
 
 The following terms will be used interchangeably:
 
@@ -41,7 +39,7 @@ by any one of the following names:
 
 
 
-# Glossary / Terminology / Vocabulary / Definitions
+## Glossary / Terminology / Vocabulary / Definitions
 
 The term «Enterprise Data Warehouse» (EDW) is widely used in professional and technical contexts,
 but you may encounter other similar-sounding terms,
@@ -169,7 +167,7 @@ Concrete examples of those include:
 
 
 
-## Key characteristics of an EDW
+### Key characteristics of an EDW
 
 consolidating information from multiple «everyday business systems» into one system;
 This helps ensure that insights reflect the full scope of (!)business(!)
@@ -185,7 +183,7 @@ They also support online analytical processing (OLAP), which is ideal for trend 
 
 
 
-# How an EDW works = How an EDW operates = EDW operations
+## How an EDW works = How an EDW operates = EDW operations
 
 EDW operations involve an essentially continuous process that moves data
 from «everyday business systems»
@@ -301,7 +299,7 @@ let us clarify that "transform data" means the following:
 > )
 
 
-# How an EDW is architected
+## How an EDW is architected
 
 A common architecture for an EDW is a multi-tiered one,
 with each layer serving a distinct purpose.
@@ -434,7 +432,7 @@ Additionally:
 
 
 
-# What benefits can an enterprise expect to reap from implementing/building an EDW?
+## What benefits can an enterprise expect to reap from implementing/building an EDW?
 
 single source of truth for
 analyzing the past and forecasting the future
@@ -470,7 +468,7 @@ support for ML and AI
 
 
 
-# Implementation considerations
+## Implementation considerations
 
 Implementing/building an EDW is a significant undertaking in terms of
 (a) technical complexity,
@@ -508,7 +506,7 @@ Approaches to overcoming common adoption challenges:
 
 
 
-# Conclusion
+## Conclusion
 
 Implementing/building an EDW is a significant undertaking.
 
@@ -522,7 +520,7 @@ that helps (!)organizations(!) turn data into valuable insights.
 
 
 
-# Closing remarks
+## Miscellaneous remarks
 
 A «data mart» is a storage system, which:
 
