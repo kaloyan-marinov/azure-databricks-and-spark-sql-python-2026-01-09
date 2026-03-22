@@ -10,16 +10,6 @@
 redirects to
 https://www.databricks.com/discover/data-warehouse
 
-# variations of a data warehouse
-
-From "less comprehensive" to "more comprehensive":
-
-- «Operational data store» (ODS): A type of data warehouse that focuses on the latest operational or transactional data.
-
-- «Data mart»: A simplified version of the data warehouse that serves a single line of business (LOB) or a single project. A data mart is smaller than an EDW, but the number of data marts typically grows as an organization grows, and LOBs want to self-service.
-
-- «Enterprise data warehouse» (EDW): A centralized data warehouse that is used by many different teams in an organization. It is often the single source of truth for BI, analytics and reporting.
-
 # What are «data warehouses» used for?
 
 «Data warehouses» are used in "data applications" such as:
