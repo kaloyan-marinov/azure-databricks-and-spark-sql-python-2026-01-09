@@ -12,27 +12,6 @@ https://www.databricks.com/discover/data-warehouse
 
 
 
-# What is «ETL» in a data warehouse?
- 
-
-A «data warehouse» requires data.
-
-(That data must be loaded into the «data warehouse» (or referenced, with a concept called «lakehouse federation»).)
-
-The process of
-extracting data from source systems, transforming the data, and then loading the data into the «data warehouse»
-is called «ETL» (extract, transform, load).
-«ETL» is typically used for integrating structured data from multiple sources into a predefined schema.
-
-(
-«Query federation», which is sometimes also called «data virtualization», is a style of «ETL»
-that is used to run queries against data sources from multiple sources and across multiple clouds.
-You can view and query all the data from one place
-without needing to migrate all data to a unified system.
-)
-
-
-
 # What is the difference between a «database» and a «data warehouse»?
 
 A «database» (or a «database management system» (DBMS)) is a collection of structured data,
@@ -288,6 +267,8 @@ of the phrase "data from all of an enterprise's constituent departments":
   
   - dozens or even hundreds of individual data stores
 
+  - data sources
+
 Concrete examples of those include:
 
 - [ as per https://www.databricks.com/blog/what-is-edw ]
@@ -415,6 +396,32 @@ let us clarify that "transform data" means the following:
 >
 > )
 
+
+
+> (
+>
+> [Source for this parenthetical remark: https://www.databricks.com/discover/data-warehouse ]
+>
+> «Query federation», which is sometimes also called «data virtualization», is a style of «ETL»
+> that is used to run queries against multiple data sources and across multiple clouds
+> without needing to migrate all data to a unified system.
+>
+> [«Lakehouse Federation»](https://docs.databricks.com/aws/en/query-federation)
+> is the «query federation» sub-system within Databricks.
+> It makes it possible to connect to the following data sources:
+> - another «Databricks workspace»
+> - MySQL
+> - PostgreSQL
+> - Microsoft SQL Server
+> - Oracle
+> - Snowflake
+> - Google BigQuery
+> - Amazon Redshift
+> - Azure Synapse (SQL Data Warehouse)
+> - Salesforce Data 360
+> - Teradata
+>
+> )
 
 
 # How an EDW is architected
