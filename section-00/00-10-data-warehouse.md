@@ -290,6 +290,7 @@ let us clarify that "transform data" means the following:
 > )
 
 
+
 ## How an EDW is architected
 
 A common architecture for an EDW is a multi-tiered one,
@@ -376,50 +377,10 @@ Additionally:
   thus helps achieve regulatory compliance
   (for example, with GDPR or HIPAA)
 
-  <u>TODO (2026/03/22, 16:51): move the following bulletpoints to the `Implementation considerations` section</u>
-
-  - role-based access controls
-    that follow [the Principle of Least Privilege](
-      https://en.wikipedia.org/wiki/Principle_of_least_privilege
-    )
-
-  - metadata management
-
-  - column-level security or dynamic data masking (for highly sensitive data, such as personal identifiable information (PII))
-
-  - end-to-end encryption to protect data at rest and in transit
-
-  - audit logs that track every query and access event
-
-  - multi-factor authentication (MFA) to help prevent unauthorized access
-
-  - regular security audits and compliance reviews
-
 - how data is modeled and organized inside an EDW can
   dramatically improve query speed
   and
   make the EDW easier to navigate for non-technical users
-
-  <u>TODO (2026/03/22, 16:52): move the following bulletpoints to the `Implementation considerations` section</u>
-
-  - Most EDWs use «dimensional modeling»,
-    which is designed to structure data for optimal query performance and user understanding
-    using «fact tables» and «dimension tables».
-
-    «Fact tables» store data for measurable transactions and events,
-    such as sales revenue, order quantities or units sold.
-    
-    «Dimension tables» store data that provides descriptive context,
-    such as customer location or age, order history and order dates.
-
-  - Data is also typically organized into schemas aligned to (!)business units(!) that reflect the (!)company(!)'s (!)operational structure(!). 
-
-    This makes working with the data more intuitive for all users - from executives to analysts.
-    (With data organized in «fact tables» and «dimension tables»,
-    they can more easily conduct analysis activities
-    such as comparing sales by region, product or customer segment.)
-
-    (!)EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.(!)
 
 
 
@@ -486,8 +447,47 @@ The remainder of this section provides practical steps for success.
 
   - (!)Because EDWs concentrate so much sensitive information in one place(!),
     it is essential for it to be supplemented with a «governance layer»
-  
-    recall that this point was discussed above
+    (which was mentioned above)
+
+    it should be used to implement these strong security practices:
+    
+    - role-based access controls
+      that follow [the Principle of Least Privilege](
+        https://en.wikipedia.org/wiki/Principle_of_least_privilege
+      )
+
+    - metadata management
+
+    - column-level security or dynamic data masking (for highly sensitive data, such as personal identifiable information (PII))
+
+    - end-to-end encryption to protect data at rest and in transit
+
+    - audit logs that track every query and access event
+
+    - multi-factor authentication (MFA) to help prevent unauthorized access
+
+    - regular security audits and compliance reviews
+
+  - pay careful attention to how data is modeled and organized inside an EDW
+
+    - Most EDWs use «dimensional modeling»,
+      which is designed to structure data for optimal query performance and user understanding
+      using «fact tables» and «dimension tables».
+
+      «Fact tables» store data for measurable transactions and events,
+      such as sales revenue, order quantities or units sold.
+      
+      «Dimension tables» store data that provides descriptive context,
+      such as customer location or age, order history and order dates.
+
+    - Data is also typically organized into schemas aligned to (!)business units(!) that reflect the (!)company(!)'s (!)operational structure(!). 
+
+      This makes working with the data more intuitive for all users - from executives to analysts.
+      (With data organized in «fact tables» and «dimension tables»,
+      they can more easily conduct analysis activities
+      such as comparing sales by region, product or customer segment.)
+
+      (!)EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.(!)
 
 - Approaches to overcoming common adoption challenges:
 
