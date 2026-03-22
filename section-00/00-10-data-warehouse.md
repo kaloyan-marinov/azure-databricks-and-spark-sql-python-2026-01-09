@@ -174,7 +174,7 @@ Concrete examples of those include:
 
 
 
-## How an EDW works = How an EDW operates = EDW operations
+## What does an EDW do?
 
 EDW operations involve an essentially continuous process that moves data
 from «everyday business systems»
@@ -291,7 +291,9 @@ let us clarify that "transform data" means the following:
 
 
 
-## What benefits can an enterprise expect to reap from implementing/building an EDW?
+## Why would an enterprise build/implement an EDW?
+
+This section explains what benefits an enterprise can expect to reap from implementing/building an EDW.
 
 single source of truth for
 analyzing the past and forecasting the future
@@ -330,7 +332,7 @@ support for ML and AI
 
 
 
-## How an EDW is architected
+## How is an EDW architected? What components is it made up of?
 
 A common architecture for an EDW is a multi-tiered one,
 with each layer serving a distinct purpose.
