@@ -409,7 +409,7 @@ The classic EDW design is built on three tiers — bottom, middle and top — ea
   
   traditionally relied on relational databases optimized for "analytics";
   key techniques/features of such databases,
-  which make analytical workloads efficient and scalable,
+  which make (!)analytical workloads(!) efficient and scalable,
   include
   
     columnar storage (storing data by column rather than row for faster queries)
@@ -630,7 +630,7 @@ Possible deployment environments for an EDW:
     to achieve compliance with regulations, while
     
     (b)
-    cloud platforms handle analytical workloads
+    cloud platforms handle (!)analytical workloads(!)
   
   - may require integration across environments,
     which can introduce complexity
@@ -660,8 +660,8 @@ Possible deployment environments for an EDW:
 > 
 > - No support for AI and machine learning
 > 
->   DWs are purpose-built and optimized for common DW workloads (including historical reporting, BI and querying);
->   they were never designed for or intended to support machine learning workloads.
+>   DWs are purpose-built and optimized for common (!)DW workloads(!) (including historical reporting, BI and querying);
+>   they were never designed for or intended to support (!)machine learning workloads(!).
 > 
 > - SQL only
 > 
