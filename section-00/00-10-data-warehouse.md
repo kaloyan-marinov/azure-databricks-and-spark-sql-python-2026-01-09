@@ -10,6 +10,14 @@
 
 
 
+## [WIP] Background
+
+online analytical processing (OLAP), which is ideal for trend analysis and forecasting, as opposed to online transaction processing (OLTP) systems that handle day-to-day transactions.
+- <u>TODO (2026/03/22, 11:31): re-read `introduction-to-the-parquet-file-format/2024-03-12-20-43-06-summary.txt`</u>
+- <u>TODO (2026/03/22, 11:34): re-read`resources-about-database-normalization/2025-06-04-10-00-10-UTC-plus-2-database-normalization.txt`</u>
+
+
+
 ## Context
 
 The following terms will be used interchangeably:
@@ -163,23 +171,6 @@ Concrete examples of those include:
   - operational systems such as point-of-sale systems, inventory management systems, or marketing or sales databases
 
   - operational data store[s]
-
-
-
-
-### Key characteristics of an EDW
-
-consolidating information from multiple «everyday business systems» into one system;
-This helps ensure that insights reflect the full scope of (!)business(!)
-(rather than different (and possibly isolated) departments' «everyday business systems»)
-
-consistency (which is vital for accurate forecasting, regulatory compliance and strategic planning)
-
-enable all users — from executives to analysts — to work from the same vetted information.
-
-They also support online analytical processing (OLAP), which is ideal for trend analysis and forecasting, as opposed to online transaction processing (OLTP) systems that handle day-to-day transactions.
-- <u>TODO (2026/03/22, 11:31): re-read `introduction-to-the-parquet-file-format/2024-03-12-20-43-06-summary.txt`</u>
-- <u>TODO (2026/03/22, 11:34): re-read`resources-about-database-normalization/2025-06-04-10-00-10-UTC-plus-2-database-normalization.txt`</u>
 
 
 
@@ -423,7 +414,7 @@ Additionally:
 
   - Data is also typically organized into schemas aligned to (!)business units(!) that reflect the (!)company(!)'s (!)operational structure(!). 
 
-    This makes working with the data more intuitive for analysts and managers.
+    This makes working with the data more intuitive for all users - from executives to analysts.
     (With data organized in «fact tables» and «dimension tables»,
     they can more easily conduct analysis activities
     such as comparing sales by region, product or customer segment.)
@@ -437,7 +428,7 @@ Additionally:
 single source of truth for
 analyzing the past and forecasting the future
 
-  - enables users to access the same vetted information
+  - enables all users - from executives to analysts - to work from the same vetted information
 
   - improves confidence and trust data outputs for the entire enterprise
 
@@ -453,6 +444,9 @@ improving the performance of both systems(!)
 enhanced BI
 
   - i.e. analyzing the past and forecasting the future in a cross-functional manner
+
+    insights reflect the full scope of (!)business(!)
+    (rather than different (and possibly isolated) departments' «everyday business systems»)
 
   - is made possible by «self-service analytics»,
     which in turn is made possible by an EDW
