@@ -22,40 +22,6 @@ A «data warehouse» is a structured repository
 that provides data for business intelligence and analytics.
 Data is cleansed, transformed and integrated into a schema that is optimized for querying and analysis
 (including adding common aggregations).
-  
-
-
-# Data warehouse architecture
- 
-
-A common model for a «data warehouse architecture» is multi-tiered.
-This architecture was created by Bill Inmon,
-the computer scientist often considered the father of the data warehouse.
-
-- Bottom tier
-
-  - is comprised of data sources and data storage;
-  
-  - includes data access methods
-    (like APIs, gateways, ODBC, JDBC and OLE-DB)
-    
-  - includes «Data ingestion» or «ETL»
-
-- Middle tier
-
-  - is comprised of an OLAP server,
-    which is either relational (ROLAP), or multi-dimensional (MOLAP), or a hybrid OLAP (HOLAP)
-
-- Top tier
-
-  - is comprised of the front-end clients
-    (for querying, BI, dashboarding, reporting and analysis)
-
-
-
-<u>TODO (2026/03/21, 11:26): "in its native format" and "raw data in its original format"</u>
-
-<u>TODO (2026/03/21, 11:28): "a dimension" and "a fact"</u>
 
 
 
@@ -69,7 +35,7 @@ the computer scientist often considered the father of the data warehouse.
 
 - Intelligent «data warehouse» (aka modern «data warehouse»):
 
-  is built on a lakehouse architecture
+  is built on a «lakehouse architecture»
   
   has an intelligent and automatically optimizing platform
   
@@ -393,46 +359,64 @@ let us clarify that "transform data" means the following:
 
 # How an EDW is architected
 
-The classic EDW design is built on three tiers — bottom, middle and top — each serving a distinct purpose.
+A common architecture for an EDW is a multi-tiered one,
+with each layer serving a distinct purpose.
 
 - The bottom tier
 
-  This is considered the data integration layer, which is where raw data is captured and prepared for storage.
+  - this is the data ingestion layer
+
+  - this is where ETL or ELT processes are run
   
-  ETL or ELT processes integrate data from «everyday business systems» and move it to the EDW.
-  
-  Modern data pipeline tools such as Fivetran, Airbyte and Matillion provide connectors to «everyday business systems».
+  > (
+  >
+  > Modern data pipeline tools such as Fivetran, Airbyte and Matillion
+  > provide connectors to «everyday business systems».
+  >
+  > )
 
 - The middle tier
 
-  is the actual storage layer (within the EDW itself) where processed data resides
+  - this is the actual storage layer (within the EDW itself)
+    where *"ELT-processed"* data resides
   
-  traditionally relied on relational databases optimized for "analytics";
-  key techniques/features of such databases,
-  which make (!)analytical workloads(!) efficient and scalable,
-  include
+  - traditionally, it relied on relational databases optimized for "analytics"
+    (aka an OLAP server,
+    which is either relational (ROLAP), or multi-dimensional (MOLAP), or a hybrid OLAP (HOLAP));
+    key techniques/features of such databases,
+    which make (!)analytical workloads(!) efficient and scalable,
+    include
   
-    columnar storage (storing data by column rather than row for faster queries)
+    - columnar storage (storing data by column rather than row for faster queries)
     
-    compression (reducing storage size)
+    - compression (reducing storage size)
     
-    partitioning (splitting data into manageable segments)
+    - partitioning (splitting data into manageable segments)
 
 - The top tier
 
-  is the query and presentation layer
+  - this is the query and presentation layer
   
-  this is where users interact directly with the data
-  to build dashboards and generate reports
-  using
+  - this is where users interact directly with the data
+    to build dashboards and generate reports
+    using
   
-    various BI tools
+    - various BI tools
     
-    query engines with massively parallel processing
+    - query engines with massively parallel processing
     
-    APIs or
+    - APIs or
     
-    user interfaces
+    - user interfaces
+
+> (
+>
+> [Source for this parenthetical remark: https://www.databricks.com/discover/data-warehouse ]
+>
+> This architecture was created by Bill Inmon,
+> the computer scientist often considered the father of the DW.
+>
+> )
 
 Additionally, an EDW should be supplemented with a «governance layer», which
 enables/provides strong security practices
@@ -669,3 +653,12 @@ Possible deployment environments for an EDW:
 >   the languages of choice for app developers, data scientists and machine learning engineers.
 >
 > )
+
+
+
+[Source for this paragraph: https://www.databricks.com/discover/data-warehouse ]
+A «data lakehouse» is a platform for data processing:
+
+- whose architecture combines the benefits of a DW and a «data lake»
+
+- which allows for the storage of raw data in its original format like a data lake while also providing data processing and analytics capabilities like a data warehouse
