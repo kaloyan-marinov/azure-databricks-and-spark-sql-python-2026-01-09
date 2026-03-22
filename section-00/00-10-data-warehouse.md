@@ -336,15 +336,17 @@ Concrete examples of those include:
 
 ## Key characteristics of an EDW
 
-By consolidating information into one system, an EDW ensures that executives, analysts and operational teams are working from the same definitions and datasets. This consistency is vital for accurate forecasting, regulatory compliance and strategic planning.
+consolidating information from multiple «everyday business systems» into one system;
+This helps ensure that insights reflect the full scope of (!)business(!)
+(rather than different (and possibly isolated) departments' «everyday business systems»)
 
-This helps ensure that insights reflect the full scope of business rather than isolated silos.
+consistency (which is vital for accurate forecasting, regulatory compliance and strategic planning)
 
-By enforcing standards and integrating data, an EDW allows all users — from executives to analysts —to work from the same vetted information.
+enable all users — from executives to analysts — to work from the same vetted information.
 
 They also support online analytical processing (OLAP), which is ideal for trend analysis and forecasting, as opposed to online transaction processing (OLTP) systems that handle day-to-day transactions.
-
-EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.
+- <u>TODO (2026/03/22, 11:31): re-read `introduction-to-the-parquet-file-format/2024-03-12-20-43-06-summary.txt`</u>
+- <u>TODO (2026/03/22, 11:34): re-read`resources-about-database-normalization/2025-06-04-10-00-10-UTC-plus-2-database-normalization.txt`</u>
 
 
 
@@ -524,6 +526,8 @@ make the EDW easier to navigate for non-technical users.
   (With data organized in «fact tables» and «dimension tables»,
   they can more easily conduct analysis activities
   such as comparing sales by region, product or customer segment.)
+
+  (!)EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.(!)
 
 
 
