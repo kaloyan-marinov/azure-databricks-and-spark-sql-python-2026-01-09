@@ -390,7 +390,8 @@ Additionally:
 - an EDW should be supplemented with a «governance layer», which
   enables/provides strong security practices
   and
-  thus helps achieve compliance with regulations (like GDPR or HIPAA)
+  thus helps achieve regulatory compliance
+  (for example, with GDPR or HIPAA)
 
   - role-based access controls
     that follow [the Principle of Least Privilege](
@@ -580,7 +581,7 @@ Possible deployment environments for an EDW:
 
     (a)
     sensitive data can be stored on-premises
-    to achieve compliance with regulations, while
+    to achieve regulatory compliance, while
     
     (b)
     cloud platforms handle (!)analytical workloads(!)
