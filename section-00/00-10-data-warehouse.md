@@ -25,39 +25,6 @@ Data is cleansed, transformed and integrated into a schema that is optimized for
 
 
 
-# types of data warehouses
-
-- Traditional «data warehouse»:
-
-  stores only structured data
-  
-  enables users to quickly and easily access data for reporting and analytics
-
-- Intelligent «data warehouse» (aka modern «data warehouse»):
-
-  is built on a «lakehouse architecture»
-  
-  has an intelligent and automatically optimizing platform
-  
-  not only provides access to AI and ML models
-  but also uses AI to
-  
-  - assist with queries,
-  - dashboard creation, and
-  - performance and sizing optimization
-
-# What solutions does Databricks have for data warehousing?
-
-Databricks provides an intelligent «data warehouse», [Databricks SQL](
-  https://www.databricks.com/product/databricks-sql
-)
-
-Databricks SQL is part of an integrated platform, Databricks' [Data Intelligence Platform](
-  https://www.databricks.com/product/data-intelligence-platform
-)
-
-
-
 ---
 
 
@@ -666,3 +633,42 @@ A «data lakehouse» is a platform for data processing:
   - both allows for the storage of raw data in its original format (like a «data lake» does)
   
   - and provides data processing and analytics capabilities like a DW
+
+
+
+> (
+>
+> [Source for this parenthetical remark: https://www.databricks.com/discover/data-warehouse ]
+>
+> - types of data warehouses
+> 
+>   - Traditional «data warehouse»:
+> 
+>     stores only structured data
+>     
+>     enables users to quickly and easily access data for reporting and analytics
+> 
+>   - Intelligent «data warehouse» (aka modern «data warehouse»):
+> 
+>     is built on a «lakehouse architecture»
+>     
+>     has an intelligent and automatically optimizing platform
+>     
+>     not only provides access to AI and ML models
+>     but also uses AI to
+>     
+>     - assist with queries,
+>     - dashboard creation, and
+>     - performance and sizing optimization
+> 
+> - What solutions does Databricks have for data warehousing?
+> 
+>   - Databricks provides an intelligent «data warehouse», [Databricks SQL](
+>       https://www.databricks.com/product/databricks-sql
+>     )
+> 
+>   - Databricks SQL is part of an integrated platform, Databricks' [Data Intelligence Platform](
+>       https://www.databricks.com/product/data-intelligence-platform
+>     )
+>
+> )
