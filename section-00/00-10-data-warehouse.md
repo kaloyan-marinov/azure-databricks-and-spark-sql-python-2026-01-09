@@ -648,24 +648,24 @@ Possible deployment environments for an EDW:
 >
 > [Source for this parenthetical remark: https://www.databricks.com/discover/data-warehouse ]
 >
-> Challenges with data warehouses
+> Challenges with DWs
 > 
 > - Limited to no support for unstructured data
 > 
-> - As data warehouses grow,
+> - As DWs grow,
 >   they slow down — and in the cloud, that gets expensive quickly with cloud compute costs
 > 
->   Commercial data warehouses charge you for storing your data, and also for analyzing it.
+>   Commercial DWs charge you for storing your data, and also for analyzing it.
 >   Storage and compute costs are therefore still tightly coupled together.
 > 
 > - No support for AI and machine learning
 > 
->   Data warehouses are purpose-built and optimized for common data warehouse workloads, including historical reporting, BI and querying —
+>   DWs are purpose-built and optimized for common DW workloads (including historical reporting, BI and querying);
 >   they were never designed for or intended to support machine learning workloads.
 > 
 > - SQL only
 > 
->   Data warehouses typically offer no support for Python or R,
+>   DWs typically offer no support for Python or R,
 >   the languages of choice for app developers, data scientists and machine learning engineers.
 >
 > )
