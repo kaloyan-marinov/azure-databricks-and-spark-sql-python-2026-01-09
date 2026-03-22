@@ -385,51 +385,53 @@ with each layer serving a distinct purpose.
 >
 > )
 
-Additionally, an EDW should be supplemented with a «governance layer», which
-enables/provides strong security practices
-and
-thus helps achieve compliance with regulations (like GDPR or HIPAA)
+Additionally:
 
-- role-based access controls
-  that follow [the Principle of Least Privilege](
-    https://en.wikipedia.org/wiki/Principle_of_least_privilege
-  )
+- an EDW should be supplemented with a «governance layer», which
+  enables/provides strong security practices
+  and
+  thus helps achieve compliance with regulations (like GDPR or HIPAA)
 
-- metadata management
+  - role-based access controls
+    that follow [the Principle of Least Privilege](
+      https://en.wikipedia.org/wiki/Principle_of_least_privilege
+    )
 
-- column-level security or dynamic data masking (for highly sensitive data, such as personal identifiable information (PII))
+  - metadata management
 
-- end-to-end encryption to protect data at rest and in transit
+  - column-level security or dynamic data masking (for highly sensitive data, such as personal identifiable information (PII))
 
-- audit logs that track every query and access event
+  - end-to-end encryption to protect data at rest and in transit
 
-- multi-factor authentication (MFA) to help prevent unauthorized access
+  - audit logs that track every query and access event
 
-- regular security audits and compliance reviews
+  - multi-factor authentication (MFA) to help prevent unauthorized access
 
-How data is modeled and organized inside an EDW can
-dramatically improve query speed
-and
-make the EDW easier to navigate for non-technical users.
+  - regular security audits and compliance reviews
 
-- Most EDWs use «dimensional modeling»,
-  which is designed to structure data for optimal query performance and user understanding
-  using «fact tables» and «dimension tables».
+- how data is modeled and organized inside an EDW can
+  dramatically improve query speed
+  and
+  make the EDW easier to navigate for non-technical users
 
-  «Fact tables» store data for measurable transactions and events,
-  such as sales revenue, order quantities or units sold.
-  
-  «Dimension tables» store data that provides descriptive context,
-  such as customer location or age, order history and order dates.
+  - Most EDWs use «dimensional modeling»,
+    which is designed to structure data for optimal query performance and user understanding
+    using «fact tables» and «dimension tables».
 
-- Data is also typically organized into schemas aligned to (!)business units(!) that reflect the (!)company(!)'s (!)operational structure(!). 
+    «Fact tables» store data for measurable transactions and events,
+    such as sales revenue, order quantities or units sold.
+    
+    «Dimension tables» store data that provides descriptive context,
+    such as customer location or age, order history and order dates.
 
-  This makes working with the data more intuitive for analysts and managers.
-  (With data organized in «fact tables» and «dimension tables»,
-  they can more easily conduct analysis activities
-  such as comparing sales by region, product or customer segment.)
+  - Data is also typically organized into schemas aligned to (!)business units(!) that reflect the (!)company(!)'s (!)operational structure(!). 
 
-  (!)EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.(!)
+    This makes working with the data more intuitive for analysts and managers.
+    (With data organized in «fact tables» and «dimension tables»,
+    they can more easily conduct analysis activities
+    such as comparing sales by region, product or customer segment.)
+
+    (!)EDWs organize data around key business subjects such as customers, products or sales. This subject focus makes analysis more intuitive and aligns the warehouse with how the business actually operates.(!)
 
 
 
